@@ -1,0 +1,11 @@
+/.venv/
+/build/
+/generated/
+__pycache__/
+*.pyc
+*.prg
+*.iq
+*.der
+*.pem
+*.key
+/.env

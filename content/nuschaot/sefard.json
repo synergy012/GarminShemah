@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "sefard",
+  "title_he": "נוסח ספרד",
+  "status": "blocked",
+  "review": {
+    "text_verified": false,
+    "order_verified": false,
+    "reviewer": null
+  },
+  "sources": [],
+  "sections": [],
+  "unresolved": [
+    "Complete bedtime sequence not acquired.",
+    "Edition-specific reuse license not verified.",
+    "Section order, optional customs and wording require comparison with an authoritative edition."
+  ]
+}

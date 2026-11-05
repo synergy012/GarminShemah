@@ -1,0 +1,115 @@
+{
+  "index_url": "https://raw.githubusercontent.com/Sefaria/Sefaria-Export/master/books.json",
+  "retrieved_on": "2026-11-05",
+  "warning": "Index metadata only. No text or version license verified. Merged editions must not be used to infer uniform wording or license.",
+  "editions": [
+    {
+      "title": "Siddur Ashkenaz",
+      "language": "Hebrew",
+      "versionTitle": "Daat Siddur Ashkenaz",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/Daat%20Siddur%20Ashkenaz.json"
+    },
+    {
+      "title": "Siddur Ashkenaz",
+      "language": "Hebrew",
+      "versionTitle": "Shema with Cantillation ",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/Shema%20with%20Cantillation%20.json"
+    },
+    {
+      "title": "Siddur Ashkenaz",
+      "language": "Hebrew",
+      "versionTitle": "Siddur Veshinantam ",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/Siddur%20Veshinantam%20.json"
+    },
+    {
+      "title": "Siddur Ashkenaz",
+      "language": "Hebrew",
+      "versionTitle": "Tanach with Nikkud",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/Tanach%20with%20Nikkud.json"
+    },
+    {
+      "title": "Siddur Ashkenaz",
+      "language": "Hebrew",
+      "versionTitle": "The Metsudah siddur a new linear siddur with English translation by Avrohom Davis, 1981",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/The%20Metsudah%20siddur%20a%20new%20linear%20siddur%20with%20English%20translation%20by%20Avrohom%20Davis%2C%201981.json"
+    },
+    {
+      "title": "Siddur Ashkenaz",
+      "language": "Hebrew",
+      "versionTitle": "The Metsudah siddur, 1981",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/The%20Metsudah%20siddur%2C%201981.json"
+    },
+    {
+      "title": "Siddur Ashkenaz",
+      "language": "Hebrew",
+      "versionTitle": "Torat Emet 357",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/Torat%20Emet%20357.json"
+    },
+    {
+      "title": "Siddur Ashkenaz",
+      "language": "Hebrew",
+      "versionTitle": "Wikipedia",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/Wikipedia.json"
+    },
+    {
+      "title": "Siddur Ashkenaz",
+      "language": "Hebrew",
+      "versionTitle": "merged",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Ashkenaz/Hebrew/merged.json"
+    },
+    {
+      "title": "Siddur Edot HaMizrach",
+      "language": "Hebrew",
+      "versionTitle": " Shaliehsaboo Edition",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Edot%20HaMizrach/Hebrew/%20Shaliehsaboo%20Edition.json"
+    },
+    {
+      "title": "Siddur Edot HaMizrach",
+      "language": "Hebrew",
+      "versionTitle": "Shaliehsaboo Edition",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Edot%20HaMizrach/Hebrew/Shaliehsaboo%20Edition.json"
+    },
+    {
+      "title": "Siddur Edot HaMizrach",
+      "language": "Hebrew",
+      "versionTitle": "Siddur Edot HaMizrach temp",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Edot%20HaMizrach/Hebrew/Siddur%20Edot%20HaMizrach%20temp.json"
+    },
+    {
+      "title": "Siddur Edot HaMizrach",
+      "language": "Hebrew",
+      "versionTitle": "Torat Emet 357",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Edot%20HaMizrach/Hebrew/Torat%20Emet%20357.json"
+    },
+    {
+      "title": "Siddur Edot HaMizrach",
+      "language": "Hebrew",
+      "versionTitle": "merged",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Edot%20HaMizrach/Hebrew/merged.json"
+    },
+    {
+      "title": "Siddur Sefard",
+      "language": "Hebrew",
+      "versionTitle": "Modeh Anu",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Sefard/Hebrew/Modeh%20Anu.json"
+    },
+    {
+      "title": "Siddur Sefard",
+      "language": "Hebrew",
+      "versionTitle": "The Metsudah siddur, 1981",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Sefard/Hebrew/The%20Metsudah%20siddur%2C%201981.json"
+    },
+    {
+      "title": "Siddur Sefard",
+      "language": "Hebrew",
+      "versionTitle": "Torat Emet 357",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Sefard/Hebrew/Torat%20Emet%20357.json"
+    },
+    {
+      "title": "Siddur Sefard",
+      "language": "Hebrew",
+      "versionTitle": "merged",
+      "json_url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Sefard/Hebrew/merged.json"
+    }
+  ]
+}
