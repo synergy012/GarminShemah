@@ -1,7 +1,7 @@
 # Development, build and installation
 
 This checkpoint has no testable Garmin binary yet. The commands below distinguish the
-tested host workflow from the blocked SDK workflow.
+tested host workflow and simulator startup from the still-blocked device build workflow.
 
 ## Tested host workflow
 
@@ -21,14 +21,17 @@ Generated data lives under ignored `generated/`; build outputs, research downloa
 test logs live under ignored `build/`. Source edits belong in `source/`, `content/`,
 `config/` or `tools/`, not the generated resources.
 
-## Official SDK workflow — not executed here
+## SDK and simulator — startup verified
 
-After network access is applied, use Garmin's official SDK/SDK Manager from
-<https://developer.garmin.com/connect-iq/sdk/>. Follow its Linux prerequisites and
-install the **fr970** and **venu2** device packages. Keep artifact/TLS verification
-enabled. Inspect the installed tool help, device metadata, API reference and store
-requirements before executing the commands below. Set `CONNECTIQ_HOME` to the SDK
-directory containing `bin/monkeyc`; add its `bin` to `PATH` if desired.
+The official SDK **9.3.0** from <https://developer.garmin.com/connect-iq/sdk/> is
+installed at `/workspace/.toolchains/garmin/9.3.0`. Its compiler runs. The simulator
+starts in an Ubuntu 22.04 container with its required libraries and responds to shell
+commands. Use the tested commands in [GARMIN-RUNTIME.md](GARMIN-RUNTIME.md).
+
+The **fr970** and **venu2** device packages remain missing. Garmin's device-package API
+at `api.gcs.garmin.com` is currently blocked by network policy. After access is available,
+use the official SDK Manager, retain verification and inspect package metadata before
+target testing. Set `CONNECTIQ_HOME` to the installed SDK directory for host compilation.
 
 Garmin builds need a local developer signing key. Reuse a securely stored existing key
 when one is available. For an initial development-only key, Garmin commonly uses an
@@ -46,8 +49,9 @@ Compile the prototype separately for each device:
 
 `tools.build` checks for the SDK and key, generates the device resources, invokes
 `monkeyc`, and only promotes a fresh successful output to `build/<device>.prototype.prg`.
-These commands have **not** been verified against an installed Garmin SDK. Resolve
-API/type/resource compiler errors before treating the prototype as runnable.
+The FR970 command has been attempted against SDK 9.3.0 and fails before source compilation
+because the target device is not installed. Neither PRG exists. Resolve device-package
+installation, then source/API/resource errors before treating the prototype as runnable.
 
 Start the SDK simulator with its documented `connectiq` command, then use its
 `monkeydo` command to run the appropriate PRG. Common SDK invocation:
@@ -58,10 +62,11 @@ monkeydo build/venu2.prototype.prg venu2
 ```
 
 Compile native tests using `--tests`; the typical SDK test invocation is
-`monkeydo build/fr970.tests.prg fr970 /t`. Confirm flags with the installed SDK help.
+`monkeydo build/fr970.tests.prg fr970 -t`, as specified by SDK 9.3.0's help.
 Capture screenshots with the actual simulator's screenshot feature; save them under
 `docs/simulator/` only after recording device and SDK versions. Do not move host proofs
-there or represent them as simulator output.
+there or represent them as simulator output. `runtime-startup.png` is an actual
+simulator startup window with no device/app loaded, not a Hebrew rendering proof.
 
 ## Intended input behavior — awaiting simulator validation
 

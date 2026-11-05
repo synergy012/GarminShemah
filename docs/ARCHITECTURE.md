@@ -3,7 +3,8 @@
 ## Decision and limits
 
 Native Garmin fonts have not been proven to shape pointed Hebrew on either target.
-The SDK and simulator were not installed. No claim is made that native fonts fail;
+The initial host prototype preceded SDK installation. SDK 9.3.0 now runs, but the
+target device packages are unavailable. No claim is made that native fonts fail;
 they still need a representative on-device comparison before the final rendering
 decision. Their API availability, font coverage and nikud positioning must be inspected
 in the installed SDK, not inferred from a successful compilation.

@@ -22,8 +22,10 @@ libraqm, HarfBuzz and FriBidi support. The setup does not install a Garmin SDK.
 
 The Monkey C implementation includes a continuous pixel-offset reader, visible-line
 bitmap caching, touch and button delegates, settings, and position storage. It is
-**not compiled or simulator-tested** in this environment: the official SDK and device
-packages are missing and their download domains are blocked by runtime policy.
+**not compiled or simulator-tested** on either target. The official SDK 9.3.0 compiler
+now runs, and the simulator launches in a compatible Ubuntu container and answers
+shell commands. The device packages are still missing; their official API is blocked
+by runtime policy. See [the runtime procedure](docs/GARMIN-RUNTIME.md).
 
 - [Milestones and remaining work](docs/STATUS.md)
 - [Text sources, licensing and verification](docs/TEXT-VERIFICATION.md)

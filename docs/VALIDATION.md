@@ -13,7 +13,7 @@ glyph coverage, unbreakable-word failure, diacritic margins, round-screen bounds
 complete bitmap/resource references, deterministic regeneration, bounded visible-pixel
 estimates, and preservation of an existing prototype when a release check fails.
 
-Direct negative checks also behaved as required:
+At the initial host checkpoint, direct negative checks also behaved as required:
 
 | Command | Exit | Meaning |
 | --- | --- | --- |
@@ -21,8 +21,9 @@ Direct negative checks also behaved as required:
 | `python -m tools.generate --release` | 1 | No distributable prayer resources generated |
 | `python -m tools.build --device fr970 --key <absent-test-key>` | 2 | Missing official SDK reported before any compilation or key use |
 
-The last check establishes the missing compiler prerequisite, not key validation or a
-successful build. Full logs and current gate results are in ignored `build/` when
+The last check recorded the then-missing compiler prerequisite, not key validation or a
+successful build. SDK 9.3.0 has since been installed; see the runtime evidence below.
+Full logs and gate results are in ignored `build/` when
 captured. Test output is also returned by the setup command.
 
 Host raster inspection caught punctuation boxes in Noto Serif Hebrew; the renamed font
@@ -39,13 +40,26 @@ asset layout, not working watch interaction or frame rate.
 - FR970: [beginning](proofs/fr970_prototype_1_0.png), [middle](proofs/fr970_prototype_1_1.png), [end](proofs/fr970_prototype_1_2.png)
 - Venu 2: [beginning](proofs/venu2_prototype_1_0.png), [middle](proofs/venu2_prototype_1_1.png), [end](proofs/venu2_prototype_1_2.png)
 
-## Not executed
+## Simulator runtime repair
+
+The actual Garmin SDK 9.3.0 simulator now launches in a compatible Ubuntu container
+with all shared libraries resolved and an Xvfb display. Its mapped window was inspected
+and captured, and the official SDK shell connected and answered `help` and `uptime`.
+Build/start/status/screenshot/shell helpers were exercised. Shell syntax checks passed
+for both runtime scripts. See [commands and startup screenshot](GARMIN-RUNTIME.md).
+
+An FR970 compile was attempted with the installed compiler. It stopped before source
+compilation with `Invalid device id specified: 'fr970'`: the device package is absent.
+Its official download API is blocked by network policy. No PRG was produced.
+
+## Application checks not executed
 
 Monkey C compilation, native unit tests, actual simulator rendering, native Hebrew
 comparison, touch/button input, all-three-nusach loading, persisted settings/resume,
 watch restart/update behavior, full-document offline reading, performance/leak stress,
-and physical-device testing are **unrun**. There are no device builds or Garmin
-simulator screenshots. Full text and source licenses remain unverified.
+and physical-device testing are **unrun**. There are no device builds or screenshots
+of the application running on Garmin. The captured simulator startup window contains
+no loaded target/app. Full text and source licenses remain unverified.
 
 ## Required device protocol
 

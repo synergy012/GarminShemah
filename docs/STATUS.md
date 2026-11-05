@@ -3,38 +3,36 @@
 | Gate | Implemented | Verified | Unresolved |
 | --- | --- | --- | --- |
 | 1. Text acquisition | Separate nusach documents, edition candidate index, source/license schema, exact paragraph comparison and release gate | Official Sefaria index has named editions for all three; missing texts fail release | No complete text acquired; edition licenses, order, differences, optional customs and knowledgeable review all pending |
-| 2. Hebrew prototype | HarfBuzz/FriBidi line shaping, licensed font derivative, punctuation coverage, two device profiles, three sizes, continuous reader code | Host asset tests and raster inspection | No SDK, simulator, device packages or actual Garmin screenshots; native rendering comparison and full resource/memory evaluation pending |
+| 2. Hebrew prototype | HarfBuzz/FriBidi line shaping, licensed font derivative, punctuation coverage, two device profiles, three sizes, continuous reader code | Host asset tests; SDK 9.3.0 compiler runs; simulator starts and responds to shell commands | No target device packages or app rendering screenshots; native rendering comparison and full resource/memory evaluation pending |
 | 3. Functional app | Monkey C reader, visible-line cache, touch/button delegates, animated steps, persistent settings, resume timeout, word anchors | Host content/resource pipeline only | Monkey C has not compiled or run; full texts and every interaction/storage behavior remain unverified |
 | 4. Compatibility/testing | Two declared products, independent resources, build wrapper, native test source and test procedure | 16 host tests passed | No FR970 or Venu 2 PRGs, simulator tests, long-scroll stress runs, device screenshots or store package |
 
 **No milestone is complete.** The code is a development checkpoint, not a prayer app
 ready for installation or publication. Optional models have not been added.
 
-## Concrete environment blocker
+## Current runtime and device-package blocker
 
-`monkeyc` and the Garmin simulator are absent. HTTPS requests to
-`developer.garmin.com`, `www.sefaria.org` and `opensiddur.org` returned proxy
-`403 Forbidden`. GitHub read access succeeds through the platform proxy when the
-command sandbox permits networking. No additional GitHub token is required by those
-successful read operations. The configured source repository was empty at the start;
-there is no existing watch-face source here.
+The published policy is enforced, and Garmin's SDK download host is reachable. The
+official SDK **9.3.0** is installed at `/workspace/.toolchains/garmin/9.3.0`.
+Its simulator requires WebKitGTK 4.0, JavaScriptCoreGTK 4.0, libsoup 2.4 and libjpeg 8,
+which this Debian 13 host lacks. An isolated Ubuntu 22.04 runtime now supplies all
+libraries and an Xvfb display. The actual simulator window opens, and its SDK shell
+answers `help` and `uptime`. See [runtime evidence and commands](GARMIN-RUNTIME.md).
 
-The environment draft now requests access to:
+An FR970 compile attempt reached the installed compiler but stopped with
+`Invalid device id specified: 'fr970'`. Neither target device package is installed.
+The official SDK Manager identifies its device service as
+`https://api.gcs.garmin.com/ciq-product-onboarding/…`; a request to the FR970 endpoint
+was denied by the network proxy with `403 Forbidden`. Access to **api.gcs.garmin.com**
+is needed to continue official device-package installation. Authentication requirements
+have not been established because policy blocks the request first.
 
-- `developer.garmin.com`, `download.garmin.com`
-- `sefaria.org`, `www.sefaria.org`, `opensiddur.org`
-- `storage.googleapis.com` (official Sefaria export bucket)
-- `api.github.com` (repository/source metadata)
+No environment draft was changed or published during runtime repair. The prior
+publish instructions are no longer a pending action. Do not reapply them.
 
-Existing package-manager presets are preserved. Saving the draft does not apply its
-network rules. Review/save the changes in environment settings and publish the environment
-as requested by that UI. Recheck runtime readiness and the affected URLs afterwards.
-Any additional official download redirect must be diagnosed and added through settings;
-do not bypass the proxy or turn off TLS verification.
+## Next actions
 
-## Next actions once access is active
-
-1. Obtain the official Connect IQ SDK and install the FR970 and Venu 2 device packages.
+1. Once the device service is accessible, install the FR970 and Venu 2 packages.
    Inspect local API docs, actual memory/resource limits and application/store requirements.
    Record tool and device package versions. Compile the prototype before extending it.
 2. Acquire named prayer editions, establish licenses and complete bedtime sections, and
