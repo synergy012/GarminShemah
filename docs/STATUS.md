@@ -3,14 +3,20 @@
 | Gate | Implemented | Verified | Unresolved |
 | --- | --- | --- | --- |
 | 1. Text acquisition | Verbatim bedtime source nodes for all three nuschaos, source-order comparison, attribution/license evidence and release gate | 37 Ashkenaz, 27 Sefard and 30 Edot source blocks; catalog licenses cross-checked against live metadata | Instructions, alternatives, abbreviated passages and intended defaults still need review; no approved reader text |
-| 2. Hebrew prototype | HarfBuzz/FriBidi line shaping, licensed font derivative, punctuation coverage, two device profiles, three sizes, continuous reader code | Host asset tests; SDK 9.3.0 compiler runs; simulator starts and responds to shell commands | No target device packages or app rendering screenshots; native rendering comparison and full resource/memory evaluation pending |
-| 3. Functional app | Monkey C reader, visible-line cache, touch/button delegates, animated steps, persistent settings, resume timeout, word anchors | Host content/resource pipeline only | Monkey C has not compiled or run; full texts and every interaction/storage behavior remain unverified |
-| 4. Compatibility/testing | Two declared products, independent resources, build wrapper, native test source and test procedure | 24 host tests passed | No FR970 or Venu 2 PRGs, application simulator tests, long-scroll stress runs, device screenshots or store package |
+| 2. Hebrew prototype | Shaped bitmap reader, device profiles and three sizes | FR970 compiles/runs; actual pointed-Hebrew screenshots and continuous traversal | Native-font comparison, full-text capacity and Venu 2 rendering pending |
+| 3. Functional app | Reader, settings, position storage, word anchors | FR970 prototype button/touch scrolling, all sizes and saved/restored offset 130/size 0 | Approved prayer integration, complete app/session/update validation pending |
+| 4. Compatibility/testing | Target-specific build metadata and test workflow | 24 host tests pass; 4 FR970 native tests report PASS; prototype PRG produced | SDK native-test client exits 1 despite PASS summary; Venu 2, rendered stress and physical watch tests pending |
 
 **No milestone is complete.** The code is a development checkpoint, not a prayer app
 ready for installation or publication. Optional models have not been added.
 
 ## Current runtime and device-package authentication blocker
+
+**FR970 update:** the uploaded `fr970.zip` is installed and the prototype builds and
+runs. Missing shared English UI fonts caused the first target-load crash; corresponding
+upstream Roboto fonts resolved it. See [FR970 validation](FR970-VALIDATION.md) for actual
+screenshots, input/state checks, artifacts and the native test-client anomaly.
+The authentication/package notes below now apply to **Venu 2** or future downloads.
 
 The published policy is enforced, and Garmin's SDK download host is reachable. The
 official SDK **9.3.0** is installed at `/workspace/.toolchains/garmin/9.3.0`.
@@ -19,8 +25,8 @@ which this Debian 13 host lacks. An isolated Ubuntu 22.04 runtime now supplies a
 libraries and an Xvfb display. The actual simulator window opens, and its SDK shell
 answers `help` and `uptime`. See [runtime evidence and commands](GARMIN-RUNTIME.md).
 
-An FR970 compile attempt reached the installed compiler but stopped with
-`Invalid device id specified: 'fr970'`. Neither target device package is installed.
+Before the upload, an FR970 compile attempt reached the installed compiler but stopped with
+`Invalid device id specified: 'fr970'`. That FR970 package is now installed; Venu 2 is not.
 The official SDK Manager identifies its device service as
 `https://api.gcs.garmin.com/ciq-product-onboarding/…`. The published policy now allows
 **api.gcs.garmin.com**. A fresh FR970 request on November 9 reached the service and
@@ -37,8 +43,8 @@ publish instructions are no longer a pending action. Do not reapply them.
 
 ## Next actions
 
-1. Authenticate through the official SDK Manager, or import official device packages
-   obtained by the user through SDK Manager on their own computer. Then install FR970/Venu 2.
+1. Import the Venu 2 package from the user's existing SDK Manager installation, then
+   compile and exercise the same prototype on that mandatory secondary target.
    Inspect local API docs, actual memory/resource limits and application/store requirements.
    Record tool and device package versions. Compile the prototype before extending it.
 2. Review the [acquired source sequences](TEXT-ACQUISITION.md), resolve instruction/custom
@@ -54,7 +60,8 @@ publish instructions are no longer a pending action. Do not reapply them.
 - Full-text flash/resource size and actual Venu 2 heap are unmeasured.
 - Touch callbacks and button mappings require SDK/device verification; they are not
   validated by the Python tests.
-- Native unit-test sources are unrun; no simulator leak, persistence or offline test has run.
+- Four FR970 native tests report PASS, but the SDK client exits 1; rendered leak,
+  physical watch, restart/update and full-prayer offline tests are still pending.
 - Source licensing and rabbinic/editorial completeness review may need a different edition
   or outside review even after network access is fixed.
 - The current app UUID is a new project UUID. Preserve it for future updates and use a

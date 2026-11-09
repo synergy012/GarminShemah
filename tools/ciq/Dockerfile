@@ -11,5 +11,5 @@ RUN --mount=type=secret,id=ca,required=true,mode=0444 \
 WORKDIR /workspace/GarminShemah
 RUN --mount=type=secret,id=ca,required=true,mode=0444 \
     apt-get -o Acquire::https::CaInfo=/run/secrets/ca update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::https::CaInfo=/run/secrets/ca install -y --no-install-recommends x11-apps && \
+    DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::https::CaInfo=/run/secrets/ca install -y --no-install-recommends x11-apps xdotool && \
     rm -rf /var/lib/apt/lists/*

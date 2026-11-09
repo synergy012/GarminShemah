@@ -1,6 +1,7 @@
 using Toybox.Graphics;
 using Toybox.Lang;
 using Toybox.Timer;
+using Toybox.System;
 using Toybox.WatchUi as Ui;
 
 class ReaderView extends Ui.View {
@@ -26,6 +27,7 @@ class ReaderView extends Ui.View {
                 state.seek(stored["offset"]);
             } else if (stored.hasKey("anchor")) { restoreAnchor(stored["anchor"]); }
         }
+        if (DocumentData.PROTOTYPE) { System.println("Reader restored offset=" + state.offset.toString() + " size=" + preferences.size.toString()); }
     }
 
     function reload(anchor) {
@@ -79,7 +81,7 @@ class ReaderView extends Ui.View {
         targetOffset = state.offset + delta;
         if (targetOffset < 0) { targetOffset = 0; }
         if (targetOffset > state.maximum) { targetOffset = state.maximum; }
-        if (targetOffset != state.offset) { animationTimer.start(method(:animate), 33, true); }
+        if (targetOffset != state.offset) { animationTimer.start(method(:animate), 50, true); }
     }
 
     function animate() {
@@ -105,6 +107,7 @@ class ReaderView extends Ui.View {
 
     function savePosition() {
         preferences.savePosition(documentId, state.offset, currentAnchor());
+        if (DocumentData.PROTOTYPE) { System.println("Reader saved offset=" + state.offset.toString() + " size=" + preferences.size.toString()); }
     }
 
     function onHide() {
@@ -122,7 +125,7 @@ class ReaderView extends Ui.View {
         var top = ((dc.getHeight() - DocumentData.VIEWPORT) / 2).toNumber();
         var left = ((width - DocumentData.WIDTH) / 2).toNumber();
         if (DocumentData.PROTOTYPE) {
-            dc.drawText(width / 2, 32, Graphics.FONT_XTINY, "TYPE TEST - NOT PRAYER", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width / 2, 32, Graphics.FONT_XTINY, "NOT PRAYER", Graphics.TEXT_JUSTIFY_CENTER);
         }
         if (document == null) {
             dc.drawText(width / 2, dc.getHeight() / 2, Graphics.FONT_XTINY, "Text unavailable", Graphics.TEXT_JUSTIFY_CENTER);

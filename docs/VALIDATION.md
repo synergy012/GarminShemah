@@ -1,5 +1,20 @@
 # Validation evidence — 2026-11-09
 
+## FR970 package supplied — current checkpoint
+
+The uploaded FR970 package now permits compilation and actual application execution.
+See [FR970 validation](FR970-VALIDATION.md) for six actual screenshots, package/artifact
+hashes, input/state checks and complete limits. All **24 host tests pass** on the
+current source. Four native tests report PASS, including word anchoring and 100 state
+traversals at each size; the SDK client's raw exit remains 1 despite that summary and
+is retained with its output. No exit status was normalized.
+
+FR970 button/touch scrolling, start-to-end traversal and return, three sizes, native
+settings and saved/restored offset 130/size 0 were checked. Missing shared English UI
+fonts and the unsupported 33 ms timer request were corrected. This is a typography
+fixture only. Venu 2, approved prayer integration, rendered stress and physical watch
+validation remain unfinished.
+
 ## November 9 continuation
 
 All **24 host tests pass** after source acquisition. The eight added acquisition tests
@@ -14,8 +29,8 @@ the CC-BY label was resolved using Sefaria's own license map. The raw excerpts r
 separate from approved reader documents. See [the acquisition report](TEXT-ACQUISITION.md).
 
 Simulator startup/status were rechecked after environment restoration. The device API
-is now allowed but returns 401. No Garmin credentials or device packages are available;
-target compilation and application testing remain blocked. No draft/configuration
+is now allowed but returns 401. No Garmin credential binding was available; before the
+uploaded FR970 package, target compilation was blocked. Venu 2 remains blocked. No draft/configuration
 write or publication was performed.
 
 ## Initial host checkpoint — November 5
@@ -66,18 +81,18 @@ and captured, and the official SDK shell connected and answered `help` and `upti
 Build/start/status/screenshot/shell helpers were exercised. Shell syntax checks passed
 for both runtime scripts. See [commands and startup screenshot](GARMIN-RUNTIME.md).
 
-An FR970 compile was attempted with the installed compiler. It stopped before source
+Before the uploaded package, an FR970 compile was attempted. It stopped before source
 compilation with `Invalid device id specified: 'fr970'`: the device package is absent.
-Its official download API is blocked by network policy. No PRG was produced.
+That first attempt produced no PRG. The uploaded package has since unblocked FR970.
 
-## Application checks not executed
+## Remaining application checks
 
-Monkey C compilation, native unit tests, actual simulator rendering, native Hebrew
-comparison, touch/button input, all-three-nusach loading, persisted settings/resume,
-watch restart/update behavior, full-document offline reading, performance/leak stress,
-and physical-device testing are **unrun**. There are no device builds or screenshots
-of the application running on Garmin. The captured simulator startup window contains
-no loaded target/app. Full text and source licenses remain unverified.
+Native-font Hebrew comparison, Venu 2 compilation/execution, approved all-three-nusach
+loading, watch restart/update behavior, session expiry/clock rollback, full-prayer offline
+reading, rendered performance/leak stress and physical-device testing remain **unrun**.
+FR970 prototype builds and actual application screenshots now exist; the older blank
+startup screenshot is only historical runtime evidence. Edition permission evidence is
+recorded, while prayer preparation and custom/completeness review remain unresolved.
 
 ## Required device protocol
 

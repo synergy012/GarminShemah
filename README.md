@@ -25,12 +25,12 @@ This prepares a Python virtual environment, checks the licensed Hebrew font buil
 generates three sizes for each device and runs the host tests. Pillow must have
 libraqm, HarfBuzz and FriBidi support. The setup does not install a Garmin SDK.
 
-The Monkey C implementation includes a continuous pixel-offset reader, visible-line
-bitmap caching, touch and button delegates, settings, and position storage. It is
-**not compiled or simulator-tested** on either target. The official SDK 9.3.0 compiler
-now runs, and the simulator launches in a compatible Ubuntu container and answers
-shell commands. The device packages are still missing: their API is now allowed but
-requires Garmin authentication (401). See [the runtime procedure](docs/GARMIN-RUNTIME.md).
+The Monkey C implementation now **compiles and runs on the FR970 simulator** using
+the uploaded device package. Continuous scrolling, button/touch input, three text sizes
+and brief-interruption resume have been exercised with the typography fixture.
+[Actual screenshots, build instructions and test limits](docs/FR970-VALIDATION.md).
+The Venu 2 package and testing are still outstanding. Garmin's download API requires
+authentication, but an uploaded `venu2` package can be reused without that login.
 
 - [Milestones and remaining work](docs/STATUS.md)
 - [Text sources, licensing and verification](docs/TEXT-VERIFICATION.md)

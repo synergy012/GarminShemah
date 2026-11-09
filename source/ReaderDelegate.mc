@@ -23,7 +23,7 @@ class ReaderDelegate extends Ui.BehaviorDelegate {
         return false;
     }
 
-    function onTouch(event) {
+    function onTap(event) {
         lastY = null;
         return true;
     }
@@ -31,9 +31,9 @@ class ReaderDelegate extends Ui.BehaviorDelegate {
     function onDrag(event) {
         var y = event.getCoordinates()[1];
         var now = System.getTimer();
-        if (now - lastDragAt > 200) { lastY = null; }
+        if (event.getType() == Ui.DRAG_TYPE_START) { lastY = y; }
         if (lastY != null) { reader.move(lastY - y); }
-        lastY = y;
+        lastY = event.getType() == Ui.DRAG_TYPE_STOP ? null : y;
         lastDragAt = now;
         return true;
     }

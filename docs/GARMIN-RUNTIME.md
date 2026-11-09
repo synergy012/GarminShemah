@@ -1,5 +1,9 @@
 # Verified Garmin runtime
 
+The uploaded FR970 package now supports an actual running typography prototype.
+See [the current FR970 evidence](FR970-VALIDATION.md). The original generic startup
+evidence below is retained as history, not the limit of current validation.
+
 The missing simulator libraries are resolved using an isolated **Ubuntu 22.04** Docker
 runtime. The host is Debian 13. No Debian libraries were replaced, no TLS or package
 signature verification was disabled, and no environment draft was edited or published.
@@ -68,9 +72,9 @@ to the linked PNG using ImageMagick on the host.
 
 ## Remaining device-package blocker — November 9 update
 
-Compiling FR970 with the installed compiler and a local development-only DER signing
-key fails with `Invalid device id specified: 'fr970'` because the target package is
-absent. No source compilation or signing succeeded. Venu 2's package is also absent.
+Before the supplied package was installed, compiling FR970 failed with
+`Invalid device id specified: 'fr970'`. FR970 compilation and simulator execution now
+succeed using the uploaded package and local development key. Venu 2's package is still absent.
 The key was generated outside the repository with restrictive permissions and is not
 a release signing identity.
 

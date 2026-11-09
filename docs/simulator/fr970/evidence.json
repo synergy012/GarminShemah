@@ -1,0 +1,40 @@
+{
+  "device": "fr970",
+  "sdk": "9.3.0",
+  "archive_sha256": "908fbcd010fbc2f1903d909437430928eccf6ca982611d1df2a56ff27ddbfde3",
+  "device_version": "2fd6344bcda9034f64198ee92abf3f1dc774e081",
+  "simulator_title_version": "6.0.2",
+  "artifact": {
+    "filename": "fr970.prototype.prg",
+    "sha256": "068461c6879b3a4b0dd6e4e028cabcbd8f314f52257f7f0857b2b0b48bfe7370",
+    "bytes": 807772
+  },
+  "content": "Original typography fixture only; NOT PRAYER",
+  "observations": {
+    "physical_button_down_changes_view": true,
+    "physical_button_up_restores_view": true,
+    "touch_drag_changes_view": true,
+    "complete_prototype_traversal_and_return_matches_start_view": true,
+    "small_medium_large_layouts_visually_checked": true,
+    "saved_offset": 130,
+    "restored_offset": 130,
+    "saved_text_size": 0,
+    "restored_text_size": 0
+  },
+  "limits": [
+    "Not a complete prayer app",
+    "Venu 2 package not supplied",
+    "Native-font Hebrew comparison not completed",
+    "Rendered bitmap stress/physical watch tests not completed",
+    "Native SDK test client exit anomaly recorded separately"
+  ],
+  "native_tests": {
+    "binary_sha256": "acca6f29c1c0823b34a7c1ac8d93ff10de90f7f9602f984b4c6f22f605853412",
+    "reported_pass": 4,
+    "reported_fail": 0,
+    "reported_errors": 0,
+    "process_exit": 1,
+    "sdk_modified": false,
+    "note": "SDK reports PASS but client exits 1; raw output preserved, not normalized."
+  }
+}

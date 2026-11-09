@@ -2,7 +2,7 @@
 <iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
   <iq:application id="37a9ef85832b488fbf7f98a1e20b81a0" type="watch-app"
       name="@Strings.AppName" entry="ShemaApp" launcherIcon="@Drawables.LauncherIcon"
-      minSdkVersion="3.2.0" version="0.1.0">
+      minSdkVersion="3.3.0" version="0.1.0">
     <iq:products>
       <iq:product id="fr970"/>
       <iq:product id="venu2"/>

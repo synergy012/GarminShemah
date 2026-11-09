@@ -10,6 +10,20 @@ docker_local() {
     env -u DOCKER_HOST -u DOCKER_CONTEXT -u DOCKER_TLS -u DOCKER_TLS_VERIFY -u DOCKER_CERT_PATH \
         docker --host=unix:///var/run/docker.sock "$@"
 }
+simulator_window() {
+    # Loading a device changes the window title (and can include Unicode).
+    # Identify the main native window by class and greatest area instead.
+    docker_local exec -e DISPLAY=:99 -e LANG=C.UTF-8 "$container_name" xwininfo -root -tree |
+        awk '/\("simulator" "Simulator"\)/ {
+            for (i=1; i<=NF; i++) {
+                if (match($i, /^[0-9]+x[0-9]+/)) {
+                    split(substr($i, RSTART, RLENGTH), size, "x");
+                    area=size[1]*size[2];
+                    if (area>largest) { largest=area; window=$1; }
+                }
+            }
+        } END { if (largest>0) print window; else exit 1; }'
+}
 case "${1:-status}" in
     build)
         docker_local build --secret id=ca,src=/etc/ssl/certs/ca-certificates.crt \
@@ -35,8 +49,7 @@ case "${1:-status}" in
             "$image_name" /opt/start-simulator.sh
         ready=false
         for attempt in {1..50}; do
-            if docker_local exec -e DISPLAY=:99 "$container_name" \
-                xwininfo -name 'CIQ Simulator' >/dev/null 2>&1; then
+            if simulator_window >/dev/null 2>&1; then
                 ready=true
                 break
             fi
@@ -51,10 +64,12 @@ case "${1:-status}" in
     status)
         docker_local exec "$container_name" bash -c \
             'ldd /opt/connectiq/bin/simulator > /tmp/ciq-libraries.txt; if grep "not found" /tmp/ciq-libraries.txt; then exit 1; fi; /opt/connectiq/bin/monkeyc --version'
-        docker_local exec -e DISPLAY=:99 "$container_name" xwininfo -name 'CIQ Simulator'
+        window="$(simulator_window)"
+        docker_local exec -e DISPLAY=:99 -e LANG=C.UTF-8 "$container_name" xwininfo -id "$window"
         ;;
     screenshot)
-        docker_local exec -e DISPLAY=:99 "$container_name" xwd -name 'CIQ Simulator' \
+        window="$(simulator_window)"
+        docker_local exec -e DISPLAY=:99 "$container_name" xwd -id "$window" \
             -silent -out /home/garmin/logs/simulator-startup.xwd
         echo "$state_dir/logs/simulator-startup.xwd"
         ;;

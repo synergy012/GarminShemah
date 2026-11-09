@@ -4,7 +4,8 @@
 
 Native Garmin fonts have not been proven to shape pointed Hebrew on either target.
 The initial host prototype preceded SDK installation. SDK 9.3.0 now runs, but the
-target device packages are unavailable. No claim is made that native fonts fail;
+FR970 package has now been supplied and the bitmap prototype runs in its simulator.
+Venu 2 remains unavailable. No claim is made that native fonts fail;
 they still need a representative on-device comparison before the final rendering
 decision. Their API availability, font coverage and nikud positioning must be inspected
 in the installed SDK, not inferred from a successful compilation.
@@ -43,12 +44,13 @@ Section and paragraph gaps are positions inside one global document, not navigab
 pages. `ReaderState` clamps the pixel offset and binary-searches the first visible line.
 `ReaderView` evicts hidden resources before loading visible lines, clips to the reading
 rectangle, and draws only the visible window. The source text is never shaped on-watch.
-Button/swipe steps animate in eight-pixel increments at about 30 Hz; dragging updates
+Button/swipe steps animate in eight-pixel increments at 50 ms intervals (about 20 Hz); dragging updates
 position directly. No perpetual redraw timer or network service is used.
 
-Input callback behavior and event ordering are **unverified** until both target packages
-and simulator are available. In particular, test duplicate drag/swipe delivery, drag
-start/end behavior, rapid button presses, menu mapping, and system back navigation.
+FR970 physical-button hit regions, touchscreen drag, menu mapping and size selection
+have been exercised. Drag lifecycle uses the documented start/stop event types; the tap
+callback is `onTap`. Rapid input edge cases and Venu 2 remain unverified. The 33 ms
+timer used initially was clamped by Garmin and has been corrected to 50 ms.
 
 ## Preferences and reading position
 

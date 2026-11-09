@@ -1,0 +1,32 @@
+{
+  "source_root": "https://raw.githubusercontent.com/googlefonts/roboto/main/",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "filename": "Roboto-Regular.ttf",
+      "source_path": "src/hinted/Roboto-Regular.ttf",
+      "sha256": "56a45233d29f11b4dfb86d248e921939d115778f87325e7ae8cc108383d6664d"
+    },
+    {
+      "filename": "Roboto-Italic.ttf",
+      "source_path": "src/hinted/Roboto-Italic.ttf",
+      "sha256": "fa0b17bb4aaac4a1b2ee149dd4ca3b55e97d3077aa6ba9bb02541b316e7c46ce"
+    },
+    {
+      "filename": "RobotoCondensed-Regular.ttf",
+      "source_path": "src/hinted/RobotoCondensed-Regular.ttf",
+      "sha256": "a9603db0f52e244064de480253ab7f48e6c21c22e24528207cab06d39abc7bb7"
+    },
+    {
+      "filename": "RobotoCondensed-Bold.ttf",
+      "source_path": "src/hinted/RobotoCondensed-Bold.ttf",
+      "sha256": "2d06877e39956ec96dbafb0d152644e8b2245d647e58c7bb7c91bb2b15defa93"
+    },
+    {
+      "filename": "Roboto-LICENSE.txt",
+      "source_path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "cache_filename": "LICENSE.txt"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 # Development, build and installation
 
-This checkpoint has no testable Garmin binary yet. The commands below distinguish the
-tested host workflow and simulator startup from the still-blocked device build workflow.
+This checkpoint includes a testable **FR970 typography prototype**, not a prayer app.
+See [FR970 validation](FR970-VALIDATION.md) for the current binary, actual screenshots,
+tested commands and limits. Venu 2 remains blocked on its missing package.
 
 ## Tested host workflow
 
@@ -28,7 +29,7 @@ installed at `/workspace/.toolchains/garmin/9.3.0`. Its compiler runs. The simul
 starts in an Ubuntu 22.04 container with its required libraries and responds to shell
 commands. Use the tested commands in [GARMIN-RUNTIME.md](GARMIN-RUNTIME.md).
 
-The **fr970** and **venu2** device packages remain missing. Garmin's device-package API
+The uploaded **fr970** device package is installed. The **venu2** package remains missing. Garmin's device-package API
 at `api.gcs.garmin.com` is now reachable but returns 401, requiring authentication.
 Use the official SDK Manager sign-in flow, or obtain the packages via SDK Manager on
 your own computer; see [GARMIN-AUTH.md](GARMIN-AUTH.md). Retain verification and inspect
@@ -50,10 +51,11 @@ Compile the prototype separately for each device:
 ```
 
 `tools.build` checks for the SDK and key, generates the device resources, invokes
-`monkeyc`, and only promotes a fresh successful output to `build/<device>.prototype.prg`.
-The FR970 command has been attempted against SDK 9.3.0 and fails before source compilation
-because the target device is not installed. Neither PRG exists. Resolve device-package
-installation, then source/API/resource errors before treating the prototype as runnable.
+`monkeyc`, and only promotes a fresh successful output and matching debug XML to
+`build/<device>.prototype.prg`. Its generated target-specific manifest/Jungle allows
+FR970 compilation without the uninstalled Venu 2 qualifier. FR970 now builds and runs;
+Venu 2 does not. The wrapper automatically selects the runtime's uploaded device home
+when available; use `--sdk-user-home` to override it.
 
 Start the SDK simulator with its documented `connectiq` command, then use its
 `monkeydo` command to run the appropriate PRG. Common SDK invocation:
@@ -70,7 +72,7 @@ Capture screenshots with the actual simulator's screenshot feature; save them un
 there or represent them as simulator output. `runtime-startup.png` is an actual
 simulator startup window with no device/app loaded, not a Hebrew rendering proof.
 
-## Intended input behavior — awaiting simulator validation
+## Input behavior — exercised on FR970; Venu 2 pending
 
 - Upward swipe: move forward; downward swipe: move back.
 - Drag: move text with the finger.
@@ -78,7 +80,8 @@ simulator startup window with no device/app loaded, not a Hebrew rendering proof
 - Select button: move forward. Back button: move back, or leave from the beginning.
 - Menu/long menu gesture: settings, text size, nusach, beginning and close reader.
 
-Verify these mappings on both products; do not assume Venu 2 has FR970's physical keys.
+FR970 button, drag, menu and text-size paths were exercised; further edge cases and
+Venu 2 remain pending. Do not assume Venu 2 has FR970's physical keys.
 Nuschaos lacking verified assets are visibly unavailable. Settings use English native
 text; the Hebrew document uses shaped bitmap resources.
 

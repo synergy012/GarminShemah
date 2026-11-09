@@ -1,5 +1,10 @@
 # Garmin device-package authentication handoff — 2026-11-09
 
+**Update:** the uploaded FR970 package has been installed successfully. Its typography
+prototype compiles and runs; see [FR970 validation](FR970-VALIDATION.md). Only the
+**Venu 2** device package is still needed. Reusing an uploaded package avoids the login
+prerequisite for that device; no further FR970 upload or Garmin account data is needed.
+
 The published network policy is active and includes `api.gcs.garmin.com`. A fresh
 request to the official SDK Manager's FR970 device endpoint reaches Garmin but returns
 **HTTP 401 Unauthorized**. It has no explanatory response body. This replaces the
@@ -28,12 +33,13 @@ There is no reason to publish an unchanged environment or reapply the existing d
 
 If shared desktop sign-in is unavailable, the user can sign in to the **official
 Garmin Connect IQ SDK Manager on their own computer**, install/download the
-**Forerunner 970** and **Venu 2** device packages, and attach a ZIP of the two device
-package folders here. Include their resource files and subdirectories. Do not include
+**Venu 2** device package, and attach a ZIP of its `venu2` folder here. Include its
+resource files and subdirectories. Do not include
 SDK Manager account settings, keychain files, cookies or signing keys.
 
 After receiving the packages, inspect their structure and provenance, preserve any
 existing local device data, and install them in the SDK's supported device directory
 outside the source repository. Do not commit proprietary device packages. Then retry
 compilation and resolve source/API/resource issues before testing actual app behavior.
-No target package, successful PRG, or application simulator screenshot exists yet.
+The FR970 package, prototype PRG and actual application simulator screenshots now
+exist. Venu 2 has not been compiled or tested.
