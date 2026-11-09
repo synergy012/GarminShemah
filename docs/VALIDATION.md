@@ -1,6 +1,24 @@
-# Validation evidence — 2026-11-05
+# Validation evidence — 2026-11-09
 
-## Executed in this cloud instance
+## November 9 continuation
+
+All **24 host tests pass** after source acquisition. The eight added acquisition tests
+check all 94 source blocks and their hashes, edition-specific permission evidence,
+nikud/punctuation preservation in comparison, rejection of changed permissions/empty
+source nodes/unexpected markup, report freshness, glyph coverage for the acquired Hebrew text, and continued rejection of unapproved
+source data by the release validator. The original 16 host tests also pass.
+
+The exact three-edition research command was exercised against the permitted official
+export host. Source permission labels were cross-checked with Sefaria's live metadata;
+the CC-BY label was resolved using Sefaria's own license map. The raw excerpts remain
+separate from approved reader documents. See [the acquisition report](TEXT-ACQUISITION.md).
+
+Simulator startup/status were rechecked after environment restoration. The device API
+is now allowed but returns 401. No Garmin credentials or device packages are available;
+target compilation and application testing remain blocked. No draft/configuration
+write or publication was performed.
+
+## Initial host checkpoint — November 5
 
 `bash tools/setup.sh` completed, including all **16 host tests** in
 `tests/test_pipeline.py`. No tests were skipped or expected to fail. The workflow

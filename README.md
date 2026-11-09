@@ -7,6 +7,11 @@ bundled yet. The current prototype contains original Hebrew typography test pros
 clearly marked **NOT PRAYER**. All three requested nuschaos are explicitly blocked;
 none silently uses another nusach or the test prose.
 
+Verbatim bedtime excerpts for all three nuschaos have now been acquired in
+`content/acquired/`, with edition-specific permission evidence and source hashes.
+See [the acquisition report](docs/TEXT-ACQUISITION.md). Instructions, alternatives
+and completeness still need review before these sources enter the reader.
+
 The dedicated checkout is `/workspace/GarminShemah`, with origin
 `https://github.com/synergy012/GarminShemah`. No watch-face project is used.
 
@@ -24,8 +29,8 @@ The Monkey C implementation includes a continuous pixel-offset reader, visible-l
 bitmap caching, touch and button delegates, settings, and position storage. It is
 **not compiled or simulator-tested** on either target. The official SDK 9.3.0 compiler
 now runs, and the simulator launches in a compatible Ubuntu container and answers
-shell commands. The device packages are still missing; their official API is blocked
-by runtime policy. See [the runtime procedure](docs/GARMIN-RUNTIME.md).
+shell commands. The device packages are still missing: their API is now allowed but
+requires Garmin authentication (401). See [the runtime procedure](docs/GARMIN-RUNTIME.md).
 
 - [Milestones and remaining work](docs/STATUS.md)
 - [Text sources, licensing and verification](docs/TEXT-VERIFICATION.md)

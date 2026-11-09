@@ -1,8 +1,9 @@
 # Prayer content contract
 
-`nuschaot/` contains separate documents for Ashkenaz, Chassidic Sefard, and
-Edot HaMizrach. They currently have **no sections**. Empty files are explicit gaps,
-not transcriptions or claims of completeness. The typography fixture is independent.
+`nuschaot/` contains separate approved-reader documents for Ashkenaz, Chassidic Sefard,
+and Edot HaMizrach. They currently have **no approved sections**. The newly acquired
+verbatim Hebrew/HTML source excerpts are in `acquired/`, separate from these documents
+and the typography fixture. See `acquired/NOTICE.md` for attribution and permissions.
 
 Each document records schema version, stable nusach ID, Hebrew title, status,
 sources, ordered sections, review, and unresolved issues. Sections have a stable ID,
@@ -11,9 +12,12 @@ Hebrew paragraphs. Required passages cannot be disabled. Optional passages curre
 remain included; a reviewed minhag selector is future work.
 
 Acquire a specific named edition, not a merged file with unknown version provenance.
-Use `python -m tools.research` to download the indexed Torat Emet candidate editions
-to ignored `build/research/` once the official export host is reachable. This is
-research material, not automatically approved distributable text. Preserve the raw
+Use `python -m tools.research --bedtime-candidates` to download the specifically selected
+Metsudah Ashkenaz and Torat Emet Sefard/Edot editions to ignored `build/research/`.
+Then `python -m tools.acquire --retrieved-on YYYY-MM-DD` extracts the selected bedtime
+nodes with their exact original HTML string values. The importer rejects a changed
+edition/license or an empty source node. These sources do not approve reader text.
+Preserve the raw
 download and its hash locally. Inspect the full edition metadata, its license and
 the relevant source site; a public URL alone does not grant reuse rights.
 

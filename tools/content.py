@@ -18,7 +18,7 @@ def validate(document, release=False):
         errors.append("Unsupported content schema")
     sections = document.get("sections", [])
     if not sections:
-        errors.append("No sections: complete text has not been acquired")
+        errors.append("No approved reader sections: source acquisition alone does not verify the prayer document")
     sources = {s["id"]: s for s in document.get("sources", [])}
     ids = set()
     for section in sections:
@@ -67,9 +67,11 @@ def report(root=ROOT):
     status = "Status: VERIFIED — recorded text and license review passed for all three nuschaos." if ready else "Status: BLOCKED — no complete verified prayer texts incorporated."
     lines = ["# Text verification report", "", status, "",
              "Edition candidates are recorded in `content/source-candidates.json`. Index presence is not permission to redistribute.", ""]
+    if (root / 'content/acquired').exists():
+        lines += ["Verbatim licensed source excerpts have been acquired separately. See [the acquisition and comparison report](TEXT-ACQUISITION.md) for source block order, catalog permissions, differences and unresolved customs. Acquisition does not approve these reader documents.", ""]
     for doc in documents:
         lines += [f"## {doc['id']}", "", f"Status: {doc['status']}", "", "Section order:"]
-        lines += [f"{i + 1}. {s['id']} — {s['heading_he']} (optional: {s['optional']})" for i, s in enumerate(doc['sections'])] or ["Not established; no sections acquired."]
+        lines += [f"{i + 1}. {s['id']} — {s['heading_he']} (optional: {s['optional']})" for i, s in enumerate(doc['sections'])] or ["Approved reader section order not established."]
         lines += ["", "Sources:"] + [f"- {s['url']} — {s.get('version_title', 'version unrecorded')}; license {s.get('license', 'unknown')} (verified: {s.get('license_verified', False)})" for s in doc['sources']] if doc['sources'] else ["", "Sources: none incorporated."]
         lines += ["", "Unresolved:"] + [f"- {e}" for e in doc.get('unresolved', [])] + [""]
     grouped = {}
@@ -78,7 +80,7 @@ def report(root=ROOT):
             grouped.setdefault(fingerprint(s), []).append((doc['id'], s['id']))
     lines += ["## Exact textual comparison", ""]
     if not grouped:
-        lines += ["No comparison is possible yet. Shared passages, nusach-specific wording, complete order and optional customs remain unresolved."]
+        lines += ["No comparison is possible yet for approved reader sections. The separately acquired source blocks are compared in TEXT-ACQUISITION.md; final reader order and optional customs remain unresolved."]
     for digest, occurrences in sorted(grouped.items()):
         lines += [f"- {digest}: {occurrences}"]
     lines += ["", "Equal hashes establish exact paragraph content only, not identical liturgical role, optionality, or prayer order.",

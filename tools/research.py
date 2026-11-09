@@ -5,19 +5,25 @@ import json
 import urllib.request
 
 from tools.content import ROOT, read_json
+from tools.acquire import SPECS
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--version', default='Torat Emet 357')
+    parser.add_argument('--bedtime-candidates', action='store_true', help='Retrieve the three specifically selected candidate editions for tools.acquire')
     args = parser.parse_args()
     candidates = read_json(ROOT / 'content/source-candidates.json')['editions']
     output = ROOT / 'build/research'
     output.mkdir(parents=True, exist_ok=True)
-    for item in candidates:
-        if item['versionTitle'] != args.version:
-            continue
-        path = output / (item['title'].replace(' ', '_') + '.json')
+    if args.bedtime_candidates:
+        selected = [(spec['filename'], next(item for item in candidates if item['title'] == spec['title'] and item['versionTitle'] == spec['version'])) for spec in SPECS.values()]
+    else:
+        selected = [(item['title'].replace(' ', '_') + '.json', item) for item in candidates if item['versionTitle'] == args.version]
+    if not selected:
+        parser.exit(1, 'No named edition matched; no source downloaded.\n')
+    for filename, item in selected:
+        path = output / filename
         request = urllib.request.Request(item['json_url'], headers={'User-Agent': 'GarminShemah-source-review/0.1'})
         # Inherited proxy and default certificate verification remain enabled.
         try:

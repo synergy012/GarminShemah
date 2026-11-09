@@ -1,0 +1,44 @@
+{
+  "retrieved_on": "2026-11-09",
+  "versions": [
+    {
+      "id": "ashkenaz",
+      "url": "https://www.sefaria.org/api/texts/versions/Siddur_Ashkenaz",
+      "retrieved_on": "2026-11-09",
+      "response_sha256": "d90c6618221368ddf8c5d099f407de0734b787354d1bfafefa7874ea0832b67c",
+      "version_title": "The Metsudah siddur, 1981",
+      "language": "he",
+      "license_claim": "CC-BY",
+      "version_source": "https://www.nli.org.il/he/books/NNL_ALEPH002211687"
+    },
+    {
+      "id": "sefard",
+      "url": "https://www.sefaria.org/api/texts/versions/Siddur_Sefard",
+      "retrieved_on": "2026-11-09",
+      "response_sha256": "90e5dbaf033e29c09cc150d98d8ed695af557a7f7df47bb24644eaa89c1b8aec",
+      "version_title": "Torat Emet 357",
+      "language": "he",
+      "license_claim": "Public Domain",
+      "version_source": "http://www.toratemetfreeware.com/index.html?downloads"
+    },
+    {
+      "id": "edot_hamizrach",
+      "url": "https://www.sefaria.org/api/texts/versions/Siddur_Edot_HaMizrach",
+      "retrieved_on": "2026-11-09",
+      "response_sha256": "b35ccc12c7e17f58b7b3413b54ee9279857f25d198e6df102b771a0ef782042f",
+      "version_title": "Torat Emet 357",
+      "language": "he",
+      "license_claim": "Public Domain",
+      "version_source": "http://www.toratemetfreeware.com/index.html?downloads"
+    }
+  ],
+  "license_mapping": {
+    "url": "https://raw.githubusercontent.com/Sefaria/Sefaria-Project/master/static/js/sefaria/sefaria.js",
+    "response_sha256": "7b3b185665c0b35d912717c4113a75f641c2ee16c2fd11d8163ffa1b5a3c5036",
+    "function": "getLicenseMap",
+    "mapping": {
+      "CC-BY": "https://creativecommons.org/licenses/by/3.0/"
+    }
+  },
+  "scope": "Only the specified Hebrew editions and excerpt paths; no blanket permission for translations, other editions or merged files."
+}

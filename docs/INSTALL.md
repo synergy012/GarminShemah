@@ -29,9 +29,11 @@ starts in an Ubuntu 22.04 container with its required libraries and responds to 
 commands. Use the tested commands in [GARMIN-RUNTIME.md](GARMIN-RUNTIME.md).
 
 The **fr970** and **venu2** device packages remain missing. Garmin's device-package API
-at `api.gcs.garmin.com` is currently blocked by network policy. After access is available,
-use the official SDK Manager, retain verification and inspect package metadata before
-target testing. Set `CONNECTIQ_HOME` to the installed SDK directory for host compilation.
+at `api.gcs.garmin.com` is now reachable but returns 401, requiring authentication.
+Use the official SDK Manager sign-in flow, or obtain the packages via SDK Manager on
+your own computer; see [GARMIN-AUTH.md](GARMIN-AUTH.md). Retain verification and inspect
+package metadata before target testing. Set `CONNECTIQ_HOME` to the installed SDK
+directory for host compilation.
 
 Garmin builds need a local developer signing key. Reuse a securely stored existing key
 when one is available. For an initial development-only key, Garmin commonly uses an

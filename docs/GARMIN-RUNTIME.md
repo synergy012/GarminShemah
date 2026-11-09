@@ -66,7 +66,7 @@ The screenshot command writes the actual X11 window to
 `$CIQ_RUNTIME_STATE/logs/simulator-startup.xwd`. It was converted without visual edits
 to the linked PNG using ImageMagick on the host.
 
-## Remaining device-package blocker
+## Remaining device-package blocker — November 9 update
 
 Compiling FR970 with the installed compiler and a local development-only DER signing
 key fails with `Invalid device id specified: 'fr970'` because the target package is
@@ -80,11 +80,13 @@ The official SDK Manager binary identifies the device endpoint as:
 https://api.gcs.garmin.com/ciq-product-onboarding/devices/fr970/ciqInfo
 ```
 
-The current proxy rejects that destination with `403 Forbidden`. Allowing
-**api.gcs.garmin.com** is necessary to continue official device installation. Once
-reachable, inspect the real response and SDK Manager requirements; authentication
-or any additional download destination has not been established. Do not use fabricated
-device definitions or bypass the proxy to claim a successful build.
+The current enforced policy now allows that destination. A fresh request reached the
+Garmin service and returned **401 Unauthorized**. The SDK Manager's own onboarding text
+requires a Garmin sign-in. No Garmin secret binding or relevant environment variable is
+present. This is an authentication prerequisite, not another unresolved domain rule.
+See [the handoff instructions](GARMIN-AUTH.md). Do not use fabricated device definitions
+or bypass authentication to claim a successful build.
 
-Prayer acquisition/licensing, actual Hebrew rendering, application interactions,
-memory testing and both target builds remain separate unfinished work.
+All three named bedtime source nodes have since been acquired, with edition-specific
+permission evidence. Their reader preparation/review, actual Hebrew rendering,
+application interactions, memory testing and both target builds remain unfinished.
