@@ -3,5 +3,3 @@ base.sourcePath = source
 base.resourcePath = resources
 fr970.sourcePath = $(base.sourcePath);generated/fr970
 fr970.resourcePath = $(base.resourcePath);generated/fr970/resources
-venu2.sourcePath = $(base.sourcePath);generated/venu2
-venu2.resourcePath = $(base.resourcePath);generated/venu2/resources

@@ -1,0 +1,34 @@
+{
+  "device": "fr970",
+  "sdk": "9.3.0",
+  "mode": "review",
+  "host_tests": 28,
+  "native_tests": {
+    "passed": 4,
+    "failed": 0,
+    "errors": 0,
+    "process_exit": 1,
+    "sdk_modified": false
+  },
+  "artifacts": {
+    "fr970.review.prg": {
+      "bytes": 5414140,
+      "sha256": "65d1451e799b1d9f2cc66b3e8d7aaec60b54e9166336c49facbb3152d78dd9ed"
+    },
+    "fr970.tests.prg": {
+      "bytes": 5418188,
+      "sha256": "df1112cd2ac0dc1e6da94171a0463ce7ab64ee2ca5e39214449041ad5938f9c3"
+    }
+  },
+  "observations": [
+    "Three source documents opened at small size in the simulator",
+    "Edot touch scrolling changed viewport and saved offset from 0 to 854",
+    "Changing Edot size from small to large saved the relocated word-anchor position 1416",
+    "Screenshot filename edot-scrolled means an intermediate viewport, not document end"
+  ],
+  "limits": [
+    "Editorial approval outstanding",
+    "Offline attribution screen compiled but not visually verified yet",
+    "Physical watch and prolonged rendered stress tests pending"
+  ]
+}

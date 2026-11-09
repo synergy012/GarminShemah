@@ -1,0 +1,73 @@
+{
+  "ashkenaz": {
+    "source_sha256": "0bc7b4d90d9f8d936566c756363da0109809e7bc72fdb65e0e629c16413cbb5d",
+    "small_roles": {
+      "5:0": "instruction",
+      "6:0": "prayer",
+      "20:0": "instruction",
+      "26:0": "instruction"
+    }
+  },
+  "sefard": {
+    "source_sha256": "b42f45a56f04c3a2080625d517c04f37bdd50098231b246836b59f2044ff1c00",
+    "small_roles": {
+      "3:0": "conditional",
+      "5:0": "instruction",
+      "5:1": "prayer",
+      "17:0": "instruction",
+      "18:0": "instruction",
+      "19:0": "instruction",
+      "20:0": "instruction",
+      "22:0": "instruction",
+      "24:0": "source_small",
+      "25:0": "source_small",
+      "26:0": "source_small",
+      "27:0": "source_small"
+    }
+  },
+  "edot_hamizrach": {
+    "source_sha256": "919f8f8521db99287ef3709bf94b955825237d882127ba12b8decd59b2f5bc46",
+    "small_roles": {
+      "2:0": "instruction",
+      "3:0": "source_small",
+      "4:0": "instruction",
+      "5:0": "source_small",
+      "6:0": "instruction",
+      "6:1": "source_small",
+      "6:2": "instruction",
+      "6:3": "source_small",
+      "7:0": "instruction",
+      "7:1": "instruction",
+      "7:2": "source_small",
+      "7:3": "source_small",
+      "8:0": "instruction",
+      "10:0": "instruction",
+      "10:1": "prayer",
+      "13:0": "instruction",
+      "13:1": "instruction",
+      "14:0": "instruction",
+      "16:0": "instruction",
+      "16:1": "instruction",
+      "18:0": "instruction",
+      "18:1": "source_small",
+      "19:0": "instruction",
+      "21:0": "instruction",
+      "22:0": "instruction",
+      "23:0": "instruction",
+      "24:0": "instruction",
+      "25:0": "instruction",
+      "26:0": "instruction",
+      "27:0": "instruction",
+      "28:0": "instruction",
+      "22:1": "prayer",
+      "23:1": "prayer",
+      "24:1": "prayer",
+      "25:1": "prayer",
+      "26:1": "prayer",
+      "27:1": "prayer",
+      "28:1": "prayer",
+      "29:0": "instruction",
+      "29:1": "prayer"
+    }
+  }
+}

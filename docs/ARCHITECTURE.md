@@ -2,13 +2,7 @@
 
 ## Decision and limits
 
-Native Garmin fonts have not been proven to shape pointed Hebrew on either target.
-The initial host prototype preceded SDK installation. SDK 9.3.0 now runs, but the
-FR970 package has now been supplied and the bitmap prototype runs in its simulator.
-Venu 2 remains unavailable. No claim is made that native fonts fail;
-they still need a representative on-device comparison before the final rendering
-decision. Their API availability, font coverage and nikud positioning must be inspected
-in the installed SDK, not inferred from a successful compilation.
+The active target is FR970; Venu 2 was removed at the user's request. Native Garmin Hebrew shaping has not been assessed. The current review app uses the validated bitmap pipeline described below. Historical prototype evidence is in FR970-VALIDATION.md; current full-source evidence is in REVIEW-BUILD.md.
 
 The implemented alternative shapes each logical-order line **off-device** using
 Pillow/libraqm, HarfBuzz and FriBidi. It wraps whole words before shaping and never
@@ -26,17 +20,11 @@ and Hebrew-reader review.
 
 ## Device resources
 
-Each device has its own column width, viewport, three font sizes, and generated resource
-directory. FR970 uses 454 pixels with a 320 × 310 reading rectangle; Venu 2 uses 416
-pixels with 288 × 282. Rectangle corners fit inside the round display. The conservative
-rectangle prevents round-edge word clipping throughout scrolling. More aggressive
-chord-dependent wrapping is deliberately deferred until device proof.
+FR970 uses a 454-pixel display and a centered 320 × 310 reading rectangle. All three nuschaos and sizes are compiled into one app. Whole-word wrapping happens off-device.
 
-Each rendered line is a 16-level indexed PNG with black background and warm white ink.
-This preserves antialiasing. Flash size, compiler resource limits, decoder pixel format
-and actual heap usage for complete texts remain unknown. The manifest estimates visible
-pixel storage at four bits per pixel; it does not include VM data, bitmap overhead or
-firmware conversion. Full-text, all-nusach resource capacity is an open release risk.
+Two adjacent rendered lines share one 16-level indexed PNG atlas. Identical atlases are deduplicated; 1,356 image resources fit the SDK's 2,047-resource ceiling. Lossless SDK compression reduces flash size. Each line stores its source-y offset. The renderer uses ordinary drawBitmap with destination clipping, because this SDK rejects indexed source cropping through drawBitmap2. The cache retains only currently visible atlas resources.
+
+The generated manifest estimates visible atlas pixel storage at four bits per pixel, below 128 KB for these layouts. This excludes VM data and decoder overhead. Simulator memory samples and artifact sizes are evidence, not proof of physical-watch behavior or absence of long-term leaks.
 
 ## Continuous document
 
@@ -49,7 +37,7 @@ position directly. No perpetual redraw timer or network service is used.
 
 FR970 physical-button hit regions, touchscreen drag, menu mapping and size selection
 have been exercised. Drag lifecycle uses the documented start/stop event types; the tap
-callback is `onTap`. Rapid input edge cases and Venu 2 remain unverified. The 33 ms
+callback is `onTap`. Rapid input edge cases remain under test. The 33 ms
 timer used initially was clamped by Garmin and has been corrected to 50 ms.
 
 ## Preferences and reading position

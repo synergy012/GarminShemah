@@ -2,17 +2,547 @@
   "schema_version": 1,
   "id": "edot_hamizrach",
   "title_he": "עדות המזרח",
-  "status": "blocked",
+  "status": "source_review",
   "review": {
     "text_verified": false,
     "order_verified": false,
     "reviewer": null
   },
-  "sources": [],
-  "sections": [],
+  "sources": [
+    {
+      "id": "edot_hamizrach-edition",
+      "url": "https://storage.googleapis.com/sefaria-export/json/Liturgy/Siddur/Siddur%20Edot%20HaMizrach/Hebrew/Torat%20Emet%20357.json",
+      "version_title": "Torat Emet 357",
+      "license": "Public Domain",
+      "license_verified": true,
+      "license_url": "https://www.sefaria.org/api/texts/versions/Siddur_Edot_HaMizrach",
+      "retrieved_on": "2026-11-09",
+      "sha256": "919f8f8521db99287ef3709bf94b955825237d882127ba12b8decd59b2f5bc46",
+      "attribution": "Siddur Edot HaMizrach, Torat Emet 357, via Sefaria. Original Hebrew/HTML excerpt retained without textual edits."
+    }
+  ],
+  "sections": [
+    {
+      "id": "source-001",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 1,
+      "source_block_sha256": "ce3be2f2ed350aa0341b789258bb63ff8380c87aed60f3c47cb38ad14903fabd",
+      "paragraphs": [
+        "קריאת שמע שעל המיטה"
+      ],
+      "paragraph_kinds": [
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-002",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 2,
+      "source_block_sha256": "c9bb661047fcb4fb076dd39eb6d58dc434afd4098990d346ee3e63f0292281a2",
+      "paragraphs": [
+        "אם נשאר ער עד אחר חצות יקרא הק\"ש שעל המטה קודם חצי השעה שלפני חצות, ואם שכח יקרא כמה שיותר מהר קודם חצות, ואם שכח אף לקרוא קודם חצות יכול לקרוא כל סדר ק\"ש אחר חצות (רב פעלים ח\"ב ס' ב)."
+      ],
+      "paragraph_kinds": [
+        "instruction"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-003",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 3,
+      "source_block_sha256": "b24ebe39a785f3fe9eedd7930cbcb1e53bdb0787f6ce7ea008ef0d2545e675cd",
+      "paragraphs": [
+        "לְשֵׁם יִחוּד קֻדְשָׁא בְּרִיךְ הוּא וּשְׁכִינְתֵּהּ, בִּדְחִילוּ וּרְחִימוּ, וּרְחִימוּ וּדְחִילוּ, לְיַחֲדָא שֵׁם אוֹת יוּ\"ד אוֹת הֵ\"א בְּאוֹת וָא\"ו אוֹת הֵ\"א, בְּיִחוּדָא שְׁלִים בְּשֵׁם כָּל יִשְׂרָאֵל, לַאֲקָמָא שְׁכִינְתָּא מֵעַפְרָא וּלְעִלוּי שְׁכִינַת עֻזֵּנוּ, הֲרֵינִי מְקַבֵּל עָלַי אֱלָהוּתוּ יִתְבָּרַךְ וְאַהֲבָתוֹ וְיִרְאָתוֹ, וְהֲרֵינִי יָרֵא מִמֶנּוּ, בְּגִין דְּאִיהוּ רַב וְשַׁלִּיט עַל כֹּלָא, וְכֹלָּא קַמֵּהּ כְּלָא. וַהֲרֵינִי מַמְלִיכוֹ עַל כָּל אֵבֶר וְאֵבֶר וְגִיד וְגִיד מֵרַמַ\"ח אֵבָרִים וְשְׁסָ\"ה גִידִים שֶׁל גּוּפִי וְנַפְשִׁי רוּחִי וְנִשְׁמָתִי, מַלְכוּת גְּמוּרָה וּשְׁלֵמָה. וַהֲרֵינִי עֶבֶד לַשֵּׁם יִתְבָּרַךְ, וְהוּא בְרַחֲמָיו יְזַכֵּנִי לְעָבְדוֹ בְלֵב שָׁלֵם וְנֶפֶשׁ חֲפֵצָה. אָמֵן כֵּן יְהִי רָצוֹן:"
+      ],
+      "paragraph_kinds": [
+        "source_small"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-004",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 4,
+      "source_block_sha256": "e25e18660e8187c6b1cf37346bca435f347fb9dbd06f5a2c29acd96a40ed3850",
+      "paragraphs": [
+        "קודם ברכת הַמַּפִּיל נוהגים לומר \"רבונו של עולם הריני מוחל וסולח\", ונוהגים לאומרו אף בשבתות וימים טובים, אבל בשבתות וימים טובים לא יאמר את מה שמופיע באותיות הקטנות"
+      ],
+      "paragraph_kinds": [
+        "instruction"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-005",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 5,
+      "source_block_sha256": "81478db4492ae9acb05f1905234c36f54980c76c768b84e8273fb97e202a7af1",
+      "paragraphs": [
+        "רִבּוֹנוֹ שֶׁל עוֹלָם הֲרֵינִי מוֹחֵל וְסוֹלֵחַ לְכָל מִי שֶׁהִכְעִיס וְהִקְנִיט אוֹתִי, אוֹ שֶׁחָטָא כְּנֶגְדִּי בֵּין בְּגוּפִי, בֵּין בְּמָמוֹנִי, בֵּין בִּכְבוֹדִי, בֵּין בְּכָל אֲשֶׁר לִי, בֵּין בְּאֹנֶס בֵּין בְּרָצוֹן, בֵּין בְּשׁוֹגֵג בֵּין בְּמֵזִיד, בֵּין בְּדִבּוּר בֵּין בְּמַעֲשֶׂה, בֵּין בְּגִלְגּוּל זֶה בֵּין בְּגִלְגּוּל אַחֵר, לְכָל בַּר יִשְׂרָאֵל, וְלֹא יֵעָנֵשׁ שׁוּם אָדָם בְּסִבָּתִי.",
+        "יְהִי רָצוֹן מִלְּפָנֶיךָ יְהֹוָה אֱלֹהַי וֵאלֹהֵי אֲבוֹתַי שֶׁלֹּא אֶחֱטָא עוֹד, וּמַה שֶּׁחָטָאתִי לְפָנֶיךָ מְחֹק בְּרַחֲמֶיךָ הָרַבִּים, אֲבָל לֹא עַל יְדֵי יִסּוּרִין וָחֳלָאִים רָעִים.",
+        "יִהְיוּ לְרָצוֹן אִמְרֵי פִי וְהֶגְיוֹן לִבִּי לְפָנֶיךָ, יְהֹוָה צוּרִי וְגֹאֲלִי:"
+      ],
+      "paragraph_kinds": [
+        "prayer",
+        "source_small",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-006",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 6,
+      "source_block_sha256": "7fbdddf4b90ce3ae55da5b628cd33f73312eee287035f8020455384fe48461e7",
+      "paragraphs": [
+        "בלילות החול אומרים",
+        "הַשְׁכִּיבֵנוּ אָבִינוּ לְשָׁלוֹם, וְהַעֲמִידֵנוּ מַלְכֵּנוּ לְחַיִּים טוֹבִים וּלְשָׁלוֹם, וּפְרֹשׂ עָלֵינוּ סֻכַּת שְׁלוֹמֶךָ, וְתַקְּנֵנוּ מַלְכֵּנוּ בְּעֵצָה טוֹבָה מִלְּפָנֶיךָ, וְהוֹשִׁיעֵנוּ מְהֵרָה לְמַעַן שְׁמְךָ, וְהָגֵן בַּעֲדֵנוּ, וְהָסֵר מֵעָלֵינוּ מַכַּת אוֹיֵב, דֶּבֶר, חֶרֶב, חֹלִי, צָרָה, רָעָה, רָעָב, וְיָגוֹן וּמַשְׁחִית וּמַגֵּפָה. שְׁבֹר וְהָסֵר הַשָּׂטָן מִלְּפָנֵינוּ וּמֵאַחֲרֵינוּ, וּבְצֵל כְּנָפֶיךָ תַּסְתִּירֵנוּ, וּשְׁמֹר צֵאתֵנוּ וּבוֹאֵנוּ לְחַיִּים טוֹבִים וּלְשָׁלוֹם מֵעַתָּה וְעַד עוֹלָם. כִּי אֵל שׁוֹמְרֵנוּ וּמַצִּילֵנוּ אַתָּה מִכָּל דָּבָר רָע וּמִפַּחַד לָיְלָה. בָּרוּךְ שׁוֹמֵר אֶת עַמּוֹ יִשְׂרָאֵל לָעַד:",
+        "בלילות שבת וימים טובים אומרים",
+        "הַשְׁכִּיבֵנוּ אָבִינוּ לְשָׁלוֹם, וְהַעֲמִידֵנוּ מַלְכֵּנוּ לְחַיִּים טוֹבִים וּלְשָׁלוֹם, וּפְרֹשׂ עָלֵינוּ סֻכַּת שְׁלוֹמֶךָ, וְתַקְּנֵנוּ מַלְכֵּנוּ בְּעֵצָה טוֹבָה מִלְּפָנֶיךָ, וְהוֹשִׁיעֵנוּ מְהֵרָה לְמַעַן שְׁמְךָ, וְהָגֵן בַּעֲדֵנוּ, וּפְרֹשׂ עָלֵינוּ וְעַל יְרוּשָׁלַיִם עִירְךָ סֻכַּת שָׁלוֹם. בָּרוּךְ הַפּוֹרֵשׂ סֻכַּת שָׁלוֹם עָלֵינוּ וְעַל כָּל עַמּוֹ יִשְׂרָאֵל, וְעַל יְרוּשָׁלַיִם:"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "source_small",
+        "instruction",
+        "source_small"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-007",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 7,
+      "source_block_sha256": "d92f6ed950be925fe9c8dbd898e495b8590751d0f34dbe74908749f88d1586a6",
+      "paragraphs": [
+        "יש להשתדל בכל עוז שלא להפסיק בדיבור בין ברכת \"המפיל\" לשינה, זולת בפסוקי \"קריאת שמע\" ושאר פסוקים שנוהגים לומר. ואם עבר ודיבר, אין ברכתו לבטלה, ואינו חוזר ומברך. ואם צמא למים רשאי לברך \"ברכת הנהנין\" ולשתות אחר ברכת \"המפיל\". וכן רשאי לברך ברכת \"אשר יצר\" אחר ברכת \"המפיל\". וכן מותר לדבר לצורך גדול, כגון להשתיק תינוק המפריעו לישון (יחו\"ד ח\"ג)",
+        "אם ישן אחר חצות הלילה יאמר ברכת המפיל ללא שם ומלכות",
+        "בָּרוּךְ",
+        "[אַתָּה יְהֹוָה, אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם]",
+        "הַמַּפִּיל חֶבְלֵי שֵׁנָה עַל עֵינַי, וּתְנוּמָה עַל עַפְעַפַּי, וּמֵאִיר לְאִישׁוֹן בַּת עָיִן. יְהִי רָצוֹן מִלְּפָנֶיךָ יְהֹוָה אֱלֹהַי וֵאלֹהֵי אֲבוֹתַי, שֶׁתַּשְׁכִּיבֵנִי לְשָׁלוֹם, וְתַעֲמִידֵנִי לְחַיִּים טוֹבִים וּלְשָׁלוֹם, וְתֵן חֶלְקִי בְּתוֹרָתֶךָ, וְתַרְגִּילֵנִי לִדְבַר מִצְוָה, וְאַל תַּרְגִּילֵנִי לִדְבַר עֲבֵרָה, וְאַל תְּבִיאֵנִי לִידֵי חֵטְא, וְלֹא לִידֵי נִסָּיוֹן, וְלֹא לִידֵי בִזָּיוֹן, וְיִשְׁלֹט בִּי יֵצֶר הַטּוֹב, וְאַל יִשְׁלֹט בִּי יֵצֶר הָרָע, וְתַצִּילֵנִי מִיֵּצֶר הָרָע וּמֵחֳלָאִים רָעִים, וְאַל יַבְהִילוּנִי חֲלוֹמוֹת רָעִים וְהִרְהוּרִים רָעִים, וּתְהֵא מִטָּתִי שְׁלֵמָה לְפָנֶיךָ, וְהָאֵר עֵינַי פֶּן אִישַׁן הַמָּוֶת. בָּרוּךְ",
+        "[אַתָּה יְהֹוָה]",
+        "הַמֵּאִיר לָעוֹלָם כֻּלּוֹ בִּכְבוֹדוֹ:"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "instruction",
+        "prayer",
+        "source_small",
+        "prayer",
+        "source_small",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-008",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 8,
+      "source_block_sha256": "2674023af6d0363c48ec9a32ba63e289ba7b13f588853d916041fb7e8577288d",
+      "paragraphs": [
+        "יכוון בקריאת שמע זו לקיים מצוות יחוד השם"
+      ],
+      "paragraph_kinds": [
+        "instruction"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-009",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 9,
+      "source_block_sha256": "0338b4d12456cc18d7dd7f2677afc49cfb12e43f09f9e07b1aa85cf10c1de90f",
+      "paragraphs": [
+        "שְׁמַע יִשְׂרָאֵל יְהֹוָה אֱלֹהֵינוּ יְהֹוָה אֶחָד:"
+      ],
+      "paragraph_kinds": [
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-010",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 10,
+      "source_block_sha256": "772400574af2f660bb66ca8ebd6b4b7db26d578826e5f7b97a5c8f96860ef483",
+      "paragraphs": [
+        "בלחש:",
+        "בָּרוּךְ, שֵּׁם כְּבוֹד מַלְכוּתוֹ, לְעוֹלָם וָעֶד:"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-011",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 11,
+      "source_block_sha256": "ef1a889a31536586324bb0ba618d0c02fe2c01d45df99b7d5dfb2cd02c558bc6",
+      "paragraphs": [
+        "וְאָהַבְתָּ אֵת יְהֹוָה אֱלֹהֶיךָ בְּכָל לְבָבְךָ וּבְכָל נַפְשְׁךָ וּבְכָל מְאֹדֶךָ. וְהָיוּ הַדְּבָרִים הָאֵלֶּה אֲשֶׁר אָנֹכִי מְצַוְּךָ הַיּוֹם עַל לְבָבֶךָ. וְשִׁנַּנְתָּם לְבָנֶיךָ וְדִבַּרְתָּ בָּם בְּשִׁבְתְּךָ בְּבֵיתֶךָ וּבְלֶכְתְּךָ בַדֶּרֶךְ וּבְשָׁכְבְּךָ וּבְקוּמֶךָ. וּקְשַׁרְתָּם לְאוֹת עַל יָדֶךָ וְהָיוּ לְטֹטָפֹת בֵּין עֵינֶיךָ. וּכְתַבְתָּם עַל מְזוּזֹת בֵּיתֶךָ וּבִשְׁעָרֶיךָ:"
+      ],
+      "paragraph_kinds": [
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-012",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 12,
+      "source_block_sha256": "4188383d5927e0b72360f767c9b089d282fa77c46d53b5e6e4c98264118b6efc",
+      "paragraphs": [
+        "וְהָיָה אִם שָׁמֹעַ תִּשְׁמְעוּ אֶל מִצְוֹתַי אֲשֶׁר אָנֹכִי מְצַוֶּה אֶתְכֶם הַיּוֹם לְאַהֲבָה אֶת יְהֹוָה אֱלֹהֵיכֶם וּלְעָבְדוֹ בְּכָל לְבַבְכֶם וּבְכָל נַפְשְׁכֶם. וְנָתַתִּי מְטַר אַרְצְכֶם בְּעִתּוֹ יוֹרֶה וּמַלְקוֹשׁ וְאָסַפְתָּ דְגָנֶךָ וְתִירֹשְׁךָ וְיִצְהָרֶךָ. וְנָתַתִּי עֵשֶׂב בְּשָׂדְךָ לִבְהֶמְתֶּךָ וְאָכַלְתָּ וְשָׂבָעְתָּ. הִשָּׁמְרוּ לָכֶם פֶּן יִפְתֶּה לְבַבְכֶם וְסַרְתֶּם וַעֲבַדְתֶּם אֱלֹהִים אֲחֵרִים וְהִשְׁתַּחֲוִיתֶם לָהֶם. וְחָרָה אַף יְהֹוָה בָּכֶם וְעָצַר אֶת הַשָּׁמַיִם וְלֹא יִהְיֶה מָטָר וְהָאֲדָמָה לֹא תִתֵּן אֶת יְבוּלָהּ וַאֲבַדְתֶּם מְהֵרָה מֵעַל הָאָרֶץ הַטֹּבָה אֲשֶׁר יְהֹוָה נֹתֵן לָכֶם. וְשַׂמְתֶּם אֶת דְּבָרַי אֵלֶּה עַל לְבַבְכֶם וְעַל נַפְשְׁכֶם וּקְשַׁרְתֶּם אֹתָם לְאוֹת עַל יֶדְכֶם וְהָיוּ לְטוֹטָפֹת בֵּין עֵינֵיכֶם. וְלִמַּדְתֶּם אֹתָם אֶת בְּנֵיכֶם לְדַבֵּר בָּם בְּשִׁבְתְּךָ בְּבֵיתֶךָ וּבְלֶכְתְּךָ בַדֶּרֶךְ וּבְשָׁכְבְּךָ וּבְקוּמֶךָ. וּכְתַבְתָּם עַל מְזוּזוֹת בֵּיתֶךָ וּבִשְׁעָרֶיךָ. לְמַעַן יִרְבּוּ יְמֵיכֶם וִימֵי בְנֵיכֶם עַל הָאֲדָמָה אֲשֶׁר נִשְׁבַּע יְהֹוָה לַאֲבֹתֵיכֶם לָתֵת לָהֶם כִּימֵי הַשָּׁמַיִם עַל הָאָרֶץ:"
+      ],
+      "paragraph_kinds": [
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-013",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 13,
+      "source_block_sha256": "fac2825eaa05eed77e91d066a74ebe28fbf99bccf2cfc3ae28fa7a10f17381ab",
+      "paragraphs": [
+        "וַיֹּאמֶר יְהֹוָה אֶל מֹשֶׁה לֵּאמֹר. דַּבֵּר אֶל בְּנֵי יִשְׂרָאֵל וְאָמַרְתָּ אֲלֵהֶם וְעָשׂוּ לָהֶם צִיצִת עַל כַּנְפֵי בִגְדֵיהֶם לְדֹרֹתָם וְנָתְנוּ עַל צִיצִת הַכָּנָף פְּתִיל תְּכֵלֶת. וְהָיָה לָכֶם לְצִיצִת וּרְאִיתֶם אֹתוֹ וּזְכַרְתֶּם",
+        "ידגיש את האות ז",
+        "אֶת כָּל מִצְוֹת יְהֹוָה וַעֲשִׂיתֶם אֹתָם וְלֹא תָתֻרוּ אַחֲרֵי לְבַבְכֶם וְאַחֲרֵי עֵינֵיכֶם אֲשֶׁר אַתֶּם זֹנִים אַחֲרֵיהֶם. לְמַעַן תִּזְכְּרוּ",
+        "ידגיש את האות ז",
+        "וַעֲשִׂיתֶם אֶת כָּל מִצְוֹתָי וִהְיִיתֶם קְדֹשִׁים לֵאלֹהֵיכֶם. אֲנִי יְהֹוָה אֱלֹהֵיכֶם אֲשֶׁר הוֹצֵאתִי אֶתְכֶם מֵאֶרֶץ מִצְרַיִם לִהְיוֹת לָכֶם לֵאלֹהִים אֲנִי יְהֹוָה אֱלֹהֵיכֶם:"
+      ],
+      "paragraph_kinds": [
+        "prayer",
+        "instruction",
+        "prayer",
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-014",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 14,
+      "source_block_sha256": "c80ac932b04d6d624476091b759cfdb1900510527362670b9e9a29c92fc70c58",
+      "paragraphs": [
+        "וחוזר ואומר",
+        "יְהֹוָה אֱלֹהֵיכֶם אֱמֶת."
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-015",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 15,
+      "source_block_sha256": "18fcf84a280d763db1e4076b8f398414d1c7b384176618364c99d39e98271ab0",
+      "paragraphs": [
+        "יַעְלְזוּ חֲסִידִים בְּכָבוֹד יְרַנְּנוּ עַל מִשְׁכְּבוֹתָם: רוֹמְמוֹת אֵל בִּגְרוֹנָם וְחֶרֶב פִּיפִיּוֹת בְּיָדָם:"
+      ],
+      "paragraph_kinds": [
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-016",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 16,
+      "source_block_sha256": "bf87f9ba4d905c9a4614f6b153ccce3b2a794a2488aace1cc1eef5b20eaa7d27",
+      "paragraphs": [
+        "הִנֵּה מִטָּתוֹ",
+        "ידגיש את הט' של מטתו",
+        "שֶׁלִּשְׁלֹמֹה שִׁשִּׁים גִּבֹּרִים סָבִיב לָהּ מִגִּבֹּרֵי יִשְׂרָאֵל: כֻּלָּם אֲחֻזֵי חֶרֶב מְלֻמְּדֵי מִלְחָמָה אִישׁ חַרְבּוֹ עַל יְרֵכוֹ מִפַּחַד בַּלֵּילוֹת:",
+        "ג' פעמים"
+      ],
+      "paragraph_kinds": [
+        "prayer",
+        "instruction",
+        "prayer",
+        "instruction"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-017",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 17,
+      "source_block_sha256": "1188ad2773ea28139c68f97d0af75daadd35189859b382fc73740aea0df8c099",
+      "paragraphs": [
+        "יְבָרֶכְךָ יְהֹוָה וְיִשְׁמְרֶךָ: יָאֵר יְהֹוָה פָּנָיו אֵלֶיךָ וִיחֻנֶּךָּ: יִשָּׂא יְהֹוָה פָּנָיו אֵלֶיךָ וְיָשֵׂם לְךָ שָׁלוֹם:"
+      ],
+      "paragraph_kinds": [
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-018",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 18,
+      "source_block_sha256": "cd0d59d13f9d26f372e6fdd06f084cdbb7ca1ab3086c6c77cd5a7a1a666b9821",
+      "paragraphs": [
+        "טוב לומר פסוקים אלו לפני יושב בסתר עליון",
+        "אִם תִּשְׁכַּב לֹא תִפְחָד וְשָׁכַבְתָּ וְעָרְבָה שְׁנָתֶךָ: שָׁמְרֵנִי כְּאִישׁוֹן בַּת עָיִן בְּצֵל כְּנָפֶיךָ תַּסְתִּירֵנִי: אֲנִי שָׁכַבְתִּי וָאִישָׁנָה הֱקִיצוֹתִי כִּי יְהֹוָה יִסְמְכֵנִי: בְּיָדְךָ אַפְקִיד רוּחִי פָּדִיתָה אוֹתִי יְהֹוָה אֵל אֱמֶת:",
+        "יֹשֵׁב בְּסֵתֶר עֶלְיוֹן בְּצֵל שַׁדַּי יִתְלוֹנָן: אֹמַר לַיהֹוָה מַחְסִי וּמְצוּדָתִי אֱלֹהַי אֶבְטַח בּוֹ: כִּי הוּא יַצִּילְךָ מִפַּח יָקוּשׁ מִדֶּבֶר הַוּוֹת: בְּאֶבְרָתוֹ יָסֶךְ לָךְ וְתַחַת כְּנָפָיו תֶּחְסֶה צִנָּה וְסֹחֵרָה אֲמִתּוֹ: לֹא תִירָא מִפַּחַד לָיְלָה מֵחֵץ יָעוּף יוֹמָם: מִדֶּבֶר בָּאֹפֶל יַהֲלֹךְ מִקֶּטֶב יָשׁוּד צָהֳרָיִם: יִפֹּל מִצִּדְּךָ אֶלֶף וּרְבָבָה מִימִינֶךָ אֵלֶיךָ לֹא יִגָּשׁ: רַק בְּעֵינֶיךָ תַבִּיט וְשִׁלֻּמַת רְשָׁעִים תִּרְאֶה: כִּי אַתָּה יְהֹוָה מַחְסִי:"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "source_small",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-019",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 19,
+      "source_block_sha256": "bd59b9044ffc09b75a7329d34d4bd1034b02a56cdfef246c11c4e42ca87663da",
+      "paragraphs": [
+        "יעמוד ויאמר וידוי, וישחה ראשו, ויכה באגרופו על לבו בכל תיבה של הוִדוי, ואין לאומרו בליל שבת ובשאר ימים שאין אומרים בהם תחנון. וכן אין לאומרו במוצ\"ש עד חצות הלילה, וכן במוצאי יו\"ט ור\"ח, וכיוצא בזה."
+      ],
+      "paragraph_kinds": [
+        "instruction"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-020",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 20,
+      "source_block_sha256": "49929f2114976780c65db79f18ac8c38b3f3fe8859ffd67a0302d721de8fd2c3",
+      "paragraphs": [
+        "אָנָּא יְהֹוָה אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ. תָּבֹא לְפָנֶיךָ תְּפִלָּתֵנוּ. וְאַל תִּתְעַלַּם מַלְכֵּנוּ מִתְּחִנָּתֵנוּ. שֶׁאֵין אֲנַחְנוּ עַזֵּי פָנִים וּקְשֵׁי עֹרֶף לוֹמַר לְפָנֶיךָ יְהֹוָה אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ צַדִּיקִים אֲנַחְנוּ וְלֹא חָטָאנוּ. אֲבָל חָטָאנוּ. עָוִינוּ. פָּשַׁעְנוּ. אֲנַחְנוּ וַאֲבוֹתֵינוּ וְאַנְשֵׁי בֵיתֵנוּ: אָשַׁמְנוּ. בָּגַדְנוּ. גָּזַלְנוּ. דִּבַּרְנוּ דֹפִי וְלָשׁון הָרָע. הֶעֱוִינוּ. וְהִרְשַׁעְנוּ. זַדְנוּ. חָמַסְנוּ. טָפַלְנוּ שֶׁקֶר וּמִרְמָה. יָעַצְנוּ עֵצוֹת רָעוֹת. כִּזַּבְנוּ. כָּעַסְנוּ. לַצְנוּ. מָרַדְנוּ. מָרִינוּ דְבָרֶיךָ. נִאַצְנוּ. נִאַפְנוּ. סָרַרְנוּ. עָוִינוּ. פָּשַׁעְנוּ. פָּגַמְנוּ. צָרַרְנוּ. צִעַרְנוּ אָב וָאֵם. קִשִּׁינוּ עֹרֶף. רָשַׁעְנוּ. שִׁחַתְנוּ. תִּעַבְנוּ. תָּעִינוּ וְתִעֲתַעְנוּ. וְסַרְנוּ מִמִּצְוֹתֶיךָ וּמִמִּשְׁפָּטֶיךָ הַטּוֹבִים וְלֹא שָׁוָה לָנוּ. וְאַתָּה צַדִּיק עַל כָּל הַבָּא עָלֵינוּ. כִּי אֱמֶת עָשִׂיתָ. ואֲנַחְנוּ הִרְשָׁעְנוּ:"
+      ],
+      "paragraph_kinds": [
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-021",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 21,
+      "source_block_sha256": "cf43c316ff83127be4f02cebe699cb158eb5cd6e79b4678400687e1d6a601b03",
+      "paragraphs": [
+        "אחר כך יאמר: \"אנא בכח\" כולו בכל לילה, ואחר שגמר אותו יחזור לומר הפסוק שכנגד אותו הלילה ג' פעמים"
+      ],
+      "paragraph_kinds": [
+        "instruction"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-022",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 22,
+      "source_block_sha256": "4d3dc8d23d61a0c6ac05b352cb88502e8278acfab2ec309a49b4add4841c35ad",
+      "paragraphs": [
+        "ליל א",
+        "אָנָּא בְּכֹחַ, גְּדוּלַת יְמִינְךָ, תַּתִּיר צְרוּרָה: (אב\"ג ית\"ץ)"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-023",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 23,
+      "source_block_sha256": "148e37f76c91945ee9ddb39290ef1d41faea8cdd6c59dfc292a9e0005eb86e1a",
+      "paragraphs": [
+        "ליל ב",
+        "קַבֵּל רִנַּת, עַמְּךָ. שַׂגְּבֵנוּ, טַהֲרֵנוּ נוֹרָא: (קר\"ע שט\"ן)"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-024",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 24,
+      "source_block_sha256": "9861704aa1392e25802f65f486c2de8e1f82d9e3ac8319a9baea5175f811e5e7",
+      "paragraphs": [
+        "ליל ג",
+        "נָא גִּבּוֹר, דּוֹרְשֵׁי יִחוּדֶךָ, כְּבָבַת שָׁמְרֵם: (נג\"ד יכ\"ש)"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-025",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 25,
+      "source_block_sha256": "e2ee161979dbad52724cca80e1b05edf7a2d293b6258bc3b9cb1cd238e7854df",
+      "paragraphs": [
+        "ליל ד",
+        "בָּרְכֵם טַהֲרֵם, רַחֲמֵי צִדְקָתְךָ, תָּמִיד גָּמְלֵם: (בט\"ר צת\"ג)"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-026",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 26,
+      "source_block_sha256": "d75664d53e9e73c7cdea3caeec4b44ab7ced46100f3a5b18fe9d14f40a5cc05c",
+      "paragraphs": [
+        "ליל ה",
+        "חָסִין קָדוֹשׁ, בְּרֹב טוּבְךָ, נַהֵל עֲדָתֶךָ: (חק\"ב טנ\"ע)"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-027",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 27,
+      "source_block_sha256": "c4de0b1abaea5f47d8952536f28213e49e04ceb3540fbf9542b5cdfbbcafa90d",
+      "paragraphs": [
+        "ליל ו",
+        "יָחִיד גֵּאֶה, לְעַמְּךָ פְנֵה, זוֹכְרֵי קְדֻשָּׁתֶךָ: (יג\"ל פז\"ק)"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-028",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 28,
+      "source_block_sha256": "532067f070cc0fd382a0fdb13eb911dc3b407526ddaf78ad3856f37af2527f78",
+      "paragraphs": [
+        "ליל ז",
+        "שַׁוְעָתֵנוּ קַבֵּל, וּשְׁמַע צַעֲקָתֵנוּ, יוֹדֵעַ תַּעֲלוּמוֹת: (שק\"ו צי\"ת)"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-029",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 29,
+      "source_block_sha256": "15f340322bcabe5b7930e332af249f82272763de9c8f26f360cec0c26498e7b3",
+      "paragraphs": [
+        "בלחש",
+        "בָּרוּךְ, שֵׁם כְּבוֹד מַלְכוּתוֹ, לְעוֹלָם וָעֶד:"
+      ],
+      "paragraph_kinds": [
+        "instruction",
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    },
+    {
+      "id": "source-030",
+      "heading_he": "",
+      "optional": false,
+      "source_id": "edot_hamizrach-edition",
+      "source_index": 30,
+      "source_block_sha256": "b6e16764dcdeb99682bfe91cfe28e0c0acd37cc858aa2e15b98d48a596122ad2",
+      "paragraphs": [
+        "אַתָּה תָקוּם תְּרַחֵם צִיּוֹן, כִּי עֵת לְחֶנְנָהּ, כִּי בָא מוֹעֵד: בְּיָדְךָ אַפְקִיד רוּחִי, פָּדִיתָה אוֹתִי יְהֹוָה אֵל אֱמֶת: בְּטוֹב אָלִין וְאָקִיץ בְּרַחֲמִים: תּוֹרָה צִוָּה לָנוּ מֹשֶׁה מוֹרָשָׁה קְהִלַּת יַעֲקֹב:"
+      ],
+      "paragraph_kinds": [
+        "prayer"
+      ],
+      "custom_policy": "All source material retained; conditional alternatives follow the source instructions. No automatic omission or repetition expansion."
+    }
+  ],
   "unresolved": [
-    "Candidate bedtime source acquired in content/acquired; its instruction/prayer boundaries, repetitions and alternatives need review.",
-    "Catalog permission and provenance are recorded for the candidate edition; final reader attribution and text mapping remain pending.",
-    "Source completeness and intended optional customs are not approved for the reader."
+    "Source section acquired in full, but completeness relative to the intended minhag requires knowledgeable review.",
+    "Prayer, instruction, repetition and alternative/custom boundaries have not been approved for the reader.",
+    "No normalization, expansion of repetitions, omission or substitution is authorized by this acquisition.",
+    "Yoshev Beseter remains abbreviated exactly as in the chosen source; no verses were borrowed to complete it."
+  ],
+  "transformations": [
+    "HTML entities decoded; b/big styling omitted; br retained as paragraph boundaries.",
+    "Outer small spans split into separately classified paragraphs using explicit source-index mappings.",
+    "Display whitespace collapsed to single spaces and source-edge whitespace trimmed; no Unicode normalization or spelling/nikud/punctuation edits.",
+    "Instruction labels and the first document heading are editorial UI, separate from the source paragraphs."
   ]
 }

@@ -1,7 +1,7 @@
 # Prayer content contract
 
 `nuschaot/` contains separate approved-reader documents for Ashkenaz, Chassidic Sefard,
-and Edot HaMizrach. They currently have **no approved sections**. The newly acquired
+and Edot HaMizrach. They currently contain **source-review sections, not approved prayer text**. The acquired
 verbatim Hebrew/HTML source excerpts are in `acquired/`, separate from these documents
 and the typography fixture. See `acquired/NOTICE.md` for attribution and permissions.
 
@@ -52,3 +52,9 @@ and clear issues only after resolving them. Run `python -m tools.content` to reg
 the report. Exact paragraph hashes identify candidates for shared content without
 equating similar titles or stripping nikud. A knowledgeable nusach review remains
 necessary to establish order, optionality and liturgical equivalence.
+
+## Review preparation
+
+`python -m tools.prepare_content` maps all 94 acquired blocks to review paragraphs. `editorial-map.json` pins each source hash and explicitly classifies small-print spans. Unknown markup, changed source hashes or unmapped small print fail preparation. Source spelling, pointing, punctuation and ordering remain intact; HTML presentation tags are removed, entities decoded and whitespace collapsed. No Unicode normalization or cross-nusach filling occurs. Instruction and conditional spans receive separate visual labels outside the source paragraphs.
+
+`python -m tools.generate --review` includes these documents with a REVIEW COPY notice. It does not set reviewer fields or grant release approval. Keep unresolved source problems visible.

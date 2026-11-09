@@ -25,6 +25,9 @@ class SettingsDelegate extends Ui.Menu2InputDelegate {
             reader.reload(null);
             reader.savePosition();
             Ui.popView(Ui.SLIDE_IMMEDIATE);
+        } else if (id.equals("sources")) {
+            var sources = new SourcesView();
+            Ui.pushView(sources, new SourcesDelegate(sources), Ui.SLIDE_IMMEDIATE);
         } else if (id.equals("exit")) {
             reader.savePosition();
             System.exit();

@@ -1,0 +1,33 @@
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/home/garmin
+Reader restored edot_hamizrach offset=1416 size=2
+------------------------------------------------------------------------------
+Executing test testScrollBounds...
+PASS
+Reader saved edot_hamizrach offset=1416 size=2
+Reader restored edot_hamizrach offset=1416 size=2
+------------------------------------------------------------------------------
+Executing test testContinuousSectionBoundary...
+PASS
+Reader saved edot_hamizrach offset=1416 size=2
+Reader restored edot_hamizrach offset=1416 size=2
+------------------------------------------------------------------------------
+Executing test testFontSizePreservesWordAnchor...
+Reader restored edot_hamizrach offset=832 size=0
+PASS
+Reader saved edot_hamizrach offset=1416 size=2
+Reader restored edot_hamizrach offset=1416 size=2
+------------------------------------------------------------------------------
+Executing test testRepeatedDocumentTraversal...
+PASS
+Reader saved edot_hamizrach offset=1416 size=2
+
+==============================================================================
+RESULTS
+Test:                               Status:
+testScrollBounds                    PASS
+testContinuousSectionBoundary       PASS
+testFontSizePreservesWordAnchor     PASS
+testRepeatedDocumentTraversal       PASS
+Ran 4 tests
+
+PASSED (passed=4, failed=0, errors=0)

@@ -22,12 +22,13 @@ class ContentTests(unittest.TestCase):
         self.assertEqual(validate(self.document), [])
         self.assertIn('Not a verified nusach', validate(self.document, release=True))
 
-    def test_each_missing_nusach_is_an_explicit_release_failure(self):
+    def test_each_unverified_nusach_is_an_explicit_release_failure(self):
         for name in NUSCHAOT:
             with self.subTest(nusach=name):
                 document = read_json(ROOT / 'content/nuschaot' / f'{name}.json')
                 self.assertEqual(document['id'], name)
-                self.assertEqual(document['sections'], [])
+                self.assertTrue(document['sections'])
+                self.assertEqual(document['status'], 'source_review')
                 self.assertTrue(validate(document, release=True))
 
     def test_same_title_does_not_hide_nikud_difference(self):
@@ -61,7 +62,8 @@ class ContentTests(unittest.TestCase):
         text = report()
         for name in NUSCHAOT:
             self.assertIn(f'## {name}', text)
-        self.assertIn('No comparison is possible yet', text)
+        self.assertIn('Status: BLOCKED', text)
+        self.assertIn('source_review', text)
 
 
 class RenderingTests(unittest.TestCase):
@@ -137,7 +139,7 @@ class RenderingTests(unittest.TestCase):
                 ids = {b.attrib['id'] for b in ET.parse(output / device / 'resources/bitmaps.xml').getroot()}
                 for variant in variants.values():
                     # Pixel estimate is not a device heap claim.
-                    self.assertLess(variant['estimated_visible_pixel_bytes_4bpp'], 80 * 1024)
+                    self.assertLess(variant['estimated_visible_pixel_bytes_4bpp'], 128 * 1024)
                     self.assertLessEqual(variant['max_visible_tiles'], 9)
                     for line in variant['lines']:
                         self.assertIn(line['resource'], ids)

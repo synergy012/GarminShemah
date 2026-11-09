@@ -1,56 +1,28 @@
 # Bedtime Shema for Garmin
 
-An offline Connect IQ siddur project for **Forerunner 970** and **Venu 2**.
+An offline Connect IQ bedtime reader for **Forerunner 970**. Venu 2 was removed from the active scope at the user's request.
 
-**Development checkpoint, not a usable prayer app.** No verified prayer text is
-bundled yet. The current prototype contains original Hebrew typography test prose,
-clearly marked **NOT PRAYER**. All three requested nuschaos are explicitly blocked;
-none silently uses another nusach or the test prose.
+The **review build** contains separate Ashkenaz, Sefard and Edot HaMizrach source sequences, with three sizes, continuous scrolling, saved position and offline source notices. It is marked **REVIEW COPY**: editorial and liturgical completeness review remains open. Release generation stays blocked until that review is recorded.
 
-Verbatim bedtime excerpts for all three nuschaos have now been acquired in
-`content/acquired/`, with edition-specific permission evidence and source hashes.
-See [the acquisition report](docs/TEXT-ACQUISITION.md). Instructions, alternatives
-and completeness still need review before these sources enter the reader.
+Read the Hebrew: [Ashkenaz](content/review/ashkenaz.md), [Sefard](content/review/sefard.md), [Edot HaMizrach](content/review/edot_hamizrach.md). See the [actual simulator screenshots](docs/REVIEW-BUILD.md#actual-simulator-images).
 
-The dedicated checkout is `/workspace/GarminShemah`, with origin
-`https://github.com/synergy012/GarminShemah`. No watch-face project is used.
+The full source sequences preserve 37 Ashkenaz, 27 Sefard and 30 Edot source blocks. Instructions and conditional passages are distinguished visually, with source text retained. See [review-build evidence and limitations](docs/REVIEW-BUILD.md), [source acquisition](docs/TEXT-ACQUISITION.md) and [text verification](docs/TEXT-VERIFICATION.md).
 
-Run the tested host workflow from this directory:
+From this directory:
 
 ```sh
 bash tools/setup.sh
+CONNECTIQ_HOME=/workspace/.toolchains/garmin/9.3.0 \
+  .venv/bin/python -m tools.build --review --device fr970 --key /secure/path/developer_key.der
 ```
 
-This prepares a Python virtual environment, checks the licensed Hebrew font build,
-generates three sizes for each device and runs the host tests. Pillow must have
-libraqm, HarfBuzz and FriBidi support. The setup does not install a Garmin SDK.
+The review artifact is `build/fr970.review.prg`. The SDK and signing key are external to Git. Setup checks the Hebrew font pipeline and runs host tests; it does not install Garmin's SDK. Generated resources and builds are ignored.
 
-The Monkey C implementation now **compiles and runs on the FR970 simulator** using
-the uploaded device package. Continuous scrolling, button/touch input, three text sizes
-and brief-interruption resume have been exercised with the typography fixture.
-[Actual screenshots, build instructions and test limits](docs/FR970-VALIDATION.md).
-The Venu 2 package and testing are still outstanding. Garmin's download API requires
-authentication, but an uploaded `venu2` package can be reused without that login.
-
-- [Milestones and remaining work](docs/STATUS.md)
-- [Text sources, licensing and verification](docs/TEXT-VERIFICATION.md)
-- [Build, install and simulator instructions](docs/INSTALL.md)
-- [Rendering and content architecture](docs/ARCHITECTURE.md)
-- [Validation evidence](docs/VALIDATION.md)
+- [Current status](docs/STATUS.md)
+- [Build and simulator commands](docs/INSTALL.md)
+- [Rendering architecture](docs/ARCHITECTURE.md)
 - [Content editing contract](content/README.md)
 
-`generated/proofs/` contains **host raster proofs**, not Garmin simulator screenshots.
-Representative proofs are retained in [docs/proofs](docs/proofs).
+Hebrew uses the OFL-licensed Siddur Serif derivative, shaped off-device with HarfBuzz/FriBidi. Ashkenaz text is CC-BY-3.0; the selected Sefard/Edot editions are public domain according to their source metadata. Attribution, license links and display changes accompany the PRG in Text sources. See `content/acquired/NOTICE.md`.
 
-The release generator intentionally fails until all three complete nuschaos and
-their permissions have been verified:
-
-```sh
-.venv/bin/python -m tools.content --release
-.venv/bin/python -m tools.generate --release
-```
-
-The fonts and derivative are distributed under [SIL OFL 1.1](fonts/OFL.txt).
-The original non-prayer test prose is dedicated to CC0. Future prayer text licenses
-must be recorded separately. No store submission or remote Git publication has
-been performed.
+No environment publishing, store submission or remote Git publication is part of this checkpoint. Earlier typography-prototype evidence remains under `docs/FR970-VALIDATION.md`.

@@ -53,7 +53,7 @@ def wrap(text, face, width):
     return result
 
 
-def bitmap(text, face, width, height, heading=False):
+def bitmap(text, face, width, height, heading=False, muted=False):
     # Shape whole logical-order lines. Bounding boxes include nikud above and below.
     box = face.getbbox(text, direction="rtl", language="he", anchor="lt")
     ink_height = box[3] - box[1]
@@ -63,7 +63,7 @@ def bitmap(text, face, width, height, heading=False):
     draw = ImageDraw.Draw(mask)
     left = (width - (box[2] - box[0])) // 2 if heading else width - 4 - box[2] + box[0]
     draw.text((left - box[0], (height - ink_height) // 2 - box[1]), text, font=face,
-              fill=190 if heading else 255, direction="rtl", language="he", anchor="lt")
+              fill=190 if heading or muted else 255, direction="rtl", language="he", anchor="lt")
     # 4-bit palette keeps antialiasing and bounds decoded pixel storage.
     paletted = mask.point(lambda value: round(value / 17)).convert("P")
     palette = []
@@ -82,27 +82,35 @@ def layout(document, profile, size):
         raise ValueError(f"Missing glyphs: {[f'U+{c:04X}' for c in missing]}")
     face = font(profile["font_sizes"][size])
     heading_face = font(max(20, profile["font_sizes"][size] - 5))
+    note_face = font(max(22, profile['font_sizes'][size] - 5))
     height = math.ceil(profile["font_sizes"][size] * 1.7)
     y = 12
     lines = []
     for section in document["sections"]:
         # Optional sections stay included until a reviewed per-minhag UI is implemented.
-        for text, start, end in wrap(section["heading_he"], heading_face, profile["column_width"] - 8):
+        for text, start, end in (wrap(section['heading_he'], heading_face, profile['column_width'] - 8) if section['heading_he'] else []):
             lines.append(Line(text, section["id"], -1, start, end, y, height, True,
                               bitmap(text, heading_face, profile["column_width"], height, True)))
             y += height
         y += 8
         for index, paragraph in enumerate(section["paragraphs"]):
-            for text, start, end in wrap(paragraph, face, profile["column_width"] - 8):
+            kind = section.get('paragraph_kinds', ['prayer'] * len(section['paragraphs']))[index]
+            if kind in {'instruction', 'conditional'}:
+                label = 'הוראה' if kind == 'instruction' else 'אמירה לפי ההוראה'
+                lines.append(Line(label, section['id'], -2 - index, 0, 1, y, height, True,
+                                  bitmap(label, heading_face, profile['column_width'], height, True)))
+                y += height
+            paragraph_face = note_face if kind in {'instruction', 'conditional', 'source_small'} else face
+            for text, start, end in wrap(paragraph, paragraph_face, profile["column_width"] - 8):
                 lines.append(Line(text, section["id"], index, start, end, y, height, False,
-                                  bitmap(text, face, profile["column_width"], height)))
+                                  bitmap(text, paragraph_face, profile["column_width"], height, muted=kind != 'prayer')))
                 y += height
             y += 18
         y += 12
     return lines, y + 12
 
 
-def preview(lines, profile, offset=0, dim=False):
+def preview(lines, profile, offset=0, dim=False, notice='TYPE TEST / HOST PROOF'):
     """Host raster proof only. This function does not simulate Garmin firmware."""
     d = profile["diameter"]
     image = Image.new("RGB", (d, d), "black")
@@ -118,7 +126,7 @@ def preview(lines, profile, offset=0, dim=False):
     image.paste(viewport, ((d - width) // 2, (d - height) // 2))
     draw = ImageDraw.Draw(image)
     # Visible notice distinguishes this from a prayer and from a simulator screenshot.
-    label = "TYPE TEST / HOST PROOF"
+    label = notice
     label_font = ImageFont.load_default(size=13)
     draw.text((d // 2, 35), label, font=label_font, fill=WARM, anchor="mt")
     return image

@@ -5,7 +5,6 @@
       minSdkVersion="3.3.0" version="0.1.0">
     <iq:products>
       <iq:product id="fr970"/>
-      <iq:product id="venu2"/>
     </iq:products>
     <iq:permissions/>
     <iq:languages><iq:language>eng</iq:language></iq:languages>

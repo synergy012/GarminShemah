@@ -1,104 +1,41 @@
-# Development, build and installation
+# Build and simulator instructions
 
-This checkpoint includes a testable **FR970 typography prototype**, not a prayer app.
-See [FR970 validation](FR970-VALIDATION.md) for the current binary, actual screenshots,
-tested commands and limits. Venu 2 remains blocked on its missing package.
-
-## Tested host workflow
-
-From `/workspace/GarminShemah`:
+Active target: **FR970 only**. The current app is a source-review build, not an approved prayer release. See [current evidence](REVIEW-BUILD.md).
 
 ```sh
 bash tools/setup.sh
+CONNECTIQ_HOME=/workspace/.toolchains/garmin/9.3.0 \
+  .venv/bin/python -m tools.build --review --device fr970 --key /secure/path/developer_key.der
 ```
 
-The current cloud runtime supplies Python 3.12, Pillow 13.0.0 with libraqm/HarfBuzz/FriBidi,
-and fonttools 4.61.1. The local virtual environment reuses installed packages and pins
-their versions. On a different machine, install the pinned packages and confirm that
-Pillow has libraqm; setup fails rather than using incorrect RTL fallback. Fonts are
-vendored under OFL. No phone or internet is used by the generated reader resources.
+Output: `build/fr970.review.prg` with matching debug XML. The wrapper checks the SDK/key, generates resources and promotes successful compiler output. It selects the uploaded device home automatically when available; `--sdk-user-home` overrides this. Keep signing keys outside Git. The local development key is not a release signing identity.
 
-Generated data lives under ignored `generated/`; build outputs, research downloads and
-test logs live under ignored `build/`. Source edits belong in `source/`, `content/`,
-`config/` or `tools/`, not the generated resources.
-
-## SDK and simulator — startup verified
-
-The official SDK **9.3.0** from <https://developer.garmin.com/connect-iq/sdk/> is
-installed at `/workspace/.toolchains/garmin/9.3.0`. Its compiler runs. The simulator
-starts in an Ubuntu 22.04 container with its required libraries and responds to shell
-commands. Use the tested commands in [GARMIN-RUNTIME.md](GARMIN-RUNTIME.md).
-
-The uploaded **fr970** device package is installed. The **venu2** package remains missing. Garmin's device-package API
-at `api.gcs.garmin.com` is now reachable but returns 401, requiring authentication.
-Use the official SDK Manager sign-in flow, or obtain the packages via SDK Manager on
-your own computer; see [GARMIN-AUTH.md](GARMIN-AUTH.md). Retain verification and inspect
-package metadata before target testing. Set `CONNECTIQ_HOME` to the installed SDK
-directory for host compilation.
-
-Garmin builds need a local developer signing key. Reuse a securely stored existing key
-when one is available. For an initial development-only key, Garmin commonly uses an
-RSA private key encoded as unencrypted PKCS#8 DER. Verify that format against the
-installed SDK's instructions. Generate it outside this repository with restrictive
-permissions, retain it securely and never commit or paste it. A proxy-backed API secret
-cannot substitute for a local signing-key file.
-
-Compile the prototype separately for each device:
+SDK 9.3.0 and the uploaded FR970 package are installed in this workspace. Simulator libraries are provided by the existing Ubuntu 22.04 container:
 
 ```sh
-.venv/bin/python -m tools.build --device fr970 --key /secure/path/developer_key.der
-.venv/bin/python -m tools.build --device venu2 --key /secure/path/developer_key.der
+bash tools/ciq-runtime.sh status
 ```
 
-`tools.build` checks for the SDK and key, generates the device resources, invokes
-`monkeyc`, and only promotes a fresh successful output and matching debug XML to
-`build/<device>.prototype.prg`. Its generated target-specific manifest/Jungle allows
-FR970 compilation without the uninstalled Venu 2 qualifier. FR970 now builds and runs;
-Venu 2 does not. The wrapper automatically selects the runtime's uploaded device home
-when available; use `--sdk-user-home` to override it.
-
-Start the SDK simulator with its documented `connectiq` command, then use its
-`monkeydo` command to run the appropriate PRG. Common SDK invocation:
+If stopped, use `bash tools/ciq-runtime.sh start`. This replaces only this project's labelled simulator container. It does not change environment configuration. Run the PRG inside it:
 
 ```sh
-monkeydo build/fr970.prototype.prg fr970
-monkeydo build/venu2.prototype.prg venu2
+env -u DOCKER_HOST -u DOCKER_CONTEXT -u DOCKER_TLS \
+  -u DOCKER_TLS_VERIFY -u DOCKER_CERT_PATH \
+  docker --host=unix:///var/run/docker.sock exec \
+  -e JAVA_TOOL_OPTIONS=-Duser.home=/home/garmin garmin-ciq-simulator \
+  /opt/connectiq/bin/monkeydo /workspace/GarminShemah/build/fr970.review.prg fr970
 ```
 
-Compile native tests using `--tests`; the typical SDK test invocation is
-`monkeydo build/fr970.tests.prg fr970 -t`, as specified by SDK 9.3.0's help.
-Capture screenshots with the actual simulator's screenshot feature; save them under
-`docs/simulator/` only after recording device and SDK versions. Do not move host proofs
-there or represent them as simulator output. `runtime-startup.png` is an actual
-simulator startup window with no device/app loaded, not a Hebrew rendering proof.
+Wait for the `Reader restored` log before interacting. `bash tools/ciq-runtime.sh screenshot` captures the actual native simulator window. Shared English UI fonts can be restored with `.venv/bin/python -m tools.ciq_fonts`; this validates pinned download hashes and preserves existing files.
 
-## Input behavior — exercised on FR970; Venu 2 pending
+Controls: up/down scroll, select advances, back moves backward or exits at the beginning. Drag scrolls continuously. Hold the physical menu button for settings; choose Beginning, Text size, Nusach, Close or Text sources. Back returns from submenus to settings, then the reader. Nusach selection retains each document's position. Hebrew is shaped bitmap text; native settings use English.
 
-- Upward swipe: move forward; downward swipe: move back.
-- Drag: move text with the finger.
-- Next/previous behavior buttons: move forward/back by a small amount.
-- Select button: move forward. Back button: move back, or leave from the beginning.
-- Menu/long menu gesture: settings, text size, nusach, beginning and close reader.
+Add `--tests` to the review build command, then invoke `monkeydo build/fr970.tests.prg fr970 -t` in the container. Preserve both the VM test summary and the SDK client's process status; its known exit-1 anomaly must not be hidden.
 
-FR970 button, drag, menu and text-size paths were exercised; further edge cases and
-Venu 2 remain pending. Do not assume Venu 2 has FR970's physical keys.
-Nuschaos lacking verified assets are visibly unavailable. Settings use English native
-text; the Hebrew document uses shaped bitmap resources.
-
-## Release and physical installation — gated
-
-Only after text verification and simulator/device testing:
+`--review` permits unapproved content with a visible review notice. Omitting it builds the historical non-prayer typography fixture. `--release` is mutually exclusive and remains blocked by editorial validation:
 
 ```sh
 .venv/bin/python -m tools.content --release
-.venv/bin/python -m tools.build --release --device fr970 --key /secure/path/developer_key.der
-.venv/bin/python -m tools.build --release --device venu2 --key /secure/path/developer_key.der
 ```
 
-These commands intentionally fail on the present unverified content. After a genuine
-successful build, follow Garmin's documented sideload process, normally copying the
-device-specific PRG into the watch's `GARMIN/APPS` directory via its supported file
-transfer mechanism. The two builds are not interchangeable. Keep prototype files off
-a device used for prayer. Store export, metadata, screenshots, licensing notices,
-device acceptance, developer agreements and submission still need review; no store
-package or submission has been produced.
+Physical-watch sideload and acceptance have not yet been verified. A future approved, device-specific PRG can be copied using Garmin's supported `GARMIN/APPS` file-transfer process. Signing identity, update behavior and store export still require release checks. No publishing is needed to run the local simulator.

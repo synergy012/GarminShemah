@@ -12,9 +12,11 @@ from tools.generate import generate
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--device', required=True, choices=['fr970', 'venu2'])
+    parser.add_argument('--device', default='fr970', choices=['fr970'])
     parser.add_argument('--key', type=Path, required=True, help='Local developer DER key; never commit it')
-    parser.add_argument('--release', action='store_true', help='Requires all three verified texts')
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--release', action='store_true', help='Requires all three verified texts')
+    mode.add_argument('--review', action='store_true', help='Build all three source-mapped prayer documents, visibly marked REVIEW COPY')
     parser.add_argument('--tests', action='store_true', help='Compile native CIQ unit tests')
     parser.add_argument('--sdk-user-home', type=Path,
                         default=Path(os.environ.get('CIQ_RUNTIME_STATE', '/workspace/.toolchains/garmin/runtime/state')),
@@ -26,7 +28,7 @@ def main():
         parser.exit(2, 'Official Connect IQ SDK missing. Install it and both device packages; set CONNECTIQ_HOME or PATH.\n')
     if not args.key.is_file():
         parser.exit(2, 'Developer signing key not found. See docs/INSTALL.md.\n')
-    generate(ROOT / 'generated', args.release)
+    generate(ROOT / 'generated', args.release, review=args.review, reuse=True)
     directory = ROOT / 'build'
     directory.mkdir(exist_ok=True)
     # An SDK without the other device package rejects even unused Jungle
@@ -47,7 +49,7 @@ def main():
         f'base.resourcePath = {ROOT / "resources"};{ROOT / "generated" / args.device / "resources"}',
         '',
     ]))
-    stem = args.device + ('.tests' if args.tests else '.prototype' if not args.release else '')
+    stem = args.device + ('.tests' if args.tests else '.review' if args.review else '.prototype' if not args.release else '')
     pending = directory / f'{stem}.pending.prg'
     pending.unlink(missing_ok=True)
     pending_debug = Path(str(pending) + '.debug.xml')

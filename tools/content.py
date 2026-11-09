@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NUSCHAOT = ("ashkenaz", "sefard", "edot_hamizrach")
-ALLOWED_LICENSES = {"CC0-1.0", "Public Domain", "CC-BY-4.0", "CC-BY-SA-4.0"}
+ALLOWED_LICENSES = {"CC0-1.0", "Public Domain", "CC-BY-3.0", "CC-BY-4.0", "CC-BY-SA-4.0"}
 
 
 def read_json(path):
@@ -32,7 +32,13 @@ def validate(document, release=False):
             errors.append(f"{sid}: missing source attribution")
         if not section.get("paragraphs"):
             errors.append(f"{sid}: no paragraphs")
-        for text in [section.get("heading_he", ""), *section.get("paragraphs", [])]:
+        kinds = section.get('paragraph_kinds')
+        if kinds is not None and (len(kinds) != len(section['paragraphs']) or any(k not in {'prayer', 'instruction', 'conditional', 'source_small'} for k in kinds)):
+            errors.append(f'{sid}: invalid paragraph classification')
+        texts = list(section.get('paragraphs', []))
+        if section.get('heading_he'):
+            texts.insert(0, section['heading_he'])
+        for text in texts:
             if not isinstance(text, str) or not text.strip():
                 errors.append(f"{sid}: empty or invalid text")
                 continue

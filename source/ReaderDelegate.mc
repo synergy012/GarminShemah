@@ -41,9 +41,13 @@ class ReaderDelegate extends Ui.BehaviorDelegate {
     function onMenu() {
         var menu = new Ui.Menu2({:title=>"Reader settings"});
         menu.addItem(new Ui.MenuItem("Return to beginning", null, "begin", null));
-        menu.addItem(new Ui.MenuItem("Text size", "Small / medium / large", "sizes", null));
-        menu.addItem(new Ui.MenuItem("Nusach", "Ashkenaz / Sefard / Edot", "nusach", null));
+        var sizes = ["Small", "Medium", "Large"];
+        var nusach = reader.preferences.nusach;
+        var nusachLabel = nusach.equals("ashkenaz") ? "Ashkenaz" : nusach.equals("sefard") ? "Sefard (Chassidic)" : "Edot HaMizrach";
+        menu.addItem(new Ui.MenuItem("Text size", sizes[reader.preferences.size], "sizes", null));
+        menu.addItem(new Ui.MenuItem("Nusach", nusachLabel, "nusach", null));
         menu.addItem(new Ui.MenuItem("Close reader", null, "exit", null));
+        menu.addItem(new Ui.MenuItem("Text sources", "Editions, licenses and review notes", "sources", null));
         Ui.pushView(menu, new SettingsDelegate(reader, "main"), Ui.SLIDE_IMMEDIATE);
         return true;
     }

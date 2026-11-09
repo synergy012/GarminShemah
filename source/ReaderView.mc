@@ -27,7 +27,7 @@ class ReaderView extends Ui.View {
                 state.seek(stored["offset"]);
             } else if (stored.hasKey("anchor")) { restoreAnchor(stored["anchor"]); }
         }
-        if (DocumentData.PROTOTYPE) { System.println("Reader restored offset=" + state.offset.toString() + " size=" + preferences.size.toString()); }
+        if (DocumentData.PROTOTYPE || DocumentData.REVIEW) { System.println("Reader restored " + documentId + " offset=" + state.offset.toString() + " size=" + preferences.size.toString()); }
     }
 
     function reload(anchor) {
@@ -107,7 +107,7 @@ class ReaderView extends Ui.View {
 
     function savePosition() {
         preferences.savePosition(documentId, state.offset, currentAnchor());
-        if (DocumentData.PROTOTYPE) { System.println("Reader saved offset=" + state.offset.toString() + " size=" + preferences.size.toString()); }
+        if (DocumentData.PROTOTYPE || DocumentData.REVIEW) { System.println("Reader saved " + documentId + " offset=" + state.offset.toString() + " size=" + preferences.size.toString()); }
     }
 
     function onHide() {
@@ -126,6 +126,8 @@ class ReaderView extends Ui.View {
         var left = ((width - DocumentData.WIDTH) / 2).toNumber();
         if (DocumentData.PROTOTYPE) {
             dc.drawText(width / 2, 32, Graphics.FONT_XTINY, "NOT PRAYER", Graphics.TEXT_JUSTIFY_CENTER);
+        } else if (DocumentData.REVIEW) {
+            dc.drawText(width / 2, 32, Graphics.FONT_XTINY, "REVIEW COPY", Graphics.TEXT_JUSTIFY_CENTER);
         }
         if (document == null) {
             dc.drawText(width / 2, dc.getHeight() / 2, Graphics.FONT_XTINY, "Text unavailable", Graphics.TEXT_JUSTIFY_CENTER);
@@ -136,15 +138,24 @@ class ReaderView extends Ui.View {
         var last = first;
         while (last < lines.size() && lines[last][1] < state.offset + DocumentData.VIEWPORT) { last++; }
         // Evict hidden bitmaps before loading the next visible window.
+        var visible = {};
+        for (var v = first; v < last; v++) { visible[lines[v][0]] = true; }
         var oldKeys = cache.keys();
         for (var k = 0; k < oldKeys.size(); k++) {
             var key = oldKeys[k];
-            if (key < first || key >= last) { cache.remove(key); }
+            if (!visible.hasKey(key)) { cache.remove(key); }
         }
-        dc.setClip(left, top, DocumentData.WIDTH, DocumentData.VIEWPORT);
         for (var i = first; i < last; i++) {
-            if (!cache.hasKey(i)) { cache[i] = Ui.loadResource(lines[i][0]); }
-            dc.drawBitmap(left, top + lines[i][1] - state.offset, cache[i]);
+            var resource = lines[i][0];
+            if (!cache.hasKey(resource)) { cache[resource] = Ui.loadResource(resource); }
+            var destinationY = top + lines[i][1] - state.offset;
+            var clipTop = destinationY < top ? top : destinationY;
+            var clipBottom = destinationY + lines[i][2];
+            if (clipBottom > top + DocumentData.VIEWPORT) { clipBottom = top + DocumentData.VIEWPORT; }
+            dc.setClip(left, clipTop, DocumentData.WIDTH, clipBottom - clipTop);
+            // Palette resources cannot be source-cropped by drawBitmap2 on this
+            // target. Destination clipping keeps indexed atlases and exact glyphs.
+            dc.drawBitmap(left, destinationY - lines[i][7], cache[resource]);
         }
         dc.clearClip();
     }

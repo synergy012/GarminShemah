@@ -40,10 +40,13 @@ function testFontSizePreservesWordAnchor(logger) {
 
 (:test)
 function testRepeatedDocumentTraversal(logger) {
-    for (var size = 0; size < 3; size++) {
-        var document = DocumentData.load("prototype", size);
+    var ids = DocumentData.PROTOTYPE ? ["prototype"] : ["ashkenaz", "sefard", "edot_hamizrach"];
+    var passes = DocumentData.PROTOTYPE ? 100 : 3;
+    for (var id = 0; id < ids.size(); id++) {
+      for (var size = 0; size < 3; size++) {
+        var document = DocumentData.load(ids[id], size);
         var state = new ReaderState(document[:height], DocumentData.VIEWPORT);
-        for (var pass = 0; pass < 100; pass++) {
+        for (var pass = 0; pass < passes; pass++) {
             while (state.move(38)) {
                 Test.assert(state.firstVisible(document[:lines]) < document[:lines].size());
             }
@@ -51,6 +54,7 @@ function testRepeatedDocumentTraversal(logger) {
             while (state.move(-38)) {}
             Test.assertEqual(state.offset, 0);
         }
+      }
     }
     return true;
 }
