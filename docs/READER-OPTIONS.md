@@ -22,6 +22,8 @@ Actual simulator checks toggled instructions, advanced a screen using select and
 
 ![After one immediate screen step](simulator/reader-options/options-screen-step.png)
 
-![Shema setting](simulator/reader-options/shema-hidden.png)
+![Final Shema setting, shown by default](simulator/reader-options/shema-default.png)
+
+[Earlier check with Shema hidden](simulator/reader-options/shema-hidden.png). The final setting label was shortened to fit the display.
 
 Source review, abbreviated Edot text and other limits in [the original review report](REVIEW-BUILD.md) remain open. Font and source licenses accompany the download. No environment publishing or store submission is involved.

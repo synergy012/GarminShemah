@@ -34,5 +34,11 @@
   "fr970.tests.prg": {
     "sha256": "6efade08a291b0f0d2f471752db673f8f0a13e56896e8f6ccab44efe3008b61e",
     "bytes": 5438428
+  },
+  "final_simulator_restart": {
+    "loaded": true,
+    "restored_nusach": "ashkenaz",
+    "restored_size": 1,
+    "note": "A device reload stalled after native tests. Restarting only the project simulator container restored normal launch."
   }
 }
