@@ -1,0 +1,15 @@
+{
+  "source_commit": "4931d2a",
+  "sdk": "9.3.0",
+  "device": "fr970",
+  "build": "success",
+  "prg_sha256": "a750155a3e8c36ce2b36980156bef47130522297642dc804c095e6249cd4d5dd",
+  "prg_bytes": 5430860,
+  "checks": {
+    "right_START_leaves_identical_reader_pixels": true,
+    "left_DOWN_changes_reading_view": true,
+    "right_BACK_exits_from_scrolled_position": true,
+    "saved_offset_before_exit": 444
+  },
+  "note": "Actual simulator physical-button checks. Host/native suites were not repeated for this input-only change."
+}

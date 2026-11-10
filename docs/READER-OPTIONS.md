@@ -29,3 +29,9 @@ The earlier simulator checks toggled instructions, advanced a screen using selec
 [Earlier check with Shema hidden](simulator/reader-options/shema-hidden.png). The final setting label was shortened to fit the display.
 
 Source review, abbreviated Edot text and other limits in [the original review report](REVIEW-BUILD.md) remain open. Font and source licenses accompany the download. No environment publishing or store submission is involved.
+
+## Direct BACK exit
+
+The follow-up build removes both right-side scrolling actions. Top-right START leaves the reader unchanged and continues to select menu items. Bottom-right BACK saves the position and exits immediately, including from a scrolled position. Left-side UP/DOWN and touch scrolling remain available.
+
+The SDK build passed. Actual simulator checks compared identical reader pixels before/after START, verified left DOWN changed the text, then pressed BACK at offset 444 and observed the app exit. The saved-position log and images are in [button evidence](simulator/back-button/evidence.json). The earlier host/native results above remain the prior layout/state checkpoint; these input changes were verified through the simulator buttons.
