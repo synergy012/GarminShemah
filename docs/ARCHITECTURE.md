@@ -32,7 +32,7 @@ Section and paragraph gaps are positions inside one global document, not navigab
 pages. `ReaderState` clamps the pixel offset and binary-searches the first visible line.
 `ReaderView` evicts hidden resources before loading visible lines, clips to the reading
 rectangle, and draws only the visible window. The source text is never shaped on-watch.
-Button/swipe steps move immediately. Screen mode is the default and aligns steps to complete lines with a line of overlap; line mode advances by the current line height. Dragging updates position directly. No perpetual redraw timer or network service is used.
+Button/swipe steps move immediately. Screen mode is the default and repeats only the last visible line on forward steps (including a partially visible row), rather than rounding a viewport-minus-line-height step down again; backward steps align the first current line to the preceding screen's bottom; line mode advances by the current line height. Dragging updates position directly. No perpetual redraw timer or network service is used.
 
 FR970 physical-button hit regions, touchscreen drag, menu mapping and size selection
 have been exercised. Drag lifecycle uses the documented start/stop event types; the tap
@@ -54,3 +54,9 @@ lose the most recent unsaved movement. Persistence across app updates is support
 as far as Garmin retains application storage; uninstall may erase it.
 
 Text color is fixed warm white. System brightness is left to Garmin. ReaderLayout filters instruction-flagged lines and explicitly mapped Shema paragraphs 2/3 according to saved preferences, compacting their spacing. Source resources stay bundled. Edot's separate closing repetition belongs to the same Shema toggle. Conditional prayer and source-small prayer text remain visible. Saved positions include the visibility settings; older positions migrate by word anchor. Hiding the current passage continues at the next visible passage.
+
+## Progress and settings feedback
+
+A three-pixel left-edge arc sits outside the 320-pixel Hebrew rectangle. Its warm segment follows the current filtered document's offset divided by its maximum scroll offset, so font and visibility changes recalculate progress automatically. A short document is already fully visible. Arc sweep angles are truncated explicitly and zero sweeps are skipped because the SDK draws a full circle for equal angles.
+
+Settings retain their current view and focus after selection. Values update in place; size/nusach submenus mark the selected item. The main menu's subtitles update when a submenu changes a preference. BACK pops one settings level using the SDK's normal menu behavior, while BACK in the reader exits the app.

@@ -39,3 +39,9 @@ The SDK build passed. Actual simulator checks compared identical reader pixels b
 ## Reading banner removed
 
 The persistent REVIEW COPY label was removed from the reading screen at the user's request. The document viewport, text, controls and saved settings are unchanged. Source-review metadata, licensing notices and release gates remain in place.
+
+## Progress, overlap and settings navigation
+
+The latest build adds a slim progress arc on the left edge, outside the Hebrew text. Screen steps now repeat the final visible row, counting a partial row, instead of repeating a full row plus a partial row. The first/last screen still clamp to document bounds.
+
+Selections remain in their current settings menu and update immediately. Font and nusach options show Selected; BACK returns to the parent settings menu, then to reading. Return to beginning also stays in settings. Close reader remains the explicit exit action. See [current verification and screenshots](PROGRESS-SETTINGS.md).

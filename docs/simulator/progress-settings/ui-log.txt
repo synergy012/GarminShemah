@@ -1,0 +1,14 @@
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/home/garmin
+Reader restored ashkenaz offset=444 size=1
+Reader saved ashkenaz offset=444 size=1
+Reader saved ashkenaz offset=0 size=1
+Reader saved ashkenaz offset=550 size=1
+Reader saved ashkenaz offset=550 size=1
+Reader saved ashkenaz offset=550 size=1
+Reader saved ashkenaz offset=550 size=1
+Reader saved ashkenaz offset=620 size=2
+Reader saved ashkenaz offset=620 size=2
+Reader saved ashkenaz offset=620 size=2
+Reader saved sefard offset=0 size=2
+Reader saved sefard offset=11540 size=2
+Reader saved sefard offset=23420 size=2

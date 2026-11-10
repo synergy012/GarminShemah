@@ -28,6 +28,9 @@ Scrolling: By screen (default, immediate steps with a line of overlap) / By line
 Instructions: Hidden (default) / Shown.
 Shema paragraphs 2 + 3: Shown (default) / Hidden.
 All three nuschaos and font sizes remain available. Settings are saved.
+Selections stay in settings; press BACK to return. Font/nusach submenus remain
+open after selection; BACK returns to the main settings menu, then to reading.
+The left-side progress arc fills as you move through the selected document.
 Prayer text in small print and conditional prayer passages remain included when
 instructions are hidden. Source text is retained; visibility changes only reading.
 

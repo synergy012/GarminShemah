@@ -1,5 +1,43 @@
 using Toybox.Test;
 
+function overlappingRows(lines, before, after) {
+    var count = 0;
+    for (var i = 0; i < lines.size(); i++) {
+        var line = lines[i];
+        if (line[1] < before + DocumentData.VIEWPORT && line[1] + line[2] > before &&
+            line[1] < after + DocumentData.VIEWPORT && line[1] + line[2] > after) { count++; }
+    }
+    return count;
+}
+
+(:test)
+function testPartialRowDoesNotCauseTwoRowOverlap(logger) {
+    var lines = [];
+    for (var i = 0; i < 30; i++) { lines.add([0, 12 + i * 53, 53]); }
+    var next = ReaderLayout.pageTarget(lines, 12, 310, 1, 1300);
+    Test.assertEqual(next, 277);
+    Test.assertEqual(overlappingRows(lines, 12, next), 1);
+    var previous = ReaderLayout.pageTarget(lines, next, 310, -1, 1300);
+    Test.assertEqual(previous, 20);
+    Test.assertEqual(overlappingRows(lines, next, previous), 1);
+    return true;
+}
+
+(:test)
+function testProgressTracksDocumentBounds(logger) {
+    var state = new ReaderState(1000, 310);
+    Test.assertEqual(state.progress(), 0.0);
+    state.seek(345);
+    Test.assertEqual(state.progress(), 0.5);
+    state.seek(10000);
+    Test.assertEqual(state.progress(), 1.0);
+    state.seek(-100);
+    Test.assertEqual(state.progress(), 0.0);
+    var shortDocument = new ReaderState(200, 310);
+    Test.assertEqual(shortDocument.progress(), 1.0);
+    return true;
+}
+
 (:test)
 function testReaderVisibilityOptions(logger) {
     var ids = DocumentData.PROTOTYPE ? ["prototype"] : ["ashkenaz", "sefard", "edot_hamizrach"];
@@ -49,12 +87,19 @@ function testScreenStepsAreImmediateAndOverlap(logger) {
             view.advance(1);
             Test.assert(view.state.offset > old);
             Test.assert(view.state.offset - old <= DocumentData.VIEWPORT);
+            // Terminal clamping can repeat more rows to keep the final page full.
+            if (view.state.offset < view.state.maximum) {
+                Test.assertEqual(overlappingRows(view.document[:lines], old, view.state.offset), 1);
+            }
         }
         while (view.state.offset > 0) {
             var previous = view.state.offset;
             view.advance(-1);
             Test.assert(view.state.offset < previous);
             Test.assert(previous - view.state.offset <= DocumentData.VIEWPORT);
+            if (view.state.offset > 0) {
+                Test.assertEqual(overlappingRows(view.document[:lines], previous, view.state.offset), 1);
+            }
         }
         prefs.screenScroll = false;
         view.advance(1);

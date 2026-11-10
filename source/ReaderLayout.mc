@@ -20,25 +20,24 @@ module ReaderLayout {
         return {:lines=>kept, :height=>y + document[:height] - previousEnd};
     }
 
-    // A screen step retains one line of context and lands at a whole-line boundary.
+    // Repeat only the final visible line, including a partially visible line.
+    // Subtracting a line height and then rounding down repeats two visible rows.
     function pageTarget(lines, offset, viewport, direction, maximum) {
         if (lines.size() == 0) { return 0; }
-        var height = lines[0][2];
-        var step = viewport - height;
-        if (step <= 0) { step = viewport; }
-        var desired = offset + direction * step;
-        if (desired <= 0) { return 0; }
-        if (desired >= maximum) { return maximum; }
-        var target = desired;
+        var target = offset;
         for (var i = 0; i < lines.size(); i++) {
             if (direction > 0) {
-                if (lines[i][1] > desired) { break; }
-                if (lines[i][1] > offset) { target = lines[i][1]; }
-            } else if (lines[i][1] >= desired) {
-                if (lines[i][1] < offset) { target = lines[i][1]; }
+                if (lines[i][1] >= offset + viewport) { break; }
+                if (lines[i][1] + lines[i][2] > offset) { target = lines[i][1]; }
+            } else if (lines[i][1] + lines[i][2] > offset) {
+                // Put the first current line at the previous screen's bottom.
+                target = lines[i][1] + lines[i][2] - viewport;
                 break;
             }
         }
+        if (direction > 0 && target <= offset) { target = offset + viewport; }
+        if (target < 0) { target = 0; }
+        if (target > maximum) { target = maximum; }
         return target;
     }
 }

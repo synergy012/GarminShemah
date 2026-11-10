@@ -22,6 +22,10 @@ class ReaderState {
         if (offset > maximum) { offset = maximum; }
     }
 
+    function progress() {
+        return maximum == 0 ? 1.0 : offset.toFloat() / maximum;
+    }
+
     function firstVisible(lines) {
         var low = 0;
         var high = lines.size();

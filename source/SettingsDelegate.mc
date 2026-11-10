@@ -4,8 +4,28 @@ using Toybox.System;
 class SettingsDelegate extends Ui.Menu2InputDelegate {
     var reader;
     var category;
-    function initialize(view, kind) {
+    var menu;
+    var rootMenu;
+    function initialize(view, kind, settingsMenu, mainMenu) {
         Menu2InputDelegate.initialize(); reader = view; category = kind;
+        menu = settingsMenu; rootMenu = mainMenu;
+    }
+
+    function refreshLabels() {
+        var sizes = ["Small", "Medium", "Large"];
+        var n = reader.preferences.nusach;
+        rootMenu.getItem(1).setSubLabel(sizes[reader.preferences.size]);
+        rootMenu.getItem(2).setSubLabel(n.equals("ashkenaz") ? "Ashkenaz" : n.equals("sefard") ? "Sefard (Chassidic)" : "Edot HaMizrach");
+        rootMenu.getItem(3).setSubLabel(reader.preferences.screenScroll ? "By screen" : "By line");
+        rootMenu.getItem(4).setSubLabel(reader.preferences.showInstructions ? "Shown" : "Hidden");
+        rootMenu.getItem(5).setSubLabel(reader.preferences.fullShema ? "Shown" : "Hidden");
+        if (!category.equals("main")) {
+            for (var i = 0; i < 3; i++) {
+                var entry = menu.getItem(i);
+                var selected = category.equals("sizes") ? entry.getId() == reader.preferences.size : entry.getId().equals(n);
+                entry.setSubLabel(selected ? "Selected" : null);
+            }
+        }
     }
 
     function onSelect(item) {
@@ -18,14 +38,12 @@ class SettingsDelegate extends Ui.Menu2InputDelegate {
             reader.preferences.save();
             reader.reload(anchor);
             reader.savePosition();
-            Ui.popView(Ui.SLIDE_IMMEDIATE);
         } else if (category.equals("sizes")) {
             var anchor = reader.currentAnchor();
             reader.preferences.size = id;
             reader.preferences.save();
             reader.reload(anchor);
             reader.savePosition();
-            Ui.popView(Ui.SLIDE_IMMEDIATE);
         } else if (category.equals("nusach")) {
             if (!DocumentData.available(id)) { return; }
             reader.savePosition();
@@ -33,7 +51,6 @@ class SettingsDelegate extends Ui.Menu2InputDelegate {
             reader.preferences.save();
             reader.reload(null);
             reader.savePosition();
-            Ui.popView(Ui.SLIDE_IMMEDIATE);
         } else if (id.equals("sources")) {
             var sources = new SourcesView();
             Ui.pushView(sources, new SourcesDelegate(sources), Ui.SLIDE_IMMEDIATE);
@@ -42,20 +59,24 @@ class SettingsDelegate extends Ui.Menu2InputDelegate {
             System.exit();
         } else if (id.equals("begin")) {
             reader.beginning();
-            Ui.popView(Ui.SLIDE_IMMEDIATE);
         } else {
-            var menu = new Ui.Menu2({:title=>id.equals("sizes") ? "Text size" : "Nusach"});
+            var child = new Ui.Menu2({:title=>id.equals("sizes") ? "Text size" : "Nusach"});
             if (id.equals("sizes")) {
-                menu.addItem(new Ui.MenuItem("Small", null, 0, null));
-                menu.addItem(new Ui.MenuItem("Medium", null, 1, null));
-                menu.addItem(new Ui.MenuItem("Large", null, 2, null));
+                child.addItem(new Ui.MenuItem("Small", null, 0, null));
+                child.addItem(new Ui.MenuItem("Medium", null, 1, null));
+                child.addItem(new Ui.MenuItem("Large", null, 2, null));
+                child.setFocus(reader.preferences.size);
             } else {
-                addNusach(menu, "Ashkenaz", "ashkenaz");
-                addNusach(menu, "Sefard (Chassidic)", "sefard");
-                addNusach(menu, "Edot HaMizrach", "edot_hamizrach");
+                addNusach(child, "Ashkenaz", "ashkenaz");
+                addNusach(child, "Sefard (Chassidic)", "sefard");
+                addNusach(child, "Edot HaMizrach", "edot_hamizrach");
+                child.setFocus(reader.preferences.nusach.equals("ashkenaz") ? 0 : reader.preferences.nusach.equals("sefard") ? 1 : 2);
             }
-            Ui.pushView(menu, new SettingsDelegate(reader, id), Ui.SLIDE_IMMEDIATE);
+            var delegate = new SettingsDelegate(reader, id, child, rootMenu);
+            delegate.refreshLabels();
+            Ui.pushView(child, delegate, Ui.SLIDE_IMMEDIATE);
         }
+        refreshLabels();
         Ui.requestUpdate();
     }
 

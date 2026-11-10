@@ -53,7 +53,7 @@ class ReaderDelegate extends Ui.BehaviorDelegate {
         menu.addItem(new Ui.MenuItem("Shema 2 + 3", reader.preferences.fullShema ? "Shown" : "Hidden", "shema", null));
         menu.addItem(new Ui.MenuItem("Close reader", null, "exit", null));
         menu.addItem(new Ui.MenuItem("Text sources", "Editions, licenses and review notes", "sources", null));
-        Ui.pushView(menu, new SettingsDelegate(reader, "main"), Ui.SLIDE_IMMEDIATE);
+        Ui.pushView(menu, new SettingsDelegate(reader, "main", menu, menu), Ui.SLIDE_IMMEDIATE);
         return true;
     }
 }

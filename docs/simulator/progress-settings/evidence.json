@@ -1,0 +1,43 @@
+{
+  "sdk": "9.3.0",
+  "device": "fr970",
+  "builds": {
+    "fr970.review.prg": {
+      "sha256": "1e49b2053af6bf2f86052552fadf2f98055c539900a91deac41153fade412459",
+      "bytes": 5432428
+    },
+    "fr970.tests.prg": {
+      "sha256": "807dd92e10c1ae73a2df1d0ccdfa8797edae0caf5298073addd01dc278663701",
+      "bytes": 5441340
+    }
+  },
+  "physical_button_checks": {
+    "toggle_remains_in_main_settings": true,
+    "size_selection_remains_in_submenu": true,
+    "size_parent_subtitle_updated": true,
+    "nusach_selection_remains_in_submenu": true,
+    "nusach_parent_subtitle_updated": true,
+    "back_returns_one_level": true,
+    "single_shared_visible_line_on_captured_screen_turns": true,
+    "arc_progress_start_middle_end_checked": true
+  },
+  "rendered_traversal": {
+    "nusach": "sefard",
+    "size": 2,
+    "instructions": false,
+    "middle_offset": 11540,
+    "end_offset": 23420,
+    "expected_maximum": 23420
+  },
+  "limits": [
+    "First/last screen clamp to document bounds and can overlap more rows",
+    "Not prolonged rendered stress testing or physical-watch acceptance"
+  ],
+  "native_tests": {
+    "passed": 9,
+    "failed": 0,
+    "errors": 0,
+    "process_exit": 1,
+    "sdk_modified": false
+  }
+}

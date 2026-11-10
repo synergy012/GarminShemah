@@ -145,5 +145,17 @@ class ReaderView extends Ui.View {
             dc.drawBitmap(left, destinationY - lines[i][7], cache[resource]);
         }
         dc.clearClip();
+        // Left-side arc sits outside the Hebrew reading rectangle.
+        var radius = width / 2 - 11;
+        dc.setPenWidth(3);
+        dc.setColor(0x303030, Graphics.COLOR_BLACK);
+        dc.drawArc(width / 2, dc.getHeight() / 2, radius, Graphics.ARC_COUNTER_CLOCKWISE, 140, 220);
+        var sweep = (80 * state.progress()).toNumber();
+        // Equal/truncated arc angles draw a full circle in this SDK.
+        if (sweep > 0) {
+            dc.setColor(0xf2e6cd, Graphics.COLOR_BLACK);
+            dc.drawArc(width / 2, dc.getHeight() / 2, radius, Graphics.ARC_COUNTER_CLOCKWISE, 140, 140 + sweep);
+        }
+        dc.setPenWidth(1);
     }
 }
