@@ -9,10 +9,12 @@ class ReaderDelegate extends Ui.BehaviorDelegate {
     function initialize(view) { BehaviorDelegate.initialize(); reader = view; }
     function onNextPage() { reader.advance(1); return true; }
     function onPreviousPage() { reader.advance(-1); return true; }
-    function onSelect() { reader.advance(1); return true; }
+    // START selects items in menus; it has no scrolling action in the reader.
+    function onSelect() { return true; }
     function onBack() {
-        if (reader.state.offset > 0) { reader.advance(-1); return true; }
-        return false;
+        reader.savePosition();
+        System.exit();
+        return true;
     }
 
     function onSwipe(event) {

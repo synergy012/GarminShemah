@@ -21,6 +21,8 @@ using Garmin's supported USB/file-transfer method. Safely disconnect afterward.
 To update an existing installation, close the app first and use the same transfer
 process. The installed app uses the same application ID and development key.
 
+Use left-side UP/DOWN to scroll. Bottom-right BACK saves your place and exits
+immediately. Top-right START does not scroll; it selects items inside menus.
 Hold the middle-left UP/MENU button while reading to open settings.
 Scrolling: By screen (default, immediate steps with a line of overlap) / By line.
 Instructions: Hidden (default) / Shown.
