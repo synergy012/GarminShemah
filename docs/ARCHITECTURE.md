@@ -32,13 +32,11 @@ Section and paragraph gaps are positions inside one global document, not navigab
 pages. `ReaderState` clamps the pixel offset and binary-searches the first visible line.
 `ReaderView` evicts hidden resources before loading visible lines, clips to the reading
 rectangle, and draws only the visible window. The source text is never shaped on-watch.
-Button/swipe steps animate in eight-pixel increments at 50 ms intervals (about 20 Hz); dragging updates
-position directly. No perpetual redraw timer or network service is used.
+Button/swipe steps move immediately. Screen mode is the default and aligns steps to complete lines with a line of overlap; line mode advances by the current line height. Dragging updates position directly. No perpetual redraw timer or network service is used.
 
 FR970 physical-button hit regions, touchscreen drag, menu mapping and size selection
 have been exercised. Drag lifecycle uses the documented start/stop event types; the tap
-callback is `onTap`. Rapid input edge cases remain under test. The 33 ms
-timer used initially was clamped by Garmin and has been corrected to 50 ms.
+callback is `onTap`. Rapid input edge cases remain under test. The older animation timer has been removed from reader movement.
 
 ## Preferences and reading position
 
@@ -55,5 +53,4 @@ seconds after scrolling and saved on hide/exit. OS termination without callbacks
 lose the most recent unsaved movement. Persistence across app updates is supported only
 as far as Garmin retains application storage; uninstall may erase it.
 
-Text color is fixed warm white. System brightness is left to Garmin. Optional sections
-are represented in the schema and remain included; no minhag filtering is implemented.
+Text color is fixed warm white. System brightness is left to Garmin. ReaderLayout filters instruction-flagged lines and explicitly mapped Shema paragraphs 2/3 according to saved preferences, compacting their spacing. Source resources stay bundled. Edot's separate closing repetition belongs to the same Shema toggle. Conditional prayer and source-small prayer text remain visible. Saved positions include the visibility settings; older positions migrate by word anchor. Hiding the current passage continues at the next visible passage.

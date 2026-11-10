@@ -1,6 +1,98 @@
 using Toybox.Test;
 
 (:test)
+function testReaderVisibilityOptions(logger) {
+    var ids = DocumentData.PROTOTYPE ? ["prototype"] : ["ashkenaz", "sefard", "edot_hamizrach"];
+    for (var id = 0; id < ids.size(); id++) {
+      for (var size = 0; size < 3; size++) {
+        for (var option = 0; option < 4; option++) {
+            var instructions = (option & 1) != 0;
+            var shema = (option & 2) != 0;
+            var full = DocumentData.load(ids[id], size);
+            var expected = [];
+            for (var i = 0; i < full[:lines].size(); i++) {
+                var line = full[:lines][i];
+                if ((!instructions && (line[8] & 1) != 0) || (!shema && (line[8] & 2) != 0)) { continue; }
+                expected.add(line[3] + ":" + line[4].toString() + ":" + line[5].toString());
+            }
+            var filtered = ReaderLayout.filter(full, instructions, shema);
+            Test.assertEqual(filtered[:lines].size(), expected.size());
+            var end = 0;
+            for (var j = 0; j < expected.size(); j++) {
+                var kept = filtered[:lines][j];
+                Test.assertEqual(kept[3] + ":" + kept[4].toString() + ":" + kept[5].toString(), expected[j]);
+                Test.assert(kept[1] >= end && kept[1] - end < 100);
+                end = kept[1] + kept[2];
+            }
+            Test.assert(filtered[:height] >= end && filtered[:height] - end < 100);
+        }
+      }
+    }
+    return true;
+}
+
+(:test)
+function testScreenStepsAreImmediateAndOverlap(logger) {
+    var prefs = new Preferences();
+    prefs.showInstructions = false;
+    prefs.fullShema = true;
+    prefs.screenScroll = true;
+    var ids = DocumentData.PROTOTYPE ? ["prototype"] : ["ashkenaz", "sefard", "edot_hamizrach"];
+    for (var id = 0; id < ids.size(); id++) {
+      prefs.nusach = ids[id];
+      for (var size = 0; size < 3; size++) {
+        prefs.size = size;
+        var view = new ReaderView(prefs);
+        view.beginning();
+        while (view.state.offset < view.state.maximum) {
+            var old = view.state.offset;
+            view.advance(1);
+            Test.assert(view.state.offset > old);
+            Test.assert(view.state.offset - old <= DocumentData.VIEWPORT);
+        }
+        while (view.state.offset > 0) {
+            var previous = view.state.offset;
+            view.advance(-1);
+            Test.assert(view.state.offset < previous);
+            Test.assert(previous - view.state.offset <= DocumentData.VIEWPORT);
+        }
+        prefs.screenScroll = false;
+        view.advance(1);
+        Test.assertEqual(view.state.offset, view.document[:lines][0][2]);
+        prefs.screenScroll = true;
+        view.onHide();
+      }
+    }
+    return true;
+}
+
+(:test)
+function testOptionsMigrateAndHiddenAnchorContinues(logger) {
+    var prefs = new Preferences();
+    prefs.showInstructions = false;
+    prefs.fullShema = true;
+    prefs.size = 0;
+    Test.assert(!prefs.sameLayout({"size"=>0}));
+    Test.assert(prefs.sameLayout({"size"=>0, "showInstructions"=>false, "fullShema"=>true}));
+    if (DocumentData.PROTOTYPE) { return true; }
+    prefs.nusach = "ashkenaz";
+    prefs.showInstructions = true;
+    var view = new ReaderView(prefs);
+    for (var i = 0; i < view.document[:lines].size(); i++) {
+        if (view.document[:lines][i][3].equals("source-008")) {
+            view.state.seek(view.document[:lines][i][1]); break;
+        }
+    }
+    var anchor = view.currentAnchor();
+    prefs.fullShema = false;
+    view.reload(anchor);
+    var next = view.document[:lines][view.state.firstVisible(view.document[:lines])];
+    Test.assertEqual(next[3], "source-010");
+    view.onHide();
+    return true;
+}
+
+(:test)
 function testScrollBounds(logger) {
     var state = new ReaderState(1200, 310);
     state.move(10000);

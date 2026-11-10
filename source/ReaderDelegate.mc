@@ -7,19 +7,19 @@ class ReaderDelegate extends Ui.BehaviorDelegate {
     var lastDragAt = 0;
 
     function initialize(view) { BehaviorDelegate.initialize(); reader = view; }
-    function onNextPage() { reader.scrollBy(38); return true; }
-    function onPreviousPage() { reader.scrollBy(-38); return true; }
-    function onSelect() { reader.scrollBy(76); return true; }
+    function onNextPage() { reader.advance(1); return true; }
+    function onPreviousPage() { reader.advance(-1); return true; }
+    function onSelect() { reader.advance(1); return true; }
     function onBack() {
-        if (reader.state.offset > 0) { reader.scrollBy(-76); return true; }
+        if (reader.state.offset > 0) { reader.advance(-1); return true; }
         return false;
     }
 
     function onSwipe(event) {
         // Some device input paths deliver a swipe after drag. Do not scroll twice.
         if (lastDragAt != 0 && System.getTimer() - lastDragAt < 400) { lastY = null; return true; }
-        if (event.getDirection() == Ui.SWIPE_UP) { reader.scrollBy(76); return true; }
-        if (event.getDirection() == Ui.SWIPE_DOWN) { reader.scrollBy(-76); return true; }
+        if (event.getDirection() == Ui.SWIPE_UP) { reader.advance(1); return true; }
+        if (event.getDirection() == Ui.SWIPE_DOWN) { reader.advance(-1); return true; }
         return false;
     }
 
@@ -46,6 +46,9 @@ class ReaderDelegate extends Ui.BehaviorDelegate {
         var nusachLabel = nusach.equals("ashkenaz") ? "Ashkenaz" : nusach.equals("sefard") ? "Sefard (Chassidic)" : "Edot HaMizrach";
         menu.addItem(new Ui.MenuItem("Text size", sizes[reader.preferences.size], "sizes", null));
         menu.addItem(new Ui.MenuItem("Nusach", nusachLabel, "nusach", null));
+        menu.addItem(new Ui.MenuItem("Scrolling", reader.preferences.screenScroll ? "By screen" : "By line", "scrolling", null));
+        menu.addItem(new Ui.MenuItem("Instructions", reader.preferences.showInstructions ? "Shown" : "Hidden", "instructions", null));
+        menu.addItem(new Ui.MenuItem("Shema 2 + 3", reader.preferences.fullShema ? "Shown" : "Hidden", "shema", null));
         menu.addItem(new Ui.MenuItem("Close reader", null, "exit", null));
         menu.addItem(new Ui.MenuItem("Text sources", "Editions, licenses and review notes", "sources", null));
         Ui.pushView(menu, new SettingsDelegate(reader, "main"), Ui.SLIDE_IMMEDIATE);

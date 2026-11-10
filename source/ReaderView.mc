@@ -11,19 +11,16 @@ class ReaderView extends Ui.View {
     var documentId;
     var cache;
     var saveTimer;
-    var animationTimer;
-    var targetOffset = 0;
 
     function initialize(prefs) {
         View.initialize();
         preferences = prefs;
         cache = {};
         saveTimer = new Timer.Timer();
-        animationTimer = new Timer.Timer();
         reload(null);
         var stored = preferences.readPosition(documentId);
         if (stored != null) {
-            if (stored.hasKey("size") && stored["size"] == preferences.size) {
+            if (preferences.sameLayout(stored)) {
                 state.seek(stored["offset"]);
             } else if (stored.hasKey("anchor")) { restoreAnchor(stored["anchor"]); }
         }
@@ -31,11 +28,10 @@ class ReaderView extends Ui.View {
     }
 
     function reload(anchor) {
-        animationTimer.stop();
         cache = {};
         // The prototype is explicitly labelled and never impersonates an unavailable nusach.
         documentId = DocumentData.PROTOTYPE ? "prototype" : preferences.nusach;
-        document = DocumentData.load(documentId, preferences.size);
+        document = ReaderLayout.filter(DocumentData.load(documentId, preferences.size), preferences.showInstructions, preferences.fullShema);
         var height = document == null ? 0 : document[:height];
         state = new ReaderState(height, DocumentData.VIEWPORT);
         if (anchor != null) { restoreAnchor(anchor); }
@@ -61,14 +57,18 @@ class ReaderView extends Ui.View {
                 return;
             }
         }
-        // Content edits may invalidate the word anchor. Resume at that section's heading.
+        // If a setting hides the current passage, continue with the following
+        // visible paragraph/section instead of jumping to the document beginning.
         for (var j = 0; j < lines.size(); j++) {
-            if (lines[j][3].equals(anchor[0])) { state.seek(lines[j][1]); return; }
+            var order = lines[j][3].compareTo(anchor[0]);
+            if (order > 0 || (order == 0 && lines[j][4] >= anchor[1])) {
+                state.seek(lines[j][1]); return;
+            }
         }
+        state.seek(state.maximum);
     }
 
     function move(delta) {
-        animationTimer.stop();
         if (state.move(delta)) {
             saveTimer.stop();
             saveTimer.start(method(:savePosition), 1500, false);
@@ -76,29 +76,19 @@ class ReaderView extends Ui.View {
         }
     }
 
-    function scrollBy(delta) {
-        animationTimer.stop();
-        targetOffset = state.offset + delta;
-        if (targetOffset < 0) { targetOffset = 0; }
-        if (targetOffset > state.maximum) { targetOffset = state.maximum; }
-        if (targetOffset != state.offset) { animationTimer.start(method(:animate), 50, true); }
-    }
-
-    function animate() {
-        var delta = targetOffset - state.offset;
-        if (delta > 8) { delta = 8; }
-        if (delta < -8) { delta = -8; }
-        state.move(delta);
-        Ui.requestUpdate();
-        if (state.offset == targetOffset) {
-            animationTimer.stop();
-            saveTimer.stop();
-            saveTimer.start(method(:savePosition), 1500, false);
+    function advance(direction) {
+        if (document == null) { return; }
+        if (preferences.screenScroll) {
+            var target = ReaderLayout.pageTarget(document[:lines], state.offset, DocumentData.VIEWPORT, direction, state.maximum);
+            move(target - state.offset);
+        } else {
+            var first = state.firstVisible(document[:lines]);
+            var height = first < document[:lines].size() ? document[:lines][first][2] : 38;
+            move(direction * height);
         }
     }
 
     function beginning() {
-        animationTimer.stop();
         state.seek(0);
         cache = {};
         savePosition();
@@ -111,7 +101,6 @@ class ReaderView extends Ui.View {
     }
 
     function onHide() {
-        animationTimer.stop();
         saveTimer.stop();
         savePosition();
         cache = {};

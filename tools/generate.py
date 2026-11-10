@@ -2,7 +2,6 @@
 import argparse
 import hashlib
 import json
-import json
 import shutil
 import xml.etree.ElementTree as ET
 from PIL import Image
@@ -10,6 +9,21 @@ from pathlib import Path
 
 from tools.content import NUSCHAOT, ROOT, read_json, validate
 from tools.render import FONT, layout, preview
+
+# Exact source blocks, including Edot's separate closing repetition.
+EXTRA_SHEMA = {
+    'ashkenaz': {'source-008', 'source-009'},
+    'sefard': {'source-007', 'source-008'},
+    'edot_hamizrach': {'source-012', 'source-013', 'source-014'},
+}
+
+
+def reader_flags(document, line):
+    section = next(s for s in document['sections'] if s['id'] == line.section)
+    paragraph = line.paragraph if line.paragraph >= 0 else -2 - line.paragraph
+    kinds = section.get('paragraph_kinds', ['prayer'] * len(section['paragraphs']))
+    instruction = line.paragraph != -1 and kinds[paragraph] == 'instruction'
+    return int(instruction) + (2 if line.section in EXTRA_SHEMA.get(document['id'], set()) else 0)
 
 
 def generate(output, release=False, review=False, reuse=False):
@@ -77,6 +91,7 @@ def generate(output, release=False, review=False, reuse=False):
                         atlas_for_line[start + local] = [atlas, source_y]
                         source_y += line.height
                 for index, line in enumerate(lines):
+                    flags = reader_flags(doc, line)
                     atlas, source_y = atlas_for_line[index]
                     digest = hashlib.sha256(str(atlas.size).encode() + atlas.tobytes()).hexdigest()[:24]
                     resource_id = 'tile_' + digest
@@ -87,9 +102,9 @@ def generate(output, release=False, review=False, reuse=False):
                         tiles[resource_id] = hashlib.sha256(path.read_bytes()).hexdigest()
                     records.append({"resource": resource_id, "y": line.y, "height": line.height, "section": line.section,
                                     "paragraph": line.paragraph, "word_start": line.word_start, "word_end": line.word_end,
-                                    "text": line.text, "source_y": source_y, "atlas_height": atlas.height, "sha256": tiles[resource_id]})
+                                    "text": line.text, "source_y": source_y, "atlas_height": atlas.height, "sha256": tiles[resource_id], "reader_flags": flags})
                     # Entries support a stable paragraph/word anchor across font-size changes.
-                    entries.append(f'[Rez.Drawables.{resource_id},{line.y},{line.height},"{line.section}",{line.paragraph},{line.word_start},{line.word_end},{source_y}]')
+                    entries.append(f'[Rez.Drawables.{resource_id},{line.y},{line.height},"{line.section}",{line.paragraph},{line.word_start},{line.word_end},{source_y},{flags}]')
                 code += [f'if (id.equals("{doc["id"]}") && size == {size}) {{', 'var lines = [];']
                 for chunk in range(0, len(entries), 48):
                     name = f'append_{prefix}_{chunk // 48}'

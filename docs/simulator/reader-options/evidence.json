@@ -1,0 +1,38 @@
+{
+  "device": "fr970",
+  "sdk": "9.3.0",
+  "mode": "review",
+  "host_tests": 29,
+  "native_tests": {
+    "passed": 7,
+    "failed": 0,
+    "errors": 0,
+    "process_exit": 1,
+    "sdk_modified": false
+  },
+  "defaults": {
+    "instructions": "hidden",
+    "shema_paragraphs_2_and_3": "shown",
+    "scrolling": "screen"
+  },
+  "observations": [
+    "Instruction visibility toggled using simulated physical buttons; source-small prayer remained visible",
+    "Select advanced immediately from offset 20 to 238 at large size",
+    "Shema toggle saved and displayed Hidden",
+    "Native tests exercised all visibility combinations at all nine nusach/size variants",
+    "Native tests exercised screen steps immediately to both document bounds, line mode, and legacy position migration"
+  ],
+  "limits": [
+    "Native tests do not constitute prolonged rendered stress testing",
+    "Physical-watch acceptance of this update is pending",
+    "Editorial approval remains pending"
+  ],
+  "fr970.review.prg": {
+    "sha256": "5584a7d973633e8697c9b490fe36ea4c4fe4a5bde77d80727261deea65580f4c",
+    "bytes": 5430924
+  },
+  "fr970.tests.prg": {
+    "sha256": "6efade08a291b0f0d2f471752db673f8f0a13e56896e8f6ccab44efe3008b61e",
+    "bytes": 5438428
+  }
+}

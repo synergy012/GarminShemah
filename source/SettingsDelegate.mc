@@ -10,7 +10,16 @@ class SettingsDelegate extends Ui.Menu2InputDelegate {
 
     function onSelect(item) {
         var id = item.getId();
-        if (category.equals("sizes")) {
+        if (id.equals("instructions") || id.equals("shema") || id.equals("scrolling")) {
+            var anchor = reader.currentAnchor();
+            if (id.equals("instructions")) { reader.preferences.showInstructions = !reader.preferences.showInstructions; }
+            if (id.equals("shema")) { reader.preferences.fullShema = !reader.preferences.fullShema; }
+            if (id.equals("scrolling")) { reader.preferences.screenScroll = !reader.preferences.screenScroll; }
+            reader.preferences.save();
+            reader.reload(anchor);
+            reader.savePosition();
+            Ui.popView(Ui.SLIDE_IMMEDIATE);
+        } else if (category.equals("sizes")) {
             var anchor = reader.currentAnchor();
             reader.preferences.size = id;
             reader.preferences.save();

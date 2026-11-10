@@ -6,6 +6,8 @@ The **review build** contains separate Ashkenaz, Sefard and Edot HaMizrach sourc
 
 Read the Hebrew: [Ashkenaz](content/review/ashkenaz.md), [Sefard](content/review/sefard.md), [Edot HaMizrach](content/review/edot_hamizrach.md). See the [actual simulator screenshots](docs/REVIEW-BUILD.md#actual-simulator-images).
 
+Reader settings now default to **screen scrolling** with immediate movement and a line of overlap, and **instructions hidden**. You can switch to line scrolling, show instructions, or hide Shema paragraphs 2 and 3 (shown by default). Hold UP/MENU to open settings. [Download the review ZIP](downloads/README.md).
+
 The full source sequences preserve 37 Ashkenaz, 27 Sefard and 30 Edot source blocks. Instructions and conditional passages are distinguished visually, with source text retained. See [review-build evidence and limitations](docs/REVIEW-BUILD.md), [source acquisition](docs/TEXT-ACQUISITION.md) and [text verification](docs/TEXT-VERIFICATION.md).
 
 From this directory:

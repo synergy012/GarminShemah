@@ -1,0 +1,12 @@
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/home/garmin
+Reader restored edot_hamizrach offset=718 size=2
+Reader saved edot_hamizrach offset=718 size=2
+Reader saved edot_hamizrach offset=1416 size=2
+Reader saved edot_hamizrach offset=1416 size=2
+Reader saved edot_hamizrach offset=0 size=2
+Reader saved edot_hamizrach offset=0 size=2
+Reader saved edot_hamizrach offset=20 size=2
+Reader saved edot_hamizrach offset=238 size=2
+Reader saved edot_hamizrach offset=238 size=2
+Reader saved edot_hamizrach offset=238 size=2
+Reader saved edot_hamizrach offset=238 size=2

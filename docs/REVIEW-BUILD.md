@@ -1,5 +1,7 @@
 # FR970 source-review build — 2026-11-09
 
+**Updated 2026-11-10:** [new reading controls, current tests and screenshots](READER-OPTIONS.md). The report below records the original integration checkpoint.
+
 All three acquired source sequences are included in one offline FR970 build, at three font sizes. This is marked **REVIEW COPY**. Release approval is still blocked; Venu 2 is excluded at the user's request.
 
 ## Read the text

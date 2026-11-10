@@ -5,7 +5,7 @@ from pathlib import Path
 from PIL import Image
 
 from tools.content import ROOT, NUSCHAOT, read_json
-from tools.generate import generate
+from tools.generate import generate, EXTRA_SHEMA, reader_flags
 from tools.render import layout
 
 
@@ -29,6 +29,9 @@ class ReviewResourceTests(unittest.TestCase):
                             self.assertEqual(' '.join(actual), paragraph)
                     # Verify first/last/central glyph rows against the real PNG atlas.
                     lines, _ = layout(document, profile, size)
+                    for line, record in zip(lines, records):
+                        self.assertEqual(record['reader_flags'], reader_flags(document, line))
+                        self.assertEqual(bool(record['reader_flags'] & 2), line.section in EXTRA_SHEMA[identifier])
                     for index in sorted({0, 1, len(lines) // 2, len(lines) - 1}):
                         record = records[index]
                         with Image.open(images / f"{record['resource']}.png") as atlas:
@@ -40,6 +43,20 @@ class ReviewResourceTests(unittest.TestCase):
             self.assertEqual(generate(output, review=True, reuse=True), manifest)
             with Image.open(damaged) as repaired:
                 repaired.load()
+
+    def test_optional_shema_blocks_match_passages_and_edot_closing(self):
+        import unicodedata
+        for identifier, sections in EXTRA_SHEMA.items():
+            document = read_json(ROOT / 'content/nuschaot' / f'{identifier}.json')
+            selected = [s for s in document['sections'] if s['id'] in sections]
+            plain = [''.join(c for c in unicodedata.normalize('NFD', s['paragraphs'][0]) if not unicodedata.combining(c)) for s in selected]
+            self.assertTrue(plain[0].startswith('והיה אם'))
+            self.assertTrue(plain[1].startswith('ויאמר'))
+            if identifier == 'edot_hamizrach':
+                self.assertEqual(len(selected), 3)
+                self.assertEqual(selected[2]['paragraphs'][1], 'יְהֹוָה אֱלֹהֵיכֶם אֱמֶת.')
+            else:
+                self.assertEqual(len(selected), 2)
 
 
 if __name__ == '__main__':
