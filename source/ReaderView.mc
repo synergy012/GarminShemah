@@ -115,8 +115,6 @@ class ReaderView extends Ui.View {
         var left = ((width - DocumentData.WIDTH) / 2).toNumber();
         if (DocumentData.PROTOTYPE) {
             dc.drawText(width / 2, 32, Graphics.FONT_XTINY, "NOT PRAYER", Graphics.TEXT_JUSTIFY_CENTER);
-        } else if (DocumentData.REVIEW) {
-            dc.drawText(width / 2, 32, Graphics.FONT_XTINY, "REVIEW COPY", Graphics.TEXT_JUSTIFY_CENTER);
         }
         if (document == null) {
             dc.drawText(width / 2, dc.getHeight() / 2, Graphics.FONT_XTINY, "Text unavailable", Graphics.TEXT_JUSTIFY_CENTER);

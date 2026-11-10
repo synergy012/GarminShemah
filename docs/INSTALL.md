@@ -32,7 +32,7 @@ Controls: left-side UP/DOWN scroll. The bottom-right BACK button saves the readi
 
 Add `--tests` to the review build command, then invoke `monkeydo build/fr970.tests.prg fr970 -t` in the container. Preserve both the VM test summary and the SDK client's process status; its known exit-1 anomaly must not be hidden.
 
-`--review` permits unapproved content with a visible review notice. Omitting it builds the historical non-prayer typography fixture. `--release` is mutually exclusive and remains blocked by editorial validation:
+`--review` builds the source-review documents without a banner on the reading screen; source-review notes remain in Text sources and the project documentation. Omitting it builds the historical non-prayer typography fixture. `--release` is mutually exclusive and remains blocked by editorial validation:
 
 ```sh
 .venv/bin/python -m tools.content --release

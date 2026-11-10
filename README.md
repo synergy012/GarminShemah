@@ -2,7 +2,7 @@
 
 An offline Connect IQ bedtime reader for **Forerunner 970**. Venu 2 was removed from the active scope at the user's request.
 
-The **review build** contains separate Ashkenaz, Sefard and Edot HaMizrach source sequences, with three sizes, continuous scrolling, saved position and offline source notices. It is marked **REVIEW COPY**: editorial and liturgical completeness review remains open. Release generation stays blocked until that review is recorded.
+The **review build** contains separate Ashkenaz, Sefard and Edot HaMizrach source sequences, with three sizes, continuous scrolling, saved position and offline source notices. The reading screen has no review banner. Editorial and liturgical completeness review remains open. Release generation stays blocked until that review is recorded.
 
 Read the Hebrew: [Ashkenaz](content/review/ashkenaz.md), [Sefard](content/review/sefard.md), [Edot HaMizrach](content/review/edot_hamizrach.md). See the [actual simulator screenshots](docs/REVIEW-BUILD.md#actual-simulator-images).
 

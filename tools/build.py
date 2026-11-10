@@ -16,7 +16,7 @@ def main():
     parser.add_argument('--key', type=Path, required=True, help='Local developer DER key; never commit it')
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument('--release', action='store_true', help='Requires all three verified texts')
-    mode.add_argument('--review', action='store_true', help='Build all three source-mapped prayer documents, visibly marked REVIEW COPY')
+    mode.add_argument('--review', action='store_true', help='Build all three source-mapped prayer documents pending editorial approval')
     parser.add_argument('--tests', action='store_true', help='Compile native CIQ unit tests')
     parser.add_argument('--sdk-user-home', type=Path,
                         default=Path(os.environ.get('CIQ_RUNTIME_STATE', '/workspace/.toolchains/garmin/runtime/state')),
