@@ -30,6 +30,9 @@ Shema paragraphs 2 + 3: Shown (default) / Hidden.
 All three nuschaos and font sizes remain available. Settings are saved.
 Selections stay in settings; press BACK to return. Font/nusach submenus remain
 open after selection; BACK returns to the main settings menu, then to reading.
+Return to beginning closes settings and opens the document at its start.
+Brightness offers System, 10%, 25%, 50%, or 100%; Garmin retains display timeout
+and protection. The selected level is applied on reader entry and selection.
 The left-side progress arc fills as you move through the selected document.
 Prayer text in small print and conditional prayer passages remain included when
 instructions are hidden. Source text is retained; visibility changes only reading.
@@ -40,7 +43,9 @@ from another edition. Physical-watch update acceptance remains to be checked.
 
 Display changes: markup parsed, whitespace collapsed, instructions separated and
 labelled; reader settings can hide instructions or Shema paragraphs 2 and 3.
-Hebrew wording, vowels and punctuation are retained in the bundled source assets.
+Divine Names are displayed as ה׳ (he followed by Hebrew geresh); attached
+prefixes and other wording/pointing are retained. Original source records remain
+unchanged in the repository. See DIVINE-NAMES.md for the substitution audit.
 See TEXT-NOTICES.md and the included font licenses. Offline source attribution is
 also available through the app's Text sources setting.
 
@@ -52,7 +57,7 @@ Repository: https://github.com/synergy012/GarminShemah
         archive.writestr('fr970.review.prg', data)
         archive.writestr('README.txt', readme)
         archive.writestr('SHA256SUMS', checksum + '  fr970.review.prg\n')
-        for name, dest in [('content/acquired/NOTICE.md', 'TEXT-NOTICES.md'), ('fonts/OFL.txt', 'fonts/OFL.txt'),
+        for name, dest in [('content/acquired/NOTICE.md', 'TEXT-NOTICES.md'), ('docs/DIVINE-NAMES.md', 'DIVINE-NAMES.md'), ('fonts/OFL.txt', 'fonts/OFL.txt'),
                            ('fonts/README.md', 'fonts/README.md'), ('fonts/DEBIAN-COPYRIGHT', 'fonts/DEBIAN-COPYRIGHT')]:
             archive.write(ROOT / name, dest)
     with zipfile.ZipFile(target) as archive:

@@ -58,3 +58,7 @@ necessary to establish order, optionality and liturgical equivalence.
 `python -m tools.prepare_content` maps all 94 acquired blocks to review paragraphs. `editorial-map.json` pins each source hash and explicitly classifies small-print spans. Unknown markup, changed source hashes or unmapped small print fail preparation. Source spelling, pointing, punctuation and ordering remain intact; HTML presentation tags are removed, entities decoded and whitespace collapsed. No Unicode normalization or cross-nusach filling occurs. Instruction and conditional spans receive separate visual labels outside the source paragraphs.
 
 `python -m tools.generate --review` includes these documents with a REVIEW COPY notice. It does not set reviewer fields or grant release approval. Keep unresolved source problems visible.
+
+## Divine-name display policy
+
+The user requested that every Divine Name appear as ה׳. Source JSON is unchanged; the render pipeline applies `divine-name-policy.json` before wrapping and shaping. The policy pins the complete section text digest and exact source spans, and records contextual exceptions for ordinary words and other gods. Changes to the source require an updated audited mapping. Use `python -m tools.divine_names` to export the displayed review Markdown and audit. Display transformations keep paragraph/word identities for position migration.

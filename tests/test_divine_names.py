@@ -1,0 +1,59 @@
+import copy
+import json
+import tempfile
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+from tools import divine_names as names
+
+
+class DivineNameTests(unittest.TestCase):
+    def display(self, text):
+        document = {'id': 'ashkenaz', 'sections': [{'id': 'source-001', 'heading_he': '', 'paragraphs': [text]}]}
+        with tempfile.TemporaryDirectory() as directory:
+            policy = Path(directory) / 'policy.json'
+            policy.write_text(json.dumps(names.make_policy([document]), ensure_ascii=False))
+            with patch.object(names, 'POLICY', policy):
+                return names.display_document(document)['sections'][0]['paragraphs'][0]
+
+    def test_names_and_prefixes_use_he_and_geresh_without_name_vowels(self):
+        self.assertEqual(self.display('יְהֹוָה אֱלֹהֵינוּ אֲדֹנָי אֵל שַׁדַּי'), 'ה׳ ה׳ ה׳ ה׳ ה׳')
+        self.assertEqual(self.display('לַיהֹוָה וֵאלֹהֵי בֵאֱלֹהִים'), 'לַה׳ וֵה׳ בֵה׳')
+        self.assertEqual(self.display('יְ֯הֹוָה אֱלֺהֵֽינוּ אֵֽל'), 'ה׳ ה׳ ה׳')
+
+    def test_ordinary_words_angels_and_other_gods_are_preserved(self):
+        ordinary = 'אֵלֶּה הָאֵלֶּה אֱלָהוּתוּ הָיָה יִשְׂרָאֵל מִיכָאֵל אֶל וְאַל'
+        self.assertEqual(self.display(ordinary), ordinary)
+        self.assertEqual(self.display('אֱלֹהִים אֲחֵרִים וְאֵל'), 'אֱלֹהִים אֲחֵרִים וְה׳')
+
+    def test_entire_corpus_has_no_unsubstituted_divine_name_and_keeps_word_anchors(self):
+        expected = {'ashkenaz': 77, 'sefard': 96, 'edot_hamizrach': 50}
+        policy = json.loads(names.POLICY.read_text())
+        for identifier in names.IDS:
+            document = json.loads((names.ROOT / 'content/nuschaot' / f'{identifier}.json').read_text())
+            original = copy.deepcopy(document)
+            displayed = names.display_document(document)
+            self.assertEqual(document, original)
+            replacements = sum(len(f['replacements']) for f in policy['documents'][identifier]['fields'])
+            self.assertEqual(replacements, expected[identifier])
+            marker_count = 0
+            other_gods = 0
+            for before, after in zip(document['sections'], displayed['sections']):
+                for raw, text in zip([before['heading_he'], *before['paragraphs']], [after['heading_he'], *after['paragraphs']]):
+                    self.assertEqual(len(raw.split(' ')), len(text.split(' ')))
+                    self.assertFalse(names.name_spans(text)[0], (identifier, after['id']))
+                    other_gods += sum(s['reason'] == 'other_gods_not_a_name_of_Hashem' for s in names.name_spans(text)[1])
+                    marker_count += text.count('ה׳')
+            self.assertEqual(marker_count, expected[identifier])
+            self.assertEqual(other_gods, 1)
+
+    def test_changed_source_requires_a_reviewed_span_policy(self):
+        document = json.loads((names.ROOT / 'content/nuschaot/ashkenaz.json').read_text())
+        document['sections'][0]['paragraphs'][0] += ' יְהֹוָה'
+        with self.assertRaisesRegex(ValueError, 'policy needs review'):
+            names.display_document(document)
+
+
+if __name__ == '__main__':
+    unittest.main()

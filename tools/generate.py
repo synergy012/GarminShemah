@@ -40,7 +40,7 @@ def generate(output, release=False, review=False, reuse=False):
             raise ValueError(f"{doc['id']}: {'; '.join(errors)}")
     output = Path(output)
     inputs = hashlib.sha256(json.dumps([profiles, documents, release, review], ensure_ascii=False, sort_keys=True).encode())
-    for path in (FONT, Path(__file__), ROOT / 'tools/render.py'):
+    for path in (FONT, Path(__file__), ROOT / 'tools/render.py', ROOT / 'tools/divine_names.py', ROOT / 'content/divine-name-policy.json'):
         inputs.update(path.read_bytes())
     input_hash = inputs.hexdigest()
     if reuse and (output / 'manifest.json').exists():
@@ -68,6 +68,7 @@ def generate(output, release=False, review=False, reuse=False):
         xml = ET.Element("resources")
         code = ["// GENERATED. Edit content JSON or tools, never this file.", "using Toybox.Lang;", "module DocumentData {",
                 f"const WIDTH = {profile['column_width']};", f"const VIEWPORT = {profile['viewport_height']};",
+                'const TEXT_VERSION = 2;',
                 f"const PROTOTYPE = {'false' if release or review else 'true'};", f"const REVIEW = {'true' if review else 'false'};", "function available(id) {",
                 "return " + " || ".join(f'id.equals("{d["id"]}")' for d in documents) + ";", "}",
                 "function load(id, size) {"]
@@ -136,7 +137,7 @@ def generate(output, release=False, review=False, reuse=False):
                 attribution += [source.get('attribution', source.get('version_title', source.get('title', ''))),
                                 'License: ' + source.get('license', 'unknown'), source.get('license_url', ''), source.get('url', '')]
         if review:
-            attribution += ['Display changes: source markup parsed, whitespace normalized, instructions separated and labelled. Hebrew wording, vowels and punctuation retained.',
+            attribution += ['Display changes: markup parsed, whitespace normalized, instructions separated and labelled. Divine Names are displayed as he followed by Hebrew geresh; other wording and pointing retained. Reader settings can hide instructions or Shema paragraphs 2 and 3.',
                             'REVIEW COPY: source instructions and alternatives are retained. Publication review is incomplete.',
                             'Edot HaMizrach: the selected source abbreviates Yoshev Beseter. No missing verses were borrowed from another nusach.']
         code += ["return null;", "}", *helpers, 'function sourceLines() { return [' + ','.join(json.dumps(line, ensure_ascii=True) for line in attribution if line) + ']; }', "}"]

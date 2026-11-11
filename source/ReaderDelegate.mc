@@ -47,6 +47,7 @@ class ReaderDelegate extends Ui.BehaviorDelegate {
         var nusach = reader.preferences.nusach;
         var nusachLabel = nusach.equals("ashkenaz") ? "Ashkenaz" : nusach.equals("sefard") ? "Sefard (Chassidic)" : "Edot HaMizrach";
         menu.addItem(new Ui.MenuItem("Text size", sizes[reader.preferences.size], "sizes", null));
+        menu.addItem(new Ui.MenuItem("Brightness", DisplayBrightness.label(reader.preferences.brightness), "brightness", null));
         menu.addItem(new Ui.MenuItem("Nusach", nusachLabel, "nusach", null));
         menu.addItem(new Ui.MenuItem("Scrolling", reader.preferences.screenScroll ? "By screen" : "By line", "scrolling", null));
         menu.addItem(new Ui.MenuItem("Instructions", reader.preferences.showInstructions ? "Shown" : "Hidden", "instructions", null));

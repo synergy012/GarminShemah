@@ -1,0 +1,47 @@
+{
+  "device": "fr970",
+  "sdk": "9.3.0",
+  "host_tests": {
+    "passed": 33
+  },
+  "native_tests": {
+    "passed": 9,
+    "failed": 0,
+    "errors": 0,
+    "process_exit": 1,
+    "sdk_modified": false
+  },
+  "names": {
+    "replacement": "ה׳",
+    "ashkenaz": 77,
+    "sefard": 96,
+    "edot_hamizrach": 50,
+    "total": 223,
+    "source_records_unchanged": true,
+    "all_nine_layouts_checked": true
+  },
+  "ui_checks": {
+    "return_to_beginning_closes_menu": true,
+    "confirmed_begin_action_from_offset": 2201,
+    "confirmed_begin_action_to_offset": 0,
+    "brightness_menu_selected": "25%",
+    "simulator_brightness_status": "25%",
+    "brightness_selection_stays_in_settings": true,
+    "masked_shema_visually_checked": true
+  },
+  "artifacts": {
+    "fr970.review.prg": {
+      "sha256": "478759aca69a05acb452bce791918605349bf21c42b12cb7f6bc0e928564f04f",
+      "bytes": 5177804
+    },
+    "fr970.tests.prg": {
+      "sha256": "a0c298efa9bacdcc959a3ecb10b9a3987bb52349a4946cc37b95409fde65eaad",
+      "bytes": 5186876
+    }
+  },
+  "limits": [
+    "Garmin controls display timeout and burn-in protection; no keep-awake timer",
+    "Physical-watch brightness/update acceptance still needs checking",
+    "Editorial source review remains pending"
+  ]
+}

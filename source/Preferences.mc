@@ -8,10 +8,12 @@ class Preferences {
     var showInstructions = false;
     var fullShema = true;
     var screenScroll = true;
+    var brightness = 0;
 
     function initialize() {
         var saved = Application.Storage.getValue("preferences-v1");
         if (saved instanceof Lang.Dictionary) {
+            if (saved.hasKey("brightness") && saved["brightness"] instanceof Lang.Number && saved["brightness"] >= 0 && saved["brightness"] <= 4) { brightness = saved["brightness"]; }
             if (saved.hasKey("showInstructions") && saved["showInstructions"] instanceof Lang.Boolean) { showInstructions = saved["showInstructions"]; }
             if (saved.hasKey("fullShema") && saved["fullShema"] instanceof Lang.Boolean) { fullShema = saved["fullShema"]; }
             if (saved.hasKey("screenScroll") && saved["screenScroll"] instanceof Lang.Boolean) { screenScroll = saved["screenScroll"]; }
@@ -27,7 +29,7 @@ class Preferences {
 
     function save() {
         Application.Storage.setValue("preferences-v1", {"nusach"=>nusach, "size"=>size,
-            "showInstructions"=>showInstructions, "fullShema"=>fullShema, "screenScroll"=>screenScroll});
+            "showInstructions"=>showInstructions, "fullShema"=>fullShema, "screenScroll"=>screenScroll, "brightness"=>brightness});
     }
 
     function positionKey(documentId) { return "position-v1-" + documentId; }
@@ -35,14 +37,14 @@ class Preferences {
     function savePosition(documentId, offset, anchor) {
         Application.Storage.setValue(positionKey(documentId), {
             "offset"=>offset, "size"=>size, "time"=>Time.now().value(), "anchor"=>anchor,
-            "showInstructions"=>showInstructions, "fullShema"=>fullShema
+            "showInstructions"=>showInstructions, "fullShema"=>fullShema, "textVersion"=>DocumentData.TEXT_VERSION
         });
     }
 
     function sameLayout(position) {
         var instructions = position.hasKey("showInstructions") ? position["showInstructions"] : true;
         var shema = position.hasKey("fullShema") ? position["fullShema"] : true;
-        return position.hasKey("size") && position["size"] == size && instructions == showInstructions && shema == fullShema;
+        return position.hasKey("textVersion") && position["textVersion"] == DocumentData.TEXT_VERSION && position.hasKey("size") && position["size"] == size && instructions == showInstructions && shema == fullShema;
     }
 
     function readPosition(documentId) {

@@ -44,4 +44,8 @@ The persistent REVIEW COPY label was removed from the reading screen at the user
 
 The latest build adds a slim progress arc on the left edge, outside the Hebrew text. Screen steps now repeat the final visible row, counting a partial row, instead of repeating a full row plus a partial row. The first/last screen still clamp to document bounds.
 
-Selections remain in their current settings menu and update immediately. Font and nusach options show Selected; BACK returns to the parent settings menu, then to reading. Return to beginning also stays in settings. Close reader remains the explicit exit action. See [current verification and screenshots](PROGRESS-SETTINGS.md).
+Selections remain in their current settings menu and update immediately. Font and nusach options show Selected; BACK returns to the parent settings menu, then to reading. Return to beginning now closes settings and opens the document at offset zero. Close reader remains the explicit exit action. See [current verification and screenshots](PROGRESS-SETTINGS.md).
+
+## Beginning, brightness and Divine Names
+
+Return to beginning now closes the menu immediately. Brightness offers System, 10%, 25%, 50% and 100%, with Garmin's normal timeout/protection. Divine Names in all three nuschaos are displayed as **ה׳** under the [pinned substitution policy](DIVINE-NAMES.md); other words and the source records remain unchanged. See [latest validation](NAMES-BRIGHTNESS.md).

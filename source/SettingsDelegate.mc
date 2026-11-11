@@ -15,14 +15,16 @@ class SettingsDelegate extends Ui.Menu2InputDelegate {
         var sizes = ["Small", "Medium", "Large"];
         var n = reader.preferences.nusach;
         rootMenu.getItem(1).setSubLabel(sizes[reader.preferences.size]);
-        rootMenu.getItem(2).setSubLabel(n.equals("ashkenaz") ? "Ashkenaz" : n.equals("sefard") ? "Sefard (Chassidic)" : "Edot HaMizrach");
-        rootMenu.getItem(3).setSubLabel(reader.preferences.screenScroll ? "By screen" : "By line");
-        rootMenu.getItem(4).setSubLabel(reader.preferences.showInstructions ? "Shown" : "Hidden");
-        rootMenu.getItem(5).setSubLabel(reader.preferences.fullShema ? "Shown" : "Hidden");
+        rootMenu.getItem(2).setSubLabel(DisplayBrightness.label(reader.preferences.brightness));
+        rootMenu.getItem(3).setSubLabel(n.equals("ashkenaz") ? "Ashkenaz" : n.equals("sefard") ? "Sefard (Chassidic)" : "Edot HaMizrach");
+        rootMenu.getItem(4).setSubLabel(reader.preferences.screenScroll ? "By screen" : "By line");
+        rootMenu.getItem(5).setSubLabel(reader.preferences.showInstructions ? "Shown" : "Hidden");
+        rootMenu.getItem(6).setSubLabel(reader.preferences.fullShema ? "Shown" : "Hidden");
         if (!category.equals("main")) {
-            for (var i = 0; i < 3; i++) {
+            var count = category.equals("brightness") ? 5 : 3;
+            for (var i = 0; i < count; i++) {
                 var entry = menu.getItem(i);
-                var selected = category.equals("sizes") ? entry.getId() == reader.preferences.size : entry.getId().equals(n);
+                var selected = category.equals("brightness") ? entry.getId() == reader.preferences.brightness : category.equals("sizes") ? entry.getId() == reader.preferences.size : entry.getId().equals(n);
                 entry.setSubLabel(selected ? "Selected" : null);
             }
         }
@@ -38,6 +40,10 @@ class SettingsDelegate extends Ui.Menu2InputDelegate {
             reader.preferences.save();
             reader.reload(anchor);
             reader.savePosition();
+        } else if (category.equals("brightness")) {
+            reader.preferences.brightness = id;
+            reader.preferences.save();
+            DisplayBrightness.apply(id);
         } else if (category.equals("sizes")) {
             var anchor = reader.currentAnchor();
             reader.preferences.size = id;
@@ -59,9 +65,16 @@ class SettingsDelegate extends Ui.Menu2InputDelegate {
             System.exit();
         } else if (id.equals("begin")) {
             reader.beginning();
+            Ui.popView(Ui.SLIDE_IMMEDIATE);
+            return;
         } else {
-            var child = new Ui.Menu2({:title=>id.equals("sizes") ? "Text size" : "Nusach"});
-            if (id.equals("sizes")) {
+            var child = new Ui.Menu2({:title=>id.equals("brightness") ? "Brightness" : id.equals("sizes") ? "Text size" : "Nusach"});
+            if (id.equals("brightness")) {
+                for (var b = 0; b < 5; b++) {
+                    child.addItem(new Ui.MenuItem(DisplayBrightness.label(b), null, b, null));
+                }
+                child.setFocus(reader.preferences.brightness);
+            } else if (id.equals("sizes")) {
                 child.addItem(new Ui.MenuItem("Small", null, 0, null));
                 child.addItem(new Ui.MenuItem("Medium", null, 1, null));
                 child.addItem(new Ui.MenuItem("Large", null, 2, null));

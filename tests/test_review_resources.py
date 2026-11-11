@@ -7,6 +7,7 @@ from PIL import Image
 from tools.content import ROOT, NUSCHAOT, read_json
 from tools.generate import generate, EXTRA_SHEMA, reader_flags
 from tools.render import layout
+from tools.divine_names import display_document
 
 
 class ReviewResourceTests(unittest.TestCase):
@@ -21,9 +22,10 @@ class ReviewResourceTests(unittest.TestCase):
             self.assertLessEqual(len(list(images.glob('*.png'))) + 1, 2047)
             for identifier in NUSCHAOT:
                 document = read_json(ROOT / 'content/nuschaot' / f'{identifier}.json')
+                displayed = display_document(document)
                 for size in range(3):
                     records = manifest['devices']['fr970'][f'{identifier}_{size}']['lines']
-                    for section in document['sections']:
+                    for section in displayed['sections']:
                         for index, paragraph in enumerate(section['paragraphs']):
                             actual = [r['text'] for r in records if r['section'] == section['id'] and r['paragraph'] == index]
                             self.assertEqual(' '.join(actual), paragraph)

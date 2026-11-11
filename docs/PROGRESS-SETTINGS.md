@@ -4,7 +4,7 @@ The FR970 reader now shows a slim three-pixel progress arc along the left edge, 
 
 Screen turns now repeat only the final visible line, including a partially visible row. The previous viewport-minus-line-height calculation rounded down again and repeated both a complete and a partial line. Backward screen steps put the first current line at the preceding screen's bottom. First/last screens still clamp to document bounds and may overlap extra rows there.
 
-Settings selections remain in their current menu, with immediate subtitles and a Selected marker in font-size/nusach submenus. BACK returns to the parent menu, then to reading. Return to beginning also remains in settings. The explicit Close reader action and the reader's direct BACK exit remain available.
+Settings selections remain in their current menu, with immediate subtitles and a Selected marker in font-size/nusach submenus. BACK returns to the parent menu, then to reading. Return to beginning now closes settings and opens the start of the document; other selections remain in settings. The explicit Close reader action and the reader's direct BACK exit remain available.
 
 ## Actual simulator checks
 

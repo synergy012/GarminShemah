@@ -5,6 +5,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, features
 from fontTools.ttLib import TTFont
+from tools.divine_names import display_document
 
 ROOT = Path(__file__).resolve().parents[1]
 FONT = ROOT / "fonts/SiddurSerif-Regular.ttf"
@@ -74,6 +75,7 @@ def bitmap(text, face, width, height, heading=False, muted=False):
 
 
 def layout(document, profile, size):
+    document = display_document(document)
     with TTFont(FONT) as tt:
         supported = tt.getBestCmap()
     text = ''.join(s['heading_he'] + ''.join(s['paragraphs']) for s in document['sections'])

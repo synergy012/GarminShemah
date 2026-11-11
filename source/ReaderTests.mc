@@ -118,7 +118,8 @@ function testOptionsMigrateAndHiddenAnchorContinues(logger) {
     prefs.fullShema = true;
     prefs.size = 0;
     Test.assert(!prefs.sameLayout({"size"=>0}));
-    Test.assert(prefs.sameLayout({"size"=>0, "showInstructions"=>false, "fullShema"=>true}));
+    Test.assert(!prefs.sameLayout({"size"=>0, "showInstructions"=>false, "fullShema"=>true}));
+    Test.assert(prefs.sameLayout({"size"=>0, "showInstructions"=>false, "fullShema"=>true, "textVersion"=>DocumentData.TEXT_VERSION}));
     if (DocumentData.PROTOTYPE) { return true; }
     prefs.nusach = "ashkenaz";
     prefs.showInstructions = true;

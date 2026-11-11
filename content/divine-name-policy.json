@@ -1,0 +1,2277 @@
+{
+  "replacement": "ה׳",
+  "documents": {
+    "ashkenaz": {
+      "text_sha256": "1a5750ac3c69388972494291f68c94d2a08f33d2f1c9128b778a4c823ae5d150",
+      "fields": [
+        {
+          "section": "source-001",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 454,
+              "end": 461,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 462,
+              "end": 469,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 472,
+              "end": 478,
+              "source": "אלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 678,
+              "end": 685,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-002",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 16,
+              "end": 23,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 24,
+              "end": 35,
+              "source": "אֱלֺהֵֽינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 145,
+              "end": 152,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 153,
+              "end": 160,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 163,
+              "end": 169,
+              "source": "אלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 442,
+              "end": 449,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 236,
+              "end": 239,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-003",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 0,
+              "end": 3,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-004",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 18,
+              "end": 25,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 26,
+              "end": 37,
+              "source": "אֱלֹהֵֽינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 38,
+              "end": 45,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-007",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 16,
+              "end": 23,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 24,
+              "end": 34,
+              "source": "אֱלֹהֶֽיךָ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-008",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 104,
+              "end": 111,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 112,
+              "end": 122,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 483,
+              "end": 490,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 641,
+              "end": 649,
+              "source": "יְ֯הֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 1076,
+              "end": 1083,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 33,
+              "end": 36,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 425,
+              "end": 434,
+              "source": "אֱלֹהִים֯",
+              "kind": "elohim_forms",
+              "reason": "other_gods_not_a_name_of_Hashem"
+            }
+          ]
+        },
+        {
+          "section": "source-009",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 12,
+              "end": 19,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 276,
+              "end": 284,
+              "source": "יְ֯הֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 472,
+              "end": 481,
+              "source": "אלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 489,
+              "end": 496,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 497,
+              "end": 508,
+              "source": "אֱלֹהֵיכֶם֯",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 576,
+              "end": 584,
+              "source": "אלֹהִים֯",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 592,
+              "end": 599,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 600,
+              "end": 611,
+              "source": "אֱלֹהֵיכֶם֯",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 20,
+              "end": 24,
+              "source": "אֶ֯ל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 49,
+              "end": 53,
+              "source": "אֶ֯ל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-010",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 14,
+              "end": 21,
+              "source": "אֲדֹנָי",
+              "kind": "adonai",
+              "display": "ה׳"
+            },
+            {
+              "start": 22,
+              "end": 33,
+              "source": "אֱלֹהֵֽינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-011",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 32,
+              "end": 39,
+              "source": "שַׁדַּי",
+              "kind": "shaddai",
+              "display": "ה׳"
+            },
+            {
+              "start": 60,
+              "end": 66,
+              "source": "יהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 88,
+              "end": 95,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 495,
+              "end": 502,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-012",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 0,
+              "end": 7,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 100,
+              "end": 107,
+              "source": "אלֺהִים",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 125,
+              "end": 132,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 187,
+              "end": 194,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 290,
+              "end": 297,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 375,
+              "end": 382,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 397,
+              "end": 404,
+              "source": "אֱלֺהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 479,
+              "end": 485,
+              "source": "יהוָֹה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 183,
+              "end": 186,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-013",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 16,
+              "end": 23,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 24,
+              "end": 35,
+              "source": "אֱלֹהֵֽינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 372,
+              "end": 375,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            },
+            {
+              "start": 418,
+              "end": 421,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-014",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 9,
+              "end": 16,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 35,
+              "end": 42,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 65,
+              "end": 72,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 97,
+              "end": 104,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 273,
+              "end": 280,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 281,
+              "end": 284,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            },
+            {
+              "start": 292,
+              "end": 303,
+              "source": "אֱלֺהֵֽינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-015",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 112,
+              "end": 123,
+              "source": "אֱלֺהָֽיִךְ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 125,
+              "end": 132,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 141,
+              "end": 148,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 156,
+              "end": 163,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-017",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 42,
+              "end": 49,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 50,
+              "end": 60,
+              "source": "אֱלֺהֶֽיךָ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 226,
+              "end": 233,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-018",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 11,
+              "end": 18,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 41,
+              "end": 48,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 75,
+              "end": 82,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 19,
+              "end": 22,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-021",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 11,
+              "end": 18,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 40,
+              "end": 47,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 87,
+              "end": 94,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-023",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 25,
+              "end": 32,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 43,
+              "end": 50,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 66,
+              "end": 73,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-024",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 8,
+              "end": 15,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 16,
+              "end": 23,
+              "source": "אֱלֺהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 149,
+              "end": 152,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-025",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 38,
+              "end": 45,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 273,
+              "end": 280,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 293,
+              "end": 300,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-027",
+          "paragraph": 0,
+          "replacements": [],
+          "exceptions": [
+            {
+              "start": 10,
+              "end": 13,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-037",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 26,
+              "end": 33,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        }
+      ]
+    },
+    "sefard": {
+      "text_sha256": "60f79cf3dee0ce3c044a0d4e0a86d995003dde827677fb3369a10085b4b648b5",
+      "fields": [
+        {
+          "section": "source-001",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 409,
+              "end": 416,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 417,
+              "end": 424,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 427,
+              "end": 434,
+              "source": "אֱלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 718,
+              "end": 725,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-002",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 16,
+              "end": 23,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 24,
+              "end": 34,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 172,
+              "end": 179,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 180,
+              "end": 187,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 190,
+              "end": 197,
+              "source": "אֱלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 739,
+              "end": 746,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 345,
+              "end": 348,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 383,
+              "end": 386,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 488,
+              "end": 491,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 579,
+              "end": 582,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-003",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 12,
+              "end": 15,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-004",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 18,
+              "end": 25,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 26,
+              "end": 36,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 37,
+              "end": 44,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-006",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 16,
+              "end": 23,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 24,
+              "end": 33,
+              "source": "אֱלֹהֶיךָ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-007",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 100,
+              "end": 107,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 108,
+              "end": 118,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 463,
+              "end": 470,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 610,
+              "end": 617,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 1019,
+              "end": 1026,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 32,
+              "end": 35,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 407,
+              "end": 415,
+              "source": "אֱלֹהִים",
+              "kind": "elohim_forms",
+              "reason": "other_gods_not_a_name_of_Hashem"
+            }
+          ]
+        },
+        {
+          "section": "source-008",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 10,
+              "end": 17,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 262,
+              "end": 269,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 447,
+              "end": 456,
+              "source": "אלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 464,
+              "end": 471,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 472,
+              "end": 482,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 543,
+              "end": 551,
+              "source": "אֱלֹהִים",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 558,
+              "end": 565,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 566,
+              "end": 576,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 18,
+              "end": 21,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 46,
+              "end": 49,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-009",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 13,
+              "end": 20,
+              "source": "אֲדֹנָי",
+              "kind": "adonai",
+              "display": "ה׳"
+            },
+            {
+              "start": 21,
+              "end": 31,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-010",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 32,
+              "end": 39,
+              "source": "שַׁדַּי",
+              "kind": "shaddai",
+              "display": "ה׳"
+            },
+            {
+              "start": 60,
+              "end": 66,
+              "source": "יהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 88,
+              "end": 95,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 481,
+              "end": 488,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-011",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 0,
+              "end": 7,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 99,
+              "end": 107,
+              "source": "אֱלֹהִים",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 124,
+              "end": 131,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 186,
+              "end": 193,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 284,
+              "end": 291,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 366,
+              "end": 373,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 387,
+              "end": 394,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 465,
+              "end": 471,
+              "source": "יהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 182,
+              "end": 185,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-012",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 15,
+              "end": 22,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 23,
+              "end": 33,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 389,
+              "end": 392,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-013",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 9,
+              "end": 16,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 36,
+              "end": 43,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 66,
+              "end": 73,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 98,
+              "end": 105,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 268,
+              "end": 275,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 276,
+              "end": 279,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            },
+            {
+              "start": 287,
+              "end": 297,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-014",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 107,
+              "end": 117,
+              "source": "אֱלֹהָיִךְ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 119,
+              "end": 126,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 134,
+              "end": 141,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 149,
+              "end": 156,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-016",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 40,
+              "end": 47,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 48,
+              "end": 57,
+              "source": "אֱלֹהֶיךָ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 223,
+              "end": 230,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 251,
+              "end": 258,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 282,
+              "end": 289,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 317,
+              "end": 324,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 259,
+              "end": 262,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-017",
+          "paragraph": 1,
+          "replacements": [
+            {
+              "start": 11,
+              "end": 18,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 40,
+              "end": 47,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 85,
+              "end": 92,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-019",
+          "paragraph": 1,
+          "replacements": [
+            {
+              "start": 24,
+              "end": 31,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 43,
+              "end": 50,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 66,
+              "end": 73,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-020",
+          "paragraph": 1,
+          "replacements": [
+            {
+              "start": 8,
+              "end": 15,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 16,
+              "end": 23,
+              "source": "אֱלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 154,
+              "end": 157,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-021",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 39,
+              "end": 46,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 267,
+              "end": 274,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 287,
+              "end": 294,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-022",
+          "paragraph": 1,
+          "replacements": [],
+          "exceptions": [
+            {
+              "start": 10,
+              "end": 13,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-023",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 544,
+              "end": 551,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-024",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 138,
+              "end": 145,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 484,
+              "end": 491,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-025",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 113,
+              "end": 120,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 236,
+              "end": 243,
+              "source": "אֲדֹנָי",
+              "kind": "adonai",
+              "display": "ה׳"
+            },
+            {
+              "start": 392,
+              "end": 399,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 660,
+              "end": 667,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 383,
+              "end": 386,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 458,
+              "end": 461,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-026",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 60,
+              "end": 67,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 161,
+              "end": 169,
+              "source": "אֱלֹהִים",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 186,
+              "end": 193,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 249,
+              "end": 256,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 349,
+              "end": 356,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 432,
+              "end": 439,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 453,
+              "end": 460,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 533,
+              "end": 539,
+              "source": "יהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 245,
+              "end": 248,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-027",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 64,
+              "end": 71,
+              "source": "אֱלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 244,
+              "end": 251,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 264,
+              "end": 271,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 417,
+              "end": 424,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 492,
+              "end": 499,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 620,
+              "end": 627,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 310,
+              "end": 313,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 413,
+              "end": 416,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        }
+      ]
+    },
+    "edot_hamizrach": {
+      "text_sha256": "2d6fd197d064148ef36f5ba094ef3782be8d3d28ff90e18d3b882d8634bc7a84",
+      "fields": [
+        {
+          "section": "source-005",
+          "paragraph": 1,
+          "replacements": [
+            {
+              "start": 26,
+              "end": 33,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 34,
+              "end": 41,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 44,
+              "end": 50,
+              "source": "אלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-005",
+          "paragraph": 2,
+          "replacements": [
+            {
+              "start": 58,
+              "end": 65,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-006",
+          "paragraph": 1,
+          "replacements": [
+            {
+              "start": 530,
+              "end": 533,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-007",
+          "paragraph": 3,
+          "replacements": [
+            {
+              "start": 8,
+              "end": 15,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 17,
+              "end": 27,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-007",
+          "paragraph": 4,
+          "replacements": [
+            {
+              "start": 123,
+              "end": 130,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 131,
+              "end": 138,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 141,
+              "end": 147,
+              "source": "אלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 297,
+              "end": 300,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 335,
+              "end": 338,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 446,
+              "end": 449,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 529,
+              "end": 532,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-007",
+          "paragraph": 5,
+          "replacements": [
+            {
+              "start": 8,
+              "end": 15,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-009",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 18,
+              "end": 25,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 26,
+              "end": 36,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 37,
+              "end": 44,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-011",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 16,
+              "end": 23,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 24,
+              "end": 33,
+              "source": "אֱלֹהֶיךָ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-012",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 100,
+              "end": 107,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 108,
+              "end": 118,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 463,
+              "end": 470,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 610,
+              "end": 617,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 1019,
+              "end": 1026,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 32,
+              "end": 35,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 407,
+              "end": 415,
+              "source": "אֱלֹהִים",
+              "kind": "elohim_forms",
+              "reason": "other_gods_not_a_name_of_Hashem"
+            }
+          ]
+        },
+        {
+          "section": "source-013",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 10,
+              "end": 17,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 18,
+              "end": 21,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 46,
+              "end": 49,
+              "source": "אֶל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-013",
+          "paragraph": 2,
+          "replacements": [
+            {
+              "start": 17,
+              "end": 24,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-013",
+          "paragraph": 4,
+          "replacements": [
+            {
+              "start": 54,
+              "end": 63,
+              "source": "אלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 71,
+              "end": 78,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 79,
+              "end": 89,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 150,
+              "end": 157,
+              "source": "אלֹהִים",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 164,
+              "end": 171,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 172,
+              "end": 182,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-014",
+          "paragraph": 1,
+          "replacements": [
+            {
+              "start": 0,
+              "end": 7,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 8,
+              "end": 18,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-015",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 71,
+              "end": 74,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-017",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 11,
+              "end": 18,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 40,
+              "end": 47,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 85,
+              "end": 92,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-018",
+          "paragraph": 1,
+          "replacements": [
+            {
+              "start": 176,
+              "end": 183,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 240,
+              "end": 247,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 248,
+              "end": 251,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-018",
+          "paragraph": 2,
+          "replacements": [
+            {
+              "start": 32,
+              "end": 39,
+              "source": "שַׁדַּי",
+              "kind": "shaddai",
+              "display": "ה׳"
+            },
+            {
+              "start": 60,
+              "end": 66,
+              "source": "יהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 88,
+              "end": 95,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 481,
+              "end": 488,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        },
+        {
+          "section": "source-020",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 7,
+              "end": 14,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 15,
+              "end": 25,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 28,
+              "end": 34,
+              "source": "אלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 190,
+              "end": 197,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 198,
+              "end": 208,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            },
+            {
+              "start": 211,
+              "end": 217,
+              "source": "אלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 82,
+              "end": 85,
+              "source": "אַל",
+              "kind": "el",
+              "reason": "preposition_or_negation_not_a_divine_name"
+            }
+          ]
+        },
+        {
+          "section": "source-030",
+          "paragraph": 0,
+          "replacements": [
+            {
+              "start": 114,
+              "end": 121,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            },
+            {
+              "start": 122,
+              "end": 125,
+              "source": "אֵל",
+              "kind": "el",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": []
+        }
+      ]
+    }
+  }
+}

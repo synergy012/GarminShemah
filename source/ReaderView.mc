@@ -12,6 +12,8 @@ class ReaderView extends Ui.View {
     var cache;
     var saveTimer;
 
+    function onShow() { DisplayBrightness.apply(preferences.brightness); }
+
     function initialize(prefs) {
         View.initialize();
         preferences = prefs;
