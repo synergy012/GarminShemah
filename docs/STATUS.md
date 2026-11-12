@@ -9,6 +9,8 @@
 | Reader | Continuous scrolling, word anchors, per-document saved position, size/nusach settings and offline source notices | Physical watch, restart/update and prolonged rendered stress checks |
 | Validation | 33 host tests pass; nine native tests report PASS; see current native and simulator evidence in REVIEW-BUILD.md | SDK native-client exit anomaly remains visible; release approval remains blocked |
 
+The final Name convention is [four-letter Name only](FOUR-LETTER-NAME.md): every other Name retains its exact original spelling.
+
 See [brightness and Divine Names](NAMES-BRIGHTNESS.md) for the latest build and verification.
 
 See [progress and settings update](PROGRESS-SETTINGS.md) for the latest behavior and simulator evidence.

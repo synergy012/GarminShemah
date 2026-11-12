@@ -48,4 +48,4 @@ Selections remain in their current settings menu and update immediately. Font an
 
 ## Beginning, brightness and Divine Names
 
-Return to beginning now closes the menu immediately. Brightness offers System, 10%, 25%, 50% and 100%, with Garmin's normal timeout/protection. Divine Names in all three nuschaos are displayed as **ה׳** under the [pinned substitution policy](DIVINE-NAMES.md); other words and the source records remain unchanged. See [latest validation](NAMES-BRIGHTNESS.md).
+Return to beginning now closes the menu immediately. Brightness offers System, 10%, 25%, 50% and 100%, with Garmin's normal timeout/protection. only the four-letter Name in all three nuschaos becomes ה׳, while every other Name remains original under the [pinned substitution policy](DIVINE-NAMES.md); other words and the source records remain unchanged. See [latest validation](NAMES-BRIGHTNESS.md).

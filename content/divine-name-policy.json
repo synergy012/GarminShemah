@@ -1,5 +1,6 @@
 {
   "replacement": "ה׳",
+  "convention": "four-letter-only-v3",
   "documents": {
     "ashkenaz": {
       "text_sha256": "1a5750ac3c69388972494291f68c94d2a08f33d2f1c9128b778a4c823ae5d150",
@@ -16,20 +17,6 @@
               "display": "ה׳"
             },
             {
-              "start": 462,
-              "end": 469,
-              "source": "אֱלֹהַי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
-              "start": 472,
-              "end": 478,
-              "source": "אלֹהֵי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 678,
               "end": 685,
               "source": "יְהֹוָה",
@@ -37,7 +24,24 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 462,
+              "end": 469,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 472,
+              "end": 478,
+              "source": "אלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "אלֹהֵי",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-002",
@@ -51,31 +55,10 @@
               "display": "ה׳"
             },
             {
-              "start": 24,
-              "end": 35,
-              "source": "אֱלֺהֵֽינוּ",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 145,
               "end": 152,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 153,
-              "end": 160,
-              "source": "אֱלֹהַי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
-              "start": 163,
-              "end": 169,
-              "source": "אלֹהֵי",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -88,6 +71,30 @@
           ],
           "exceptions": [
             {
+              "start": 24,
+              "end": 35,
+              "source": "אֱלֺהֵֽינוּ",
+              "kind": "elohim_forms",
+              "display": "אֱלֺהֵֽינוּ",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 153,
+              "end": 160,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 163,
+              "end": 169,
+              "source": "אלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "אלֹהֵי",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
               "start": 236,
               "end": 239,
               "source": "אַל",
@@ -99,16 +106,17 @@
         {
           "section": "source-003",
           "paragraph": 0,
-          "replacements": [
+          "replacements": [],
+          "exceptions": [
             {
               "start": 0,
               "end": 3,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-004",
@@ -122,13 +130,6 @@
               "display": "ה׳"
             },
             {
-              "start": 26,
-              "end": 37,
-              "source": "אֱלֹהֵֽינוּ",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 38,
               "end": 45,
               "source": "יְהֹוָה",
@@ -136,7 +137,16 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 26,
+              "end": 37,
+              "source": "אֱלֹהֵֽינוּ",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵֽינוּ",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-007",
@@ -148,16 +158,18 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 24,
               "end": 34,
               "source": "אֱלֹהֶֽיךָ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֶֽיךָ",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-008",
@@ -168,13 +180,6 @@
               "end": 111,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 112,
-              "end": 122,
-              "source": "אֱלֹהֵיכֶם",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -208,6 +213,14 @@
               "reason": "preposition_or_negation_not_a_divine_name"
             },
             {
+              "start": 112,
+              "end": 122,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
               "start": 425,
               "end": 434,
               "source": "אֱלֹהִים֯",
@@ -235,13 +248,6 @@
               "display": "ה׳"
             },
             {
-              "start": 472,
-              "end": 481,
-              "source": "אלֹהֵיכֶם",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 489,
               "end": 496,
               "source": "יְהֹוָה",
@@ -249,31 +255,10 @@
               "display": "ה׳"
             },
             {
-              "start": 497,
-              "end": 508,
-              "source": "אֱלֹהֵיכֶם֯",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
-              "start": 576,
-              "end": 584,
-              "source": "אלֹהִים֯",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 592,
               "end": 599,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 600,
-              "end": 611,
-              "source": "אֱלֹהֵיכֶם֯",
-              "kind": "elohim_forms",
               "display": "ה׳"
             }
           ],
@@ -291,53 +276,73 @@
               "source": "אֶ֯ל",
               "kind": "el",
               "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 472,
+              "end": 481,
+              "source": "אלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "אלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 497,
+              "end": 508,
+              "source": "אֱלֹהֵיכֶם֯",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵיכֶם֯",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 576,
+              "end": 584,
+              "source": "אלֹהִים֯",
+              "kind": "elohim_forms",
+              "display": "אלֹהִים֯",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 600,
+              "end": 611,
+              "source": "אֱלֹהֵיכֶם֯",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵיכֶם֯",
+              "reason": "preserved_by_requested_convention"
             }
           ]
         },
         {
           "section": "source-010",
           "paragraph": 0,
-          "replacements": [
+          "replacements": [],
+          "exceptions": [
             {
               "start": 14,
               "end": 21,
               "source": "אֲדֹנָי",
               "kind": "adonai",
-              "display": "ה׳"
+              "display": "אֲדֹנָי",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 22,
               "end": 33,
               "source": "אֱלֹהֵֽינוּ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵֽינוּ",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-011",
           "paragraph": 0,
           "replacements": [
             {
-              "start": 32,
-              "end": 39,
-              "source": "שַׁדַּי",
-              "kind": "shaddai",
-              "display": "ה׳"
-            },
-            {
               "start": 60,
               "end": 66,
               "source": "יהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 88,
-              "end": 95,
-              "source": "אֱלֹהַי",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -348,7 +353,24 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 32,
+              "end": 39,
+              "source": "שַׁדַּי",
+              "kind": "shaddai",
+              "display": "שַׁדַּי",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 88,
+              "end": 95,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-012",
@@ -359,13 +381,6 @@
               "end": 7,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 100,
-              "end": 107,
-              "source": "אלֺהִים",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -397,13 +412,6 @@
               "display": "ה׳"
             },
             {
-              "start": 397,
-              "end": 404,
-              "source": "אֱלֺהַי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 479,
               "end": 485,
               "source": "יהוָֹה",
@@ -413,11 +421,27 @@
           ],
           "exceptions": [
             {
+              "start": 100,
+              "end": 107,
+              "source": "אלֺהִים",
+              "kind": "elohim_forms",
+              "display": "אלֺהִים",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
               "start": 183,
               "end": 186,
               "source": "אֶל",
               "kind": "el",
               "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 397,
+              "end": 404,
+              "source": "אֱלֺהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֺהַי",
+              "reason": "preserved_by_requested_convention"
             }
           ]
         },
@@ -431,30 +455,34 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 24,
               "end": 35,
               "source": "אֱלֹהֵֽינוּ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵֽינוּ",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 372,
               "end": 375,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 418,
               "end": 421,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-014",
@@ -494,35 +522,31 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 281,
               "end": 284,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 292,
               "end": 303,
               "source": "אֱלֺהֵֽינוּ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֺהֵֽינוּ",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-015",
           "paragraph": 0,
           "replacements": [
-            {
-              "start": 112,
-              "end": 123,
-              "source": "אֱלֺהָֽיִךְ",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
             {
               "start": 125,
               "end": 132,
@@ -545,7 +569,16 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 112,
+              "end": 123,
+              "source": "אֱלֺהָֽיִךְ",
+              "kind": "elohim_forms",
+              "display": "אֱלֺהָֽיִךְ",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-017",
@@ -559,13 +592,6 @@
               "display": "ה׳"
             },
             {
-              "start": 50,
-              "end": 60,
-              "source": "אֱלֺהֶֽיךָ",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 226,
               "end": 233,
               "source": "יְהֹוָה",
@@ -573,7 +599,16 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 50,
+              "end": 60,
+              "source": "אֱלֺהֶֽיךָ",
+              "kind": "elohim_forms",
+              "display": "אֱלֺהֶֽיךָ",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-018",
@@ -677,23 +712,26 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 16,
               "end": 23,
               "source": "אֱלֺהֵי",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֺהֵי",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 149,
               "end": 152,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-025",
@@ -768,20 +806,6 @@
               "display": "ה׳"
             },
             {
-              "start": 417,
-              "end": 424,
-              "source": "אֱלֹהַי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
-              "start": 427,
-              "end": 434,
-              "source": "אֱלֹהֵי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 718,
               "end": 725,
               "source": "יְהֹוָה",
@@ -789,7 +813,24 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 417,
+              "end": 424,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 427,
+              "end": 434,
+              "source": "אֱלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵי",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-002",
@@ -803,31 +844,10 @@
               "display": "ה׳"
             },
             {
-              "start": 24,
-              "end": 34,
-              "source": "אֱלֹהֵינוּ",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 172,
               "end": 179,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 180,
-              "end": 187,
-              "source": "אֱלֹהַי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
-              "start": 190,
-              "end": 197,
-              "source": "אֱלֹהֵי",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -839,6 +859,30 @@
             }
           ],
           "exceptions": [
+            {
+              "start": 24,
+              "end": 34,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵינוּ",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 180,
+              "end": 187,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 190,
+              "end": 197,
+              "source": "אֱלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵי",
+              "reason": "preserved_by_requested_convention"
+            },
             {
               "start": 345,
               "end": 348,
@@ -872,16 +916,17 @@
         {
           "section": "source-003",
           "paragraph": 0,
-          "replacements": [
+          "replacements": [],
+          "exceptions": [
             {
               "start": 12,
               "end": 15,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-004",
@@ -895,13 +940,6 @@
               "display": "ה׳"
             },
             {
-              "start": 26,
-              "end": 36,
-              "source": "אֱלֹהֵינוּ",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 37,
               "end": 44,
               "source": "יְהֹוָה",
@@ -909,7 +947,16 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 26,
+              "end": 36,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵינוּ",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-006",
@@ -921,16 +968,18 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 24,
               "end": 33,
               "source": "אֱלֹהֶיךָ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֶיךָ",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-007",
@@ -941,13 +990,6 @@
               "end": 107,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 108,
-              "end": 118,
-              "source": "אֱלֹהֵיכֶם",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -981,6 +1023,14 @@
               "reason": "preposition_or_negation_not_a_divine_name"
             },
             {
+              "start": 108,
+              "end": 118,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
               "start": 407,
               "end": 415,
               "source": "אֱלֹהִים",
@@ -1008,13 +1058,6 @@
               "display": "ה׳"
             },
             {
-              "start": 447,
-              "end": 456,
-              "source": "אלֹהֵיכֶם",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 464,
               "end": 471,
               "source": "יְהֹוָה",
@@ -1022,31 +1065,10 @@
               "display": "ה׳"
             },
             {
-              "start": 472,
-              "end": 482,
-              "source": "אֱלֹהֵיכֶם",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
-              "start": 543,
-              "end": 551,
-              "source": "אֱלֹהִים",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 558,
               "end": 565,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 566,
-              "end": 576,
-              "source": "אֱלֹהֵיכֶם",
-              "kind": "elohim_forms",
               "display": "ה׳"
             }
           ],
@@ -1064,53 +1086,73 @@
               "source": "אֶל",
               "kind": "el",
               "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 447,
+              "end": 456,
+              "source": "אלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "אלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 472,
+              "end": 482,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 543,
+              "end": 551,
+              "source": "אֱלֹהִים",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהִים",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 566,
+              "end": 576,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
             }
           ]
         },
         {
           "section": "source-009",
           "paragraph": 0,
-          "replacements": [
+          "replacements": [],
+          "exceptions": [
             {
               "start": 13,
               "end": 20,
               "source": "אֲדֹנָי",
               "kind": "adonai",
-              "display": "ה׳"
+              "display": "אֲדֹנָי",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 21,
               "end": 31,
               "source": "אֱלֹהֵינוּ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵינוּ",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-010",
           "paragraph": 0,
           "replacements": [
             {
-              "start": 32,
-              "end": 39,
-              "source": "שַׁדַּי",
-              "kind": "shaddai",
-              "display": "ה׳"
-            },
-            {
               "start": 60,
               "end": 66,
               "source": "יהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 88,
-              "end": 95,
-              "source": "אֱלֹהַי",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -1121,7 +1163,24 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 32,
+              "end": 39,
+              "source": "שַׁדַּי",
+              "kind": "shaddai",
+              "display": "שַׁדַּי",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 88,
+              "end": 95,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-011",
@@ -1132,13 +1191,6 @@
               "end": 7,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 99,
-              "end": 107,
-              "source": "אֱלֹהִים",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -1170,13 +1222,6 @@
               "display": "ה׳"
             },
             {
-              "start": 387,
-              "end": 394,
-              "source": "אֱלֹהַי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 465,
               "end": 471,
               "source": "יהֹוָה",
@@ -1186,11 +1231,27 @@
           ],
           "exceptions": [
             {
+              "start": 99,
+              "end": 107,
+              "source": "אֱלֹהִים",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהִים",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
               "start": 182,
               "end": 185,
               "source": "אֶל",
               "kind": "el",
               "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 387,
+              "end": 394,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
             }
           ]
         },
@@ -1204,23 +1265,26 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 23,
               "end": 33,
               "source": "אֱלֹהֵינוּ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵינוּ",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 389,
               "end": 392,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-013",
@@ -1260,35 +1324,31 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 276,
               "end": 279,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 287,
               "end": 297,
               "source": "אֱלֹהֵינוּ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵינוּ",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-014",
           "paragraph": 0,
           "replacements": [
-            {
-              "start": 107,
-              "end": 117,
-              "source": "אֱלֹהָיִךְ",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
             {
               "start": 119,
               "end": 126,
@@ -1311,7 +1371,16 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 107,
+              "end": 117,
+              "source": "אֱלֹהָיִךְ",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהָיִךְ",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-016",
@@ -1322,13 +1391,6 @@
               "end": 47,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 48,
-              "end": 57,
-              "source": "אֱלֹהֶיךָ",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -1361,6 +1423,14 @@
             }
           ],
           "exceptions": [
+            {
+              "start": 48,
+              "end": 57,
+              "source": "אֱלֹהֶיךָ",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֶיךָ",
+              "reason": "preserved_by_requested_convention"
+            },
             {
               "start": 259,
               "end": 262,
@@ -1436,23 +1506,26 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 16,
               "end": 23,
               "source": "אֱלֹהֵי",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵי",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 154,
               "end": 157,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-021",
@@ -1543,13 +1616,6 @@
               "display": "ה׳"
             },
             {
-              "start": 236,
-              "end": 243,
-              "source": "אֲדֹנָי",
-              "kind": "adonai",
-              "display": "ה׳"
-            },
-            {
               "start": 392,
               "end": 399,
               "source": "יְהֹוָה",
@@ -1565,6 +1631,14 @@
             }
           ],
           "exceptions": [
+            {
+              "start": 236,
+              "end": 243,
+              "source": "אֲדֹנָי",
+              "kind": "adonai",
+              "display": "אֲדֹנָי",
+              "reason": "preserved_by_requested_convention"
+            },
             {
               "start": 383,
               "end": 386,
@@ -1590,13 +1664,6 @@
               "end": 67,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 161,
-              "end": 169,
-              "source": "אֱלֹהִים",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -1628,13 +1695,6 @@
               "display": "ה׳"
             },
             {
-              "start": 453,
-              "end": 460,
-              "source": "אֱלֹהַי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 533,
               "end": 539,
               "source": "יהֹוָה",
@@ -1644,11 +1704,27 @@
           ],
           "exceptions": [
             {
+              "start": 161,
+              "end": 169,
+              "source": "אֱלֹהִים",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהִים",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
               "start": 245,
               "end": 248,
               "source": "אֶל",
               "kind": "el",
               "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 453,
+              "end": 460,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
             }
           ]
         },
@@ -1656,13 +1732,6 @@
           "section": "source-027",
           "paragraph": 0,
           "replacements": [
-            {
-              "start": 64,
-              "end": 71,
-              "source": "אֱלֹהֵי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
             {
               "start": 244,
               "end": 251,
@@ -1701,6 +1770,14 @@
           ],
           "exceptions": [
             {
+              "start": 64,
+              "end": 71,
+              "source": "אֱלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵי",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
               "start": 310,
               "end": 313,
               "source": "אַל",
@@ -1731,23 +1808,26 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 34,
               "end": 41,
               "source": "אֱלֹהַי",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 44,
               "end": 50,
               "source": "אלֹהֵי",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אלֹהֵי",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-005",
@@ -1766,16 +1846,17 @@
         {
           "section": "source-006",
           "paragraph": 1,
-          "replacements": [
+          "replacements": [],
+          "exceptions": [
             {
               "start": 530,
               "end": 533,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-007",
@@ -1787,16 +1868,18 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 17,
               "end": 27,
               "source": "אֱלֹהֵינוּ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵינוּ",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-007",
@@ -1808,23 +1891,25 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 131,
               "end": 138,
               "source": "אֱלֹהַי",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 141,
               "end": 147,
               "source": "אלֹהֵי",
               "kind": "elohim_forms",
-              "display": "ה׳"
-            }
-          ],
-          "exceptions": [
+              "display": "אלֹהֵי",
+              "reason": "preserved_by_requested_convention"
+            },
             {
               "start": 297,
               "end": 300,
@@ -1881,13 +1966,6 @@
               "display": "ה׳"
             },
             {
-              "start": 26,
-              "end": 36,
-              "source": "אֱלֹהֵינוּ",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 37,
               "end": 44,
               "source": "יְהֹוָה",
@@ -1895,7 +1973,16 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 26,
+              "end": 36,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵינוּ",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-011",
@@ -1907,16 +1994,18 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 24,
               "end": 33,
               "source": "אֱלֹהֶיךָ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֶיךָ",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-012",
@@ -1927,13 +2016,6 @@
               "end": 107,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 108,
-              "end": 118,
-              "source": "אֱלֹהֵיכֶם",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -1965,6 +2047,14 @@
               "source": "אֶל",
               "kind": "el",
               "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 108,
+              "end": 118,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 407,
@@ -2023,31 +2113,10 @@
           "paragraph": 4,
           "replacements": [
             {
-              "start": 54,
-              "end": 63,
-              "source": "אלֹהֵיכֶם",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
               "start": 71,
               "end": 78,
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 79,
-              "end": 89,
-              "source": "אֱלֹהֵיכֶם",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
-              "start": 150,
-              "end": 157,
-              "source": "אלֹהִים",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -2056,16 +2125,42 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
+              "start": 54,
+              "end": 63,
+              "source": "אלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "אלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 79,
+              "end": 89,
+              "source": "אֱלֹהֵיכֶם",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 150,
+              "end": 157,
+              "source": "אלֹהִים",
+              "kind": "elohim_forms",
+              "display": "אלֹהִים",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 172,
               "end": 182,
               "source": "אֱלֹהֵיכֶם",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-014",
@@ -2077,30 +2172,33 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 8,
               "end": 18,
               "source": "אֱלֹהֵיכֶם",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵיכֶם",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-015",
           "paragraph": 0,
-          "replacements": [
+          "replacements": [],
+          "exceptions": [
             {
               "start": 71,
               "end": 74,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-017",
@@ -2147,40 +2245,28 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 248,
               "end": 251,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         },
         {
           "section": "source-018",
           "paragraph": 2,
           "replacements": [
             {
-              "start": 32,
-              "end": 39,
-              "source": "שַׁדַּי",
-              "kind": "shaddai",
-              "display": "ה׳"
-            },
-            {
               "start": 60,
               "end": 66,
               "source": "יהֹוָה",
               "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 88,
-              "end": 95,
-              "source": "אֱלֹהַי",
-              "kind": "elohim_forms",
               "display": "ה׳"
             },
             {
@@ -2191,7 +2277,24 @@
               "display": "ה׳"
             }
           ],
-          "exceptions": []
+          "exceptions": [
+            {
+              "start": 32,
+              "end": 39,
+              "source": "שַׁדַּי",
+              "kind": "shaddai",
+              "display": "שַׁדַּי",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 88,
+              "end": 95,
+              "source": "אֱלֹהַי",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהַי",
+              "reason": "preserved_by_requested_convention"
+            }
+          ]
         },
         {
           "section": "source-020",
@@ -2205,48 +2308,52 @@
               "display": "ה׳"
             },
             {
+              "start": 190,
+              "end": 197,
+              "source": "יְהֹוָה",
+              "kind": "tetragrammaton",
+              "display": "ה׳"
+            }
+          ],
+          "exceptions": [
+            {
               "start": 15,
               "end": 25,
               "source": "אֱלֹהֵינוּ",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אֱלֹהֵינוּ",
+              "reason": "preserved_by_requested_convention"
             },
             {
               "start": 28,
               "end": 34,
               "source": "אלֹהֵי",
               "kind": "elohim_forms",
-              "display": "ה׳"
+              "display": "אלֹהֵי",
+              "reason": "preserved_by_requested_convention"
             },
-            {
-              "start": 190,
-              "end": 197,
-              "source": "יְהֹוָה",
-              "kind": "tetragrammaton",
-              "display": "ה׳"
-            },
-            {
-              "start": 198,
-              "end": 208,
-              "source": "אֱלֹהֵינוּ",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            },
-            {
-              "start": 211,
-              "end": 217,
-              "source": "אלֹהֵי",
-              "kind": "elohim_forms",
-              "display": "ה׳"
-            }
-          ],
-          "exceptions": [
             {
               "start": 82,
               "end": 85,
               "source": "אַל",
               "kind": "el",
               "reason": "preposition_or_negation_not_a_divine_name"
+            },
+            {
+              "start": 198,
+              "end": 208,
+              "source": "אֱלֹהֵינוּ",
+              "kind": "elohim_forms",
+              "display": "אֱלֹהֵינוּ",
+              "reason": "preserved_by_requested_convention"
+            },
+            {
+              "start": 211,
+              "end": 217,
+              "source": "אלֹהֵי",
+              "kind": "elohim_forms",
+              "display": "אלֹהֵי",
+              "reason": "preserved_by_requested_convention"
             }
           ]
         },
@@ -2260,16 +2367,18 @@
               "source": "יְהֹוָה",
               "kind": "tetragrammaton",
               "display": "ה׳"
-            },
+            }
+          ],
+          "exceptions": [
             {
               "start": 122,
               "end": 125,
               "source": "אֵל",
               "kind": "el",
-              "display": "ה׳"
+              "display": "אֵל",
+              "reason": "preserved_by_requested_convention"
             }
-          ],
-          "exceptions": []
+          ]
         }
       ]
     }

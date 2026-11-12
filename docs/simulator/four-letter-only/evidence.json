@@ -1,0 +1,36 @@
+{
+  "device": "fr970",
+  "sdk": "9.3.0",
+  "convention": "four-letter-only",
+  "replacements": {
+    "ashkenaz": 49,
+    "sefard": 65,
+    "edot_hamizrach": 27,
+    "total": 141
+  },
+  "other_names": "exact original source spelling and pointing",
+  "host_tests": 33,
+  "checks": [
+    "Independent full-corpus regex comparison proves all other characters remain original",
+    "Visual checks of Shema/El, Adonai and Shaddai",
+    "No kuf substitutions or inserted dashes",
+    "Earlier unpushed five-rule version not distributed"
+  ],
+  "artifacts": {
+    "fr970.review.prg": {
+      "sha256": "b5a55d536f60877eda04d9702c05f971a27d23bdd463104cf6aa6854d8ce2680",
+      "bytes": 5451580
+    },
+    "fr970.tests.prg": {
+      "sha256": "b14bdbdf3de5744f16916554aac460291f318c4fffd8c5b90f49eef74b330d1b",
+      "bytes": 5460812
+    }
+  },
+  "native_tests": {
+    "passed": 9,
+    "failed": 0,
+    "errors": 0,
+    "process_exit": 1,
+    "sdk_modified": false
+  }
+}

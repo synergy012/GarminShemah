@@ -1,5 +1,7 @@
 # Beginning, brightness and Divine Names — 2026-11-11
 
+**Superseded Name convention:** the earlier blanket substitution described below has been corrected to the [four-letter-only convention](FOUR-LETTER-NAME.md). The brightness/beginning checks remain valid.
+
 **Return to beginning** now closes settings and immediately displays the start of the selected document. Other selection menus retain their existing stay-open behavior.
 
 **Brightness** appears beneath Text size and offers System, 10%, 25%, 50% and 100%. It is saved in preferences and applied on selection and reader entry using Garmin's supported `Attention.backlight` API. Garmin still controls timeout and burn-in protection. There is no repeating keep-awake timer. Actual physical-watch brightness behavior remains to be checked.

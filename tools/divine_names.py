@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 POLICY = ROOT / 'content/divine-name-policy.json'
 IDS = ('ashkenaz', 'sefard', 'edot_hamizrach')
 REPLACEMENT = 'ה׳'
+CONVENTION = 'four-letter-only-v3'
 TOKEN = re.compile(r'[\u05d0-\u05ea\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7]+')
 GRAPHEME = re.compile(r'[\u05d0-\u05ea][\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7]*')
 ROOTS = {'יהוה': 'tetragrammaton', 'אדני': 'adonai', 'אל': 'el', 'שדי': 'shaddai',
@@ -27,6 +28,10 @@ def letters(text):
 def document_digest(document):
     values = [[s['id'], s['heading_he'], s['paragraphs']] for s in document['sections']]
     return hashlib.sha256(json.dumps(values, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()
+
+
+def display_name(name, kind):
+    return REPLACEMENT if kind == 'tetragrammaton' else name
 
 
 def name_spans(text):
@@ -54,14 +59,18 @@ def name_spans(text):
                 span['reason'] = reason
                 exceptions.append(span)
             else:
-                span['display'] = REPLACEMENT
+                span['display'] = display_name(name, ROOTS[stem])
+                if span['display'] == name:
+                    span['reason'] = 'preserved_by_requested_convention'
+                    exceptions.append(span)
+                    break
                 replacements.append(span)
             break
     return replacements, exceptions
 
 
 def make_policy(documents):
-    result = {'replacement': REPLACEMENT, 'documents': {}}
+    result = {'replacement': REPLACEMENT, 'convention': CONVENTION, 'documents': {}}
     for document in documents:
         fields = []
         for section in document['sections']:
@@ -78,7 +87,7 @@ def display_document(document):
         return document
     policy = json.loads(POLICY.read_text())
     entry = policy['documents'][document['id']]
-    if policy['replacement'] != REPLACEMENT or entry['text_sha256'] != document_digest(document):
+    if policy['replacement'] != REPLACEMENT or policy.get('convention') != CONVENTION or entry['text_sha256'] != document_digest(document):
         raise ValueError('Divine-name policy needs review for changed source text')
     output = copy.deepcopy(document)
     sections = {s['id']: s for s in output['sections']}
@@ -102,7 +111,7 @@ def display_document(document):
 
 def export_review():
     policy = json.loads(POLICY.read_text())
-    report = ['# Divine-name display substitutions', '', 'The app displays **ה׳** (he followed by Hebrew geresh) for Divine Names. Original acquired and reader-input JSON remains verbatim for provenance. Names, including their attached vowels/accents, are replaced only at pinned source spans; attached prefixes and all other text remain unchanged.', '', 'Ordinary prepositions/negations, angel/personal names, descriptive words and the Shema reference to other gods are not Divine Names and remain unchanged. This is a display convention, not a change to source certification.', '', '| Nusach | Replacements | By name family |', '| --- | ---: | --- |']
+    report = ['# Divine-name display substitutions', '', 'Only the four-letter Name displays as **ה׳**. Every other Name remains exactly as it appears in the source, including its spelling, vowels, prefixes and endings. No kuf substitutions or added dashes are applied. Original acquired and reader-input JSON remains verbatim for provenance. Substitutions apply only at pinned four-letter Name spans. Attached prefixes remain unchanged; the four-letter Name itself becomes unpointed ה׳. All other source text is unchanged.', '', 'Ordinary prepositions/negations, angel/personal names, descriptive words and the Shema reference to other gods are not Divine Names and remain unchanged. This is a display convention, not a change to source certification.', '', '| Nusach | Replacements | By name family |', '| --- | ---: | --- |']
     folder = ROOT / 'content/review'
     folder.mkdir(exist_ok=True)
     for identifier in IDS:
@@ -110,7 +119,7 @@ def export_review():
         displayed = display_document(document)
         counts = Counter(s['kind'] for f in policy['documents'][identifier]['fields'] for s in f['replacements'])
         report.append(f"| {identifier} | {sum(counts.values())} | {dict(sorted(counts.items()))} |")
-        lines = [f"# {document['title_he']}", '', '**Source-review display text. Divine Names use ה׳.**', '', 'See [name substitution audit](../../docs/DIVINE-NAMES.md) and [source notices](../acquired/NOTICE.md).', '']
+        lines = [f"# {document['title_he']}", '', '**Source-review display text: only the four-letter Name uses ה׳. Other Names retain their source spelling.**', '', 'See [name substitution audit](../../docs/DIVINE-NAMES.md) and [source notices](../acquired/NOTICE.md).', '']
         for section in displayed['sections']:
             lines += [f"## {section['id']}", '']
             for kind, text in zip(section['paragraph_kinds'], section['paragraphs']):

@@ -1,0 +1,92 @@
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/home/garmin
+Reader restored ashkenaz offset=6048 size=1
+------------------------------------------------------------------------------
+Executing test testPartialRowDoesNotCauseTwoRowOverlap...
+PASS
+Reader saved ashkenaz offset=6048 size=1
+Reader restored ashkenaz offset=6048 size=1
+------------------------------------------------------------------------------
+Executing test testProgressTracksDocumentBounds...
+PASS
+Reader saved ashkenaz offset=6048 size=1
+Reader restored ashkenaz offset=6048 size=1
+------------------------------------------------------------------------------
+Executing test testReaderVisibilityOptions...
+PASS
+Reader saved ashkenaz offset=6048 size=1
+Reader restored ashkenaz offset=6048 size=1
+------------------------------------------------------------------------------
+Executing test testScreenStepsAreImmediateAndOverlap...
+Reader restored ashkenaz offset=4556 size=0
+Reader saved ashkenaz offset=0 size=0
+Reader saved ashkenaz offset=46 size=0
+Reader restored ashkenaz offset=12 size=1
+Reader saved ashkenaz offset=0 size=1
+Reader saved ashkenaz offset=53 size=1
+Reader restored ashkenaz offset=12 size=2
+Reader saved ashkenaz offset=0 size=2
+Reader saved ashkenaz offset=60 size=2
+Reader restored sefard offset=0 size=0
+Reader saved sefard offset=0 size=0
+Reader saved sefard offset=46 size=0
+Reader restored sefard offset=12 size=1
+Reader saved sefard offset=0 size=1
+Reader saved sefard offset=53 size=1
+Reader restored sefard offset=12 size=2
+Reader saved sefard offset=0 size=2
+Reader saved sefard offset=60 size=2
+Reader restored edot_hamizrach offset=0 size=0
+Reader saved edot_hamizrach offset=0 size=0
+Reader saved edot_hamizrach offset=46 size=0
+Reader restored edot_hamizrach offset=20 size=1
+Reader saved edot_hamizrach offset=0 size=1
+Reader saved edot_hamizrach offset=53 size=1
+Reader restored edot_hamizrach offset=20 size=2
+Reader saved edot_hamizrach offset=0 size=2
+Reader saved edot_hamizrach offset=60 size=2
+PASS
+Reader saved ashkenaz offset=6048 size=1
+Reader restored ashkenaz offset=6048 size=1
+------------------------------------------------------------------------------
+Executing test testOptionsMigrateAndHiddenAnchorContinues...
+Reader restored ashkenaz offset=4778 size=0
+Reader saved ashkenaz offset=2632 size=0
+PASS
+Reader saved ashkenaz offset=6048 size=1
+Reader restored ashkenaz offset=6048 size=1
+------------------------------------------------------------------------------
+Executing test testScrollBounds...
+PASS
+Reader saved ashkenaz offset=6048 size=1
+Reader restored ashkenaz offset=6048 size=1
+------------------------------------------------------------------------------
+Executing test testContinuousSectionBoundary...
+PASS
+Reader saved ashkenaz offset=6048 size=1
+Reader restored ashkenaz offset=6048 size=1
+------------------------------------------------------------------------------
+Executing test testFontSizePreservesWordAnchor...
+Reader restored ashkenaz offset=4556 size=0
+PASS
+Reader saved ashkenaz offset=6048 size=1
+Reader restored ashkenaz offset=6048 size=1
+------------------------------------------------------------------------------
+Executing test testRepeatedDocumentTraversal...
+PASS
+Reader saved ashkenaz offset=6048 size=1
+
+==============================================================================
+RESULTS
+Test:                                      Status:
+testPartialRowDoesNotCauseTwoRowOverlap    PASS
+testProgressTracksDocumentBounds           PASS
+testReaderVisibilityOptions                PASS
+testScreenStepsAreImmediateAndOverlap      PASS
+testOptionsMigrateAndHiddenAnchorContinues PASS
+testScrollBounds                           PASS
+testContinuousSectionBoundary              PASS
+testFontSizePreservesWordAnchor            PASS
+testRepeatedDocumentTraversal              PASS
+Ran 9 tests
+
+PASSED (passed=9, failed=0, errors=0)

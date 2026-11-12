@@ -43,8 +43,9 @@ from another edition. Physical-watch update acceptance remains to be checked.
 
 Display changes: markup parsed, whitespace collapsed, instructions separated and
 labelled; reader settings can hide instructions or Shema paragraphs 2 and 3.
-Divine Names are displayed as ה׳ (he followed by Hebrew geresh); attached
-prefixes and other wording/pointing are retained. Original source records remain
+Only the four-letter Name becomes ה׳. All other Names remain exactly as written
+in the source, including vowels, prefixes and endings. No kuf substitutions or
+added dashes are applied. Original source records remain
 unchanged in the repository. See DIVINE-NAMES.md for the substitution audit.
 See TEXT-NOTICES.md and the included font licenses. Offline source attribution is
 also available through the app's Text sources setting.

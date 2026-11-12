@@ -8,4 +8,4 @@ This is a development-signed **REVIEW COPY**, pending editorial approval. The ZI
 
 Latest reading controls: screen scrolling is immediate and is the default; instructions are hidden by default; Shema paragraphs 2 and 3 can be toggled together in settings. Hold the middle-left UP/MENU button to open settings. It is not a store release. Venu 2 is not supported.
 
-Latest changes: Return to beginning closes settings; Brightness offers System/10%/25%/50%/100%; Divine Names display as **ה׳**. See the [validation and screenshots](../docs/NAMES-BRIGHTNESS.md).
+Latest changes: Return to beginning closes settings; Brightness offers System/10%/25%/50%/100%; only the four-letter Name uses **ה׳**, with all other Names restored to their exact original spelling. See the [validation and screenshots](../docs/NAMES-BRIGHTNESS.md).

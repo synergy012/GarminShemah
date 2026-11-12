@@ -42,4 +42,4 @@ Physical-watch sideload and acceptance have not yet been verified. A future appr
 
 Brightness offers System, 10%, 25%, 50% and 100%. It uses Garmin's supported backlight API on selection and reader entry; device timeout and burn-in protection remain active. A persistent keep-awake timer is not used. Return to beginning is an action: it closes the menu and immediately returns to offset zero. Other selections remain in settings.
 
-All three nuschaos display Divine Names as **ה׳**. The [span audit](DIVINE-NAMES.md) records 223 replacements; ordinary prepositions and the reference to other gods are preserved. Saved positions from earlier text layouts migrate by word anchor.
+All three nuschaos use **ה׳** only for the four-letter Name. All other Names retain their exact source spelling, vowels, prefixes and endings; no kuf substitutions or extra dashes are applied. The [span audit](DIVINE-NAMES.md) records 141 replacements; ordinary prepositions and the reference to other gods are preserved. Saved positions from earlier text layouts migrate by word anchor.
